@@ -498,7 +498,7 @@ export function Header({ onBookDemo }: HeaderProps) {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Button
               variant="emerald"
-              size="sm"
+              size="lg"
               onClick={handleDemoClick}
               className="font-bold text-xs"
             >
@@ -506,7 +506,7 @@ export function Header({ onBookDemo }: HeaderProps) {
             </Button>
             <Button
               variant="primary"
-              size="sm"
+              size="lg"
               onClick={handleDemoClick}
               className="font-bold text-xs shadow-[var(--shadow-glow)]"
             >

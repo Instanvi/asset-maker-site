@@ -3,12 +3,15 @@
 import React from "react";
 
 const logos = [
-  { name: "DHL", src: "/images/DHL-Logo.wine.svg" },
-  { name: "FedEx", src: "/images/FedEx_Express.webp" },
-  { name: "UPS", src: "/images/United_Parcel_Service-Logo.wine.svg" },
-  { name: "USPS", src: "/images/USPS_-_Color_Logo.svg" },
-  { name: "DPD", src: "/images/DPD_id9sTo-S4f_0.svg" },
-  { name: "Valeo", src: "/images/Valeo_Logo.webp" },
+  { src: "/images/Amazon_logo.svg.webp", alt: "Amazon", h: "30px" },
+  { src: "/images/brandbird-alibaba-logotype.svg", alt: "Alibaba", h: "28px" },
+  { src: "/images/EBay_logo.svg", alt: "eBay", h: "30px" },
+  { src: "/images/aliexpress-logo-5a8f.webp", alt: "AliExpress", h: "100px" },
+  { src: "/images/DPD_id9sTo-S4f_0.svg", alt: "DPD", h: "30px" },
+  { src: "/images/United_Parcel_Service-Logo.wine.svg", alt: "UPS", h: "70px" },
+  { src: "/images/DHL-Logo.wine.svg", alt: "DHL", h: "100px" },
+  { src: "/images/FedEx_Express.webp", alt: "FedEx", h: "30px" },
+  { src: "/images/Valeo_Logo.webp", alt: "Valeo", h: "50px" },
 ];
 
 export function LogoMarquee() {
@@ -20,19 +23,36 @@ export function LogoMarquee() {
         </p>
       </div>
 
-      <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_96px,_black_calc(100%-96px),transparent_100%)]">
-        <div className="flex w-max items-center gap-12 sm:gap-16 marquee-track hover:[animation-play-state:paused]">
-          {[...logos, ...logos, ...logos].map((logo, idx) => (
+      <div className="group flex w-max animate-marquee hover:[animation-play-state:paused]">
+        {/* First copy */}
+        <div className="flex items-center gap-16 px-8">
+          {logos.map((logo) => (
             <div
-              key={`${logo.name}-${idx}`}
-              className="flex h-6 items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-200 cursor-pointer"
-              title={logo.name}
+              key={`a-${logo.alt}`}
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
             >
               <img
                 src={logo.src}
-                alt={logo.name}
-                className="h-full w-auto max-w-[120px] object-contain select-none"
-                draggable={false}
+                alt={logo.alt}
+                style={{ height: logo.h, width: "auto" }}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Second copy */}
+        <div className="flex items-center gap-16 px-8" aria-hidden="true">
+          {logos.map((logo) => (
+            <div
+              key={`b-${logo.alt}`}
+              className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-60 hover:opacity-100"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                style={{ height: logo.h, width: "auto" }}
+                className="object-contain"
               />
             </div>
           ))}
@@ -40,16 +60,13 @@ export function LogoMarquee() {
       </div>
 
       <style jsx>{`
-        .marquee-track {
-          animation: marquee 35s linear infinite;
-        }
         @keyframes marquee {
-          from {
-            transform: translateX(0%);
-          }
-          to {
-            transform: translateX(-33.3334%);
-          }
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 80s linear infinite;
+          will-change: transform;
         }
       `}</style>
     </div>
