@@ -1,0 +1,236 @@
+@import "tailwindcss";
+
+/* Söhne Font Family for Headings (Loaded from /public/fonts/sohne) */
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Buch-BF663d89cd32e6a.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-BuchKursiv-BF663d89cd3e887.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Kraftig-BF663d89cd37e26.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Halbfett-BF663d89cd2d67b.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Dreiviertelfett-BF663d89ccc5f66.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Extrafett-BF663d89cc9f2c0.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Sohne';
+  src: url('/fonts/sohne/TestSohne-Fett-BF663d89cca89ff.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   CENTRALIZED DESIGN SYSTEM & COLOR TOKENS
+   Modifying any variable here instantly updates the entire website!
+   ========================================================================== */
+:root {
+  /* Layout Dimensions */
+  --header-height: 72px;
+
+  /* Canvas & Surface Layers */
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --surface-raised: #f1f5f9;
+  --surface-muted: #e2e8f0;
+  --surface-dark: #0f172a;
+  --surface-dark-card: #1e293b;
+  --surface-dark-border: rgba(255, 255, 255, 0.1);
+
+  /* Typography */
+  --foreground: #0f172a;
+  --foreground-muted: #475569;
+  --foreground-subtle: #94a3b8;
+  --foreground-inverted: #ffffff;
+
+  /* Brand Primary Accent (Electric Royal Sapphire) */
+  --brand-primary: #2563eb;
+  --brand-primary-hover: #1d4ed8;
+  --brand-primary-light: #eff6ff;
+  --brand-primary-glow: rgba(37, 99, 235, 0.16);
+
+  /* Brand Secondary Accent / Health & Compliance (Vibrant Mint Emerald) */
+  --brand-emerald: #059669;
+  --brand-emerald-hover: #047857;
+  --brand-emerald-light: #ecfdf5;
+  --brand-emerald-glow: rgba(16, 185, 129, 0.18);
+
+  /* Operational Accents */
+  --accent-amber: #d97706;
+  --accent-amber-light: #fffbeb;
+  --accent-rose: #e11d48;
+  --accent-rose-light: #fff1f2;
+  --accent-cyan: #0891b2;
+  --accent-cyan-light: #ecfeff;
+  --accent-purple: #7c3aed;
+
+  /* Borders & Dividers */
+  --border-custom: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-hover: #cbd5e1;
+  --border-focus: #2563eb;
+
+  /* Shadows & Glows */
+  --shadow-soft: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+  --shadow-card: 0 10px 30px -4px rgba(15, 23, 42, 0.07);
+  --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.2);
+  --shadow-emerald-glow: 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-dark-card: var(--surface-dark-card);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
+  
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-primary-hover: var(--brand-primary-hover);
+  --color-brand-primary-light: var(--brand-primary-light);
+  --color-brand-emerald: var(--brand-emerald);
+  --color-brand-emerald-hover: var(--brand-emerald-hover);
+  --color-brand-emerald-light: var(--brand-emerald-light);
+  
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-rose: var(--accent-rose);
+  --color-accent-cyan: var(--accent-cyan);
+  
+  --color-border-custom: var(--border-custom);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-hover: var(--border-hover);
+  
+  --font-sans: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Sohne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Headings use Söhne with crisp typographic hierarchy */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Sohne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+p, span, li, a, input, select, textarea, button, label, .font-body {
+  font-family: var(--font-manrope), 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base Body Text Standard (16px) */
+p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.625;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
+
+/* Grid & Ambient Background Accents */
+.bg-grid-subtle {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+}
+
+.ambient-hero-glow {
+  background: radial-gradient(circle 800px at 50% 0%, rgba(37, 99, 235, 0.07), transparent 70%);
+}
+
+.ambient-emerald-glow {
+  background: radial-gradient(circle 600px at 50% 50%, rgba(16, 185, 129, 0.06), transparent 70%);
+}
+
+/* Scanner Animation */
+@keyframes scanLaser {
+  0% { top: 4%; opacity: 0.8; }
+  50% { top: 92%; opacity: 1; }
+  100% { top: 4%; opacity: 0.8; }
+}
+
+.scanner-laser {
+  animation: scanLaser 3s ease-in-out infinite;
+}
+
+/* Text Gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0f172a 30%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #0f172a 30%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
