@@ -40,7 +40,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
       description={
         submitted
           ? ""
-          : "See how intelligent asset tracking and UrsaAI condition audits transform your team's compliance."
+          : "See how complete asset tracking and digital compliance workflows transform your team's operational efficiency."
       }
     >
       {submitted ? (

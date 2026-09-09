@@ -448,8 +448,8 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
 
                     <div className="pt-2 flex items-center justify-between text-xs text-[var(--foreground-muted)]">
                       <span className="flex items-center gap-1 text-[var(--brand-emerald)] font-bold">
-                        <Sparkles className="h-3.5 w-3.5" />
-                        UrsaAI Auto-Grader Ready
+                        <ShieldCheck className="h-3.5 w-3.5" />
+                        Automated Digital Scoring Active
                       </span>
                       <Button
                         variant="primary"

@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { X, ChevronDown } from "lucide-react";
+import { X, ChevronDown, QrCode, Wrench, ClipboardCheck, Laptop, Layers, HardHat, Box, GraduationCap, Stethoscope, Warehouse } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +13,7 @@ export interface MobileDrawerProps {
 }
 
 export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps) {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+  const [expandedSection, setExpandedSection] = useState<string | null>("products");
 
   const toggleSection = (id: string) => {
     setExpandedSection((prev) => (prev === id ? null : id));
@@ -66,192 +66,176 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
               />
             </button>
             {expandedSection === "products" && (
-              <div className="pl-3 pr-1 pb-3 space-y-2.5 text-xs animate-in fade-in-0 duration-150">
-                <div className="text-[10px] font-extrabold uppercase text-[var(--foreground-subtle)] tracking-wider">
-                  Public Sector Solutions
-                </div>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Local Government
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Public Works
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Fire & Rescue
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Law Enforcement
+              <div className="pl-2 pr-1 pb-3 space-y-2 text-xs animate-in fade-in-0 duration-150">
+                <Link
+                  href="/products/asset-tracking"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <QrCode className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Asset Tracking & Tags</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">QR & barcode scanning from any phone</div>
+                  </div>
                 </Link>
 
-                <div className="pt-2 text-[10px] font-extrabold uppercase text-[var(--foreground-subtle)] tracking-wider">
-                  Education Solutions
-                </div>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  K-12 School Districts
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Higher Education & Labs
+                <Link
+                  href="/products/maintenance-cmms"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Wrench className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Maintenance (CMMS)</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Preventative schedules & work orders</div>
+                  </div>
                 </Link>
 
-                <div className="pt-2 text-[10px] font-extrabold uppercase text-[var(--foreground-subtle)] tracking-wider">
-                  Core Platform
-                </div>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Asset Intelligence Platform
+                <Link
+                  href="/products/inspections-audit"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <ClipboardCheck className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Inspections & Audit Trail</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Digital checklists & full history</div>
+                  </div>
                 </Link>
-                <Link href="/#demo" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  UrsaAI Intelligence
+
+                <Link
+                  href="/products/it-asset-management"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Laptop className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">IT Asset Management</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Hardware, licenses & MDM sync</div>
+                  </div>
                 </Link>
-                <Link href="/#systems" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Integrations & API
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Barcode Tags & RFID
+
+                <Link
+                  href="/products/integrations-api"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Layers className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Integrations & API</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Connect ERP, Jamf, Intune & Jira</div>
+                  </div>
                 </Link>
               </div>
             )}
           </div>
 
-          {/* Solutions Accordion */}
+          {/* Industries Accordion */}
           <div className="border-b border-[var(--border-subtle)] pb-2">
             <button
               type="button"
-              onClick={() => toggleSection("solutions")}
+              onClick={() => toggleSection("industries")}
               className="w-full flex items-center justify-between py-2.5 text-sm font-bold text-[var(--foreground)]"
             >
-              <span>Solutions</span>
+              <span>Industries</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 text-[var(--foreground-subtle)] transition-transform duration-200",
-                  expandedSection === "solutions" && "rotate-180 text-[var(--brand-primary)]"
+                  expandedSection === "industries" && "rotate-180 text-[var(--brand-primary)]"
                 )}
               />
             </button>
-            {expandedSection === "solutions" && (
-              <div className="pl-3 pr-1 pb-3 space-y-2 text-xs animate-in fade-in-0 duration-150">
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Asset Management & Tracking
+            {expandedSection === "industries" && (
+              <div className="pl-2 pr-1 pb-3 space-y-2 text-xs animate-in fade-in-0 duration-150">
+                <Link
+                  href="/industries/construction"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <HardHat className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Construction & Field Crews</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Tools and heavy gear on jobsites</div>
+                  </div>
                 </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Inventory & Consumables
+
+                <Link
+                  href="/industries/it-facilities"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Box className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">IT & Facilities</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Assigned staff devices and gear</div>
+                  </div>
                 </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  IT Asset Management (ITAM)
+
+                <Link
+                  href="/industries/education"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <GraduationCap className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Education</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Campus devices & lab equipment</div>
+                  </div>
                 </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Fixed Asset Accounting
+
+                <Link
+                  href="/industries/healthcare"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Stethoscope className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Healthcare</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Findable biomedical equipment</div>
+                  </div>
                 </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Maintenance Management (CMMS)
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Facilities Management
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Tool & Tool-Crib Tracking
-                </Link>
-                <Link href="/#products" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Mobile Field Audits
+
+                <Link
+                  href="/industries/warehousing-logistics"
+                  onClick={onClose}
+                  className="flex items-center gap-2.5 p-2 rounded-md font-semibold text-[var(--foreground)] hover:bg-[var(--surface-raised)] hover:text-[var(--brand-primary)]"
+                >
+                  <Warehouse className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
+                  <div>
+                    <div className="font-bold">Warehousing & Logistics</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Forklifts, bins & dock tools</div>
+                  </div>
                 </Link>
               </div>
             )}
           </div>
 
-          {/* Who We Help Accordion */}
-          <div className="border-b border-[var(--border-subtle)] pb-2">
-            <button
-              type="button"
-              onClick={() => toggleSection("whoWeHelp")}
-              className="w-full flex items-center justify-between py-2.5 text-sm font-bold text-[var(--foreground)]"
-            >
-              <span>Who We Help</span>
-              <ChevronDown
-                className={cn(
-                  "h-4 w-4 text-[var(--foreground-subtle)] transition-transform duration-200",
-                  expandedSection === "whoWeHelp" && "rotate-180 text-[var(--brand-primary)]"
-                )}
-              />
-            </button>
-            {expandedSection === "whoWeHelp" && (
-              <div className="pl-3 pr-1 pb-3 space-y-2 text-xs animate-in fade-in-0 duration-150">
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Municipal Government
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  K-12 & Higher Education
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Healthcare & Biomedical
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Construction & Contractors
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Manufacturing Plants
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Energy & Utilities
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Warehousing & Supply Chain
-                </Link>
-                <Link href="/#industries" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  MSPs & Nonprofits
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Resources Accordion */}
-          <div className="border-b border-[var(--border-subtle)] pb-2">
-            <button
-              type="button"
-              onClick={() => toggleSection("resources")}
-              className="w-full flex items-center justify-between py-2.5 text-sm font-bold text-[var(--foreground)]"
-            >
-              <span>Resources</span>
-              <ChevronDown
-                className={cn(
-                  "h-4 w-4 text-[var(--foreground-subtle)] transition-transform duration-200",
-                  expandedSection === "resources" && "rotate-180 text-[var(--brand-primary)]"
-                )}
-              />
-            </button>
-            {expandedSection === "resources" && (
-              <div className="pl-3 pr-1 pb-3 space-y-2 text-xs animate-in fade-in-0 duration-150">
-                <Link href="/#why-asset-intelligence" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Asset Intelligence Blog
-                </Link>
-                <Link href="/#case-studies" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Customer Case Studies
-                </Link>
-                <Link href="/#roi-calculator" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Interactive ROI Calculator
-                </Link>
-                <Link href="/#faq" onClick={onClose} className="block font-semibold text-[var(--foreground)] hover:text-[var(--brand-primary)]">
-                  Frequently Asked Questions (FAQ)
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Direct Links */}
+          {/* Direct Section Links */}
           <div className="border-b border-[var(--border-subtle)] py-1.5">
             <Link
-              href="/#systems"
+              href="/#how"
               onClick={onClose}
-              className="block py-1.5 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
+              className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
             >
-              Enterprise
+              How it Works
             </Link>
           </div>
           <div className="border-b border-[var(--border-subtle)] py-1.5">
             <Link
-              href="/#roi-calculator"
+              href="/#roi"
               onClick={onClose}
-              className="block py-1.5 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
+              className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
             >
-              Pricing
+              ROI Calculator
+            </Link>
+          </div>
+          <div className="border-b border-[var(--border-subtle)] py-1.5">
+            <Link
+              href="/#proof"
+              onClick={onClose}
+              className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
+            >
+              Customer Proof
             </Link>
           </div>
         </div>

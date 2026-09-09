@@ -8,7 +8,6 @@ import {
   ClipboardCheck,
   ShieldAlert,
   FileBarChart,
-  Sparkles,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
@@ -30,6 +29,9 @@ import {
   SlidersHorizontal,
   ChevronRight,
   Check,
+  Zap,
+  Globe,
+  Bell,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -160,47 +162,38 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
     }, 800);
   };
 
-  // ─── STEP 07 STATE ───
-  const [aiQuery, setAiQuery] = useState("Which assets are due for warranty renewal this quarter?");
-  const [aiResponse, setAiResponse] = useState({
-    title: "14 Assets Requiring Renewal Action",
-    summary: "Identified 14 hardware units expiring in next 90 days. Estimated warranty coverage gap: $42,600.",
-    confidence: "99.8%",
-    recommendation: "Auto-generate batch PO quote with Dell & Apple Premier enterprise portals.",
-  });
+  // ─── STEP 07 STATE (WORKFLOW & API AUTOMATION) ───
+  const [automationRules, setAutomationRules] = useState([
+    {
+      id: 1,
+      name: "Warranty Expiry Alert",
+      trigger: "Warranty < 30 Days Remaining",
+      action: "Auto-create renewal ticket in Jira & notify procurement",
+      active: true,
+      icon: <Bell className="h-4 w-4 text-amber-500" />,
+    },
+    {
+      id: 2,
+      name: "Defect Safety Lockout",
+      trigger: "Inspection Status = 'Flag Defect'",
+      action: "Revoke checkout permission & alert Fleet Safety Officer",
+      active: true,
+      icon: <AlertCircle className="h-4 w-4 text-rose-500" />,
+    },
+    {
+      id: 3,
+      name: "ERP Financial Synchronization",
+      trigger: "Asset Value Reconciled",
+      action: "POST real-time depreciation GL entry to SAP / NetSuite",
+      active: true,
+      icon: <Globe className="h-4 w-4 text-[var(--brand-primary)]" />,
+    },
+  ]);
 
-  const aiPrompts = [
-    {
-      q: "Which assets are due for warranty renewal this quarter?",
-      title: "14 Assets Requiring Renewal Action",
-      summary: "Identified 14 hardware units expiring in next 90 days. Estimated warranty coverage gap: $42,600.",
-      confidence: "99.8%",
-      rec: "Auto-generate batch PO quote with Dell & Apple Premier enterprise portals.",
-    },
-    {
-      q: "Show missing or unverified equipment in Warehouse B",
-      title: "Zero Discrepancies Found in Warehouse B",
-      summary: "All 1,842 barcoded items reconciled via RFID gate sensors in past 48 hours. 100% audit-ready.",
-      confidence: "100%",
-      rec: "Log zero-variance audit signoff for ISO 27001 auditor.",
-    },
-    {
-      q: "Forecast residual salvage value for retired fleet",
-      title: "Estimated Residual Salvage: $284,500",
-      summary: "32 heavy vehicles reaching Year 7 MACRS endpoint. Market value indexed against Ritchie Bros auctions.",
-      confidence: "96.4%",
-      rec: "Schedule certified recycling & decommission auction.",
-    },
-  ];
-
-  const handleSelectAiPrompt = (item: (typeof aiPrompts)[0]) => {
-    setAiQuery(item.q);
-    setAiResponse({
-      title: item.title,
-      summary: item.summary,
-      confidence: item.confidence,
-      recommendation: item.rec,
-    });
+  const toggleRule = (id: number) => {
+    setAutomationRules((prev) =>
+      prev.map((r) => (r.id === id ? { ...r, active: !r.active } : r))
+    );
   };
 
   // ─── STEPS DEFINITION ───
@@ -249,10 +242,10 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
     },
     {
       number: "07",
-      title: "UrsaAI Intelligence",
-      tagline: "Proactive AI Copilot",
-      shortDesc: "Natural language queries, predictive maintenance & auto-grading.",
-      icon: <Sparkles className="h-4 w-4" />,
+      title: "Workflow & API Automation",
+      tagline: "Automated Rules & Webhooks",
+      shortDesc: "Trigger automatic alerts, ERP sync, and webhook integrations.",
+      icon: <SlidersHorizontal className="h-4 w-4" />,
     },
   ];
 
@@ -730,8 +723,8 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
 
                   <div className="p-3 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)] flex items-center justify-between text-xs">
                     <span className="flex items-center gap-1.5 text-[var(--brand-emerald)] font-bold">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      UrsaAI Inspection Auto-Grader: 98% Compliance Score
+                      <ShieldCheck className="h-3.5 w-3.5" />
+                      Automated Digital Scoring: 98% Compliance Grade
                     </span>
                     <span className="text-slate-400 font-mono text-[11px]">
                       GPS: 32.7767° N, 96.7970° W
@@ -905,53 +898,85 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
               )}
 
               {/* ─────────────────────────────────────────────────────────────
-                  MODULE 07: URSAAI INTELLIGENCE COPILOT
+                  MODULE 07: WORKFLOW & API AUTOMATION
                  ───────────────────────────────────────────────────────────── */}
               {activeStep === 6 && (
-                <div className="space-y-3.5 animate-in fade-in-0 duration-150">
-                  {/* Prompt Suggestions */}
-                  <div className="space-y-1.5">
-                    <span className="text-[10px] font-bold uppercase text-[var(--foreground-subtle)]">
-                      Suggested Natural Language Prompts
+                <div className="space-y-4 animate-in fade-in-0 duration-150">
+                  <div className="flex items-center justify-between pb-1">
+                    <span className="text-xs font-bold text-[var(--foreground)]">
+                      Configured Trigger-Action Workflows
                     </span>
-                    <div className="flex flex-wrap gap-1.5">
-                      {aiPrompts.map((p, pIdx) => (
-                        <button
-                          key={pIdx}
-                          type="button"
-                          onClick={() => handleSelectAiPrompt(p)}
-                          className={cn(
-                            "px-2.5 py-1 rounded-md text-xs font-semibold border transition-all cursor-pointer select-none text-left",
-                            aiQuery === p.q
-                              ? "bg-[var(--brand-primary-light)] text-[var(--brand-primary)] border-[var(--brand-primary)]/40"
-                              : "bg-[var(--surface)] text-[var(--foreground-muted)] border-[var(--border-custom)] hover:bg-white"
-                          )}
-                        >
-                          "{p.q}"
-                        </button>
-                      ))}
-                    </div>
+                    <span className="text-xs font-mono font-bold text-[var(--brand-emerald)]">
+                      {automationRules.filter((r) => r.active).length} Rules Active
+                    </span>
                   </div>
 
-                  {/* AI Response Card */}
-                  <div className="p-4 rounded-lg bg-[var(--surface)] border border-[var(--border-custom)] space-y-2.5">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--brand-primary)]">
-                        <Sparkles className="h-4 w-4" />
-                        <span>{aiResponse.title}</span>
+                  {/* Interactive Automation Rules List */}
+                  <div className="space-y-2">
+                    {automationRules.map((rule) => (
+                      <div
+                        key={rule.id}
+                        className={cn(
+                          "p-3 rounded-lg border transition-all flex items-center justify-between gap-3 text-xs select-none",
+                          rule.active
+                            ? "bg-white border-[var(--border-custom)] shadow-2xs"
+                            : "bg-[var(--surface)] border-[var(--border-subtle)] opacity-60"
+                        )}
+                      >
+                        <div className="flex items-start gap-2.5 min-w-0">
+                          <div className="p-1.5 rounded-md bg-[var(--surface)] border border-[var(--border-subtle)] shrink-0 mt-0.5">
+                            {rule.icon}
+                          </div>
+                          <div>
+                            <div className="font-bold text-[var(--foreground)] flex items-center gap-2">
+                              <span>{rule.name}</span>
+                              <span className="text-[10px] font-mono font-normal text-[var(--foreground-subtle)]">
+                                IF: {rule.trigger}
+                              </span>
+                            </div>
+                            <p className="text-[11px] text-[var(--foreground-muted)] mt-0.5">
+                              THEN: {rule.action}
+                            </p>
+                          </div>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => toggleRule(rule.id)}
+                          className={cn(
+                            "px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider transition-all cursor-pointer shrink-0 border",
+                            rule.active
+                              ? "bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] border-[var(--brand-emerald)]/30"
+                              : "bg-slate-100 text-slate-500 border-slate-200"
+                          )}
+                        >
+                          {rule.active ? "Enabled" : "Disabled"}
+                        </button>
                       </div>
-                      <span className="text-[11px] font-mono text-[var(--brand-emerald)] font-bold">
-                        Confidence: {aiResponse.confidence}
-                      </span>
+                    ))}
+                  </div>
+
+                  {/* Connected Enterprise Ecosystem Strip */}
+                  <div className="p-3 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
+                    <div className="text-[10px] font-bold uppercase text-[var(--foreground-subtle)] mb-2">
+                      Connected Enterprise Integrations & Webhooks
                     </div>
-
-                    <p className="text-xs text-[var(--foreground)] leading-relaxed">
-                      {aiResponse.summary}
-                    </p>
-
-                    <div className="p-2.5 rounded-md bg-white border border-[var(--border-subtle)] text-xs text-[var(--foreground-muted)]">
-                      <strong className="text-[var(--foreground)]">Recommended Action: </strong>
-                      {aiResponse.recommendation}
+                    <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold text-[var(--foreground-muted)]">
+                      <span className="px-2 py-0.5 rounded bg-white border border-[var(--border-custom)]">
+                        Microsoft Intune & Entra ID
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[var(--border-custom)]">
+                        Jamf Pro MDM
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[var(--border-custom)]">
+                        Jira Service Management
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[var(--border-custom)]">
+                        SAP S/4HANA & NetSuite
+                      </span>
+                      <span className="px-2 py-0.5 rounded bg-white border border-[var(--border-custom)]">
+                        REST API & Webhooks
+                      </span>
                     </div>
                   </div>
                 </div>

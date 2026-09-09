@@ -1,141 +1,345 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 import {
-  Building2,
-  Factory,
-  Stethoscope,
-  GraduationCap,
   HardHat,
-  HeartHandshake,
+  Box,
+  GraduationCap,
+  Stethoscope,
+  Warehouse,
   ArrowRight,
-  Shield,
+  ShieldCheck,
+  CheckCircle2,
+  MapPin,
+  Clock,
+  Laptop,
+  Building,
+  QrCode,
+  Truck,
+  Activity,
+  UserCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Button from "@/components/ui/Button";
 
 interface IndustrySolutionsProps {
   onBookDemo: () => void;
 }
 
 export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
-  const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const [activeTab, setActiveTab] = useState<string>("construction");
 
-  const industries = [
-    {
-      title: "Government & Public Sector",
+  const industriesData = {
+    construction: {
+      id: "construction",
+      title: "Construction & Field Crews",
+      tagline: "Jobsite Tool Crib & Heavy Fleet Control",
+      badge: "Zero Tool Hoarding & Lost Equipment",
       description:
-        "Asset accountability, audit history, chain of custody, and department-level compliance for agencies that can’t afford gaps.",
-      icon: <Building2 className="h-5 w-5" />,
-      linkText: "Explore Public Sector",
-      stats: "Strict Chain-of-Custody & CJIS Ready",
-      colorBg: "from-blue-500/10 to-indigo-500/10 border-blue-200/80",
-    },
-    {
-      title: "Manufacturing & Warehousing",
-      description:
-        "Equipment tracking, calibration records, and inspection workflows tied to every asset on every line.",
-      icon: <Factory className="h-5 w-5" />,
-      linkText: "Explore Manufacturing",
-      stats: "Zero Production Line Downtime",
-      colorBg: "from-emerald-500/10 to-teal-500/10 border-emerald-200/80",
-    },
-    {
-      title: "Healthcare & Life Sciences",
-      description:
-        "Medical equipment tracking, maintenance documentation, and regulatory audit trails across every facility.",
-      icon: <Stethoscope className="h-5 w-5" />,
-      linkText: "Explore Healthcare",
-      stats: "FDA, Joint Commission & HIPAA Compliant",
-      colorBg: "from-cyan-500/10 to-blue-500/10 border-cyan-200/80",
-    },
-    {
-      title: "Education & School Districts",
-      description:
-        "Device management, equipment checkouts, and campus-wide inventory audits. All in one place.",
-      icon: <GraduationCap className="h-5 w-5" />,
-      linkText: "Explore Education",
-      stats: "1:1 Student Device & Lab Tracking",
-      colorBg: "from-purple-500/10 to-indigo-500/10 border-purple-200/80",
-    },
-    {
-      title: "Construction & Contracting",
-      description:
-        "Tools, equipment, and vehicles tracked from the field. Inspection and repair history always accessible.",
+        "Assign power tools and survey gear to field crews with mobile QR scans. Track inter-jobsite transfers and enforce OSHA daily equipment safety walkarounds.",
+      href: "/industries/construction",
+      image: "/images/Barcodescanner.jpeg",
       icon: <HardHat className="h-5 w-5" />,
-      linkText: "Explore Construction",
-      stats: "GPS Jobsite Tool Crib Checkout",
-      colorBg: "from-amber-500/10 to-orange-500/10 border-amber-200/80",
+      features: [
+        "Mobile QR & Barcode Tool Crib Check-out",
+        "Inter-Jobsite Transfer Audits with GPS sign-off",
+        "Mandatory OSHA Heavy Equipment Pre-Shift Checklists",
+        "Anodized Aluminum Asset Tags for extreme weather",
+      ],
+      mockupData: {
+        title: "Austin Site #4 — Heavy Equipment Ledger",
+        stat: "34 Active Assets on Site",
+        items: [
+          { name: "CAT 320 Hydraulic Excavator", tag: "AM-CAT-320", status: "Operational", custodian: "Marcus Vance", value: "$185,000" },
+          { name: "Generac 50kW Mobile Generator", tag: "AM-GEN-881", status: "In Use", custodian: "Crew #2 (Electrical)", value: "$28,400" },
+          { name: "Hilti TE 3000-AVR Breaker", tag: "AM-HLT-091", status: "Checked Out", custodian: "Dave Martinez", value: "$3,200" },
+        ],
+      },
     },
-    {
-      title: "Nonprofit Organizations",
+    it: {
+      id: "it",
+      title: "IT & Facilities Management",
+      tagline: "Unified Hardware Fleet & Building Operations",
+      badge: "Jamf / Intune Two-Way Sync",
       description:
-        "Replace spreadsheets with a simpler way to track equipment, donations, and supplies. With the audit trail donors and boards expect.",
-      icon: <HeartHandshake className="h-5 w-5" />,
-      linkText: "Explore Nonprofit",
-      stats: "Donor Grant Audit & Tax Records",
-      colorBg: "from-rose-500/10 to-pink-500/10 border-rose-200/80",
+        "Manage remote employee laptop assignments, automated offboarding retrievals, server room racks, and HVAC mechanical CMMS maintenance.",
+      href: "/industries/it-facilities",
+      image: "/images/personOffice.jpg",
+      icon: <Box className="h-5 w-5" />,
+      features: [
+        "Real-time Jamf Pro & Microsoft Intune sync",
+        "Remote employee offboarding with prepaid return labels",
+        "HVAC, elevator & backup generator CMMS work orders",
+        "SOC 2 Type II & ISO 27001 chain-of-custody logs",
+      ],
+      mockupData: {
+        title: "Enterprise IT & Datacenter Fleet",
+        stat: "1,420 Enrolled Endpoints",
+        items: [
+          { name: "Apple MacBook Pro 16\" M3 Max", tag: "AM-MAC-991", status: "MDM Synced", custodian: "Sarah Jenkins (Eng)", value: "FileVault Active" },
+          { name: "Dell PowerEdge R750 Server", tag: "AM-SRV-102", status: "Operational", custodian: "Server Room 2", value: "Encrypted" },
+          { name: "Trane Rooftop HVAC Unit #4", tag: "AM-HVAC-01", status: "Filter Due (5d)", custodian: "Facilities Team", value: "Quarterly CMMS" },
+        ],
+      },
     },
-  ];
+    education: {
+      id: "education",
+      title: "K-12 & Higher Education",
+      tagline: "High-Speed 1:1 Student Deployments",
+      badge: "100% Title I & Grant Audit Ready",
+      description:
+        "Distribute thousands of student Chromebooks and iPads in hours. Track STEM science lab sensors, manage repair fines, and pass federal grant audits.",
+      href: "/industries/education",
+      image: "/images/consulting-team.jpg",
+      icon: <GraduationCap className="h-5 w-5" />,
+      features: [
+        "Rapid 1:1 Student Chromebook rollouts & returns",
+        "Google Workspace & Clever SIS sync",
+        "STEM lab 3D printers, VR headsets & microscopes",
+        "Damage fee logging & parent signature tracking",
+      ],
+      mockupData: {
+        title: "Campus Device Deployment Hub",
+        stat: "1,840/1,850 Laptops Issued",
+        items: [
+          { name: "Lenovo 300e Touch Chromebook", tag: "SCH-K12-8819", status: "Assigned", custodian: "Liam O'Connor (Gr 9)", value: "Good Condition" },
+          { name: "Dell Chromebook 3110 2-in-1", tag: "SCH-K12-9901", status: "Assigned", custodian: "Emma Watson (Gr 11)", value: "Pristine" },
+          { name: "Vernier LabQuest 3 STEM Kit", tag: "SCH-STEM-401", status: "In Lab", custodian: "AP Physics Lab 2", value: "Calibrated" },
+        ],
+      },
+    },
+    healthcare: {
+      id: "healthcare",
+      title: "Healthcare & Biomedical",
+      tagline: "Mobile Clinical Equipment Locator",
+      badge: "Joint Commission & FDA Ready",
+      description:
+        "Locate portable ultrasound, telemetry monitors, and infusion pumps in seconds across hospital wings. Automate biomedical preventative calibrations.",
+      href: "/industries/healthcare",
+      image: "/images/complaince.jpg",
+      icon: <Stethoscope className="h-5 w-5" />,
+      features: [
+        "Instant room & wing locator for clinical staff",
+        "Automated biomedical calibration & electrical safety logs",
+        "Joint Commission (JCAHO) & FDA survey readiness",
+        "Cleanroom sterilization & surgical tray tracking",
+      ],
+      mockupData: {
+        title: "Cardiology & ICU Biomedical Ledger",
+        stat: "100% Calibrations Verified",
+        items: [
+          { name: "Siemens Acuson Ultrasound System", tag: "AM-MED-4091", status: "Calibrated & Ready", custodian: "Suite 210 (Cardio)", value: "Valid to 2028" },
+          { name: "Hamilton-C6 Mechanical Ventilator", tag: "AM-MED-9912", status: "In Active Use", custodian: "ICU Bed #4", value: "Certified" },
+          { name: "Zoll X Series Defibrillator", tag: "AM-MED-5501", status: "Emergency Standby", custodian: "Trauma Bay 1", value: "Self-Test Passed" },
+        ],
+      },
+    },
+    logistics: {
+      id: "logistics",
+      title: "Warehousing & Logistics",
+      tagline: "Distribution Dock & Fleet Asset Management",
+      badge: "Zero Lost Handheld Scanners",
+      description:
+        "Prevent lost Zebra/Honeywell barcode scanners with shift check-ins. Automate forklift fleet CMMS, battery cycles, and OSHA dock inspections.",
+      href: "/industries/warehousing-logistics",
+      image: "/images/shipment.jpg",
+      icon: <Warehouse className="h-5 w-5" />,
+      features: [
+        "Shift check-in/check-out for RF barcode guns",
+        "Forklift runtime hour tracking & preventative maintenance",
+        "Daily OSHA pre-operation operator walkarounds",
+        "Multi-hub & regional cross-dock inventory visibility",
+      ],
+      mockupData: {
+        title: "Outbound Hub #3 Logistics Asset Roster",
+        stat: "48 Scanners Checked Out",
+        items: [
+          { name: "Crown C-5 5,000lb LPG Forklift", tag: "AM-FLK-102", status: "Operational", custodian: "Johnathan Brooks", value: "Battery 92%" },
+          { name: "Zebra TC58 Android RF Scanner", tag: "AM-SCN-441", status: "In Use", custodian: "Shift 1 Picking Team", value: "Battery 78%" },
+          { name: "Toyota Electric Pallet Jack", tag: "AM-PLT-889", status: "Inspected", custodian: "Receiving Bay #1", value: "100% Ready" },
+        ],
+      },
+    },
+  };
+
+  const currentInd = industriesData[activeTab as keyof typeof industriesData] || industriesData.construction;
 
   return (
-    <section id="industries" className="py-20 lg:py-28 bg-white border-t border-[var(--border-custom)]">
+    <section id="industries" className="py-20 lg:py-28 bg-white border-t border-[var(--border-custom)] relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
             Built for Your Industry
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-            Ahead of your requirements. <span className="text-[var(--brand-primary)]">Asset intelligence for every sector.</span>
+            Tailored for your sector. <span className="text-[var(--brand-primary)]">Zero compromise.</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
-            Tailored data fields, automated compliance workflows, and industry-specific inspection checklists out of the box.
+            Every sector manages physical equipment with distinct regulatory and operational rules. Discover our specialized industry workflows.
           </p>
         </div>
 
-        {/* 6 Industry Cards with clean rounded-xl */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-          {industries.map((ind, idx) => (
-            <div
-              key={idx}
-              onMouseEnter={() => setActiveIdx(idx)}
-              onMouseLeave={() => setActiveIdx(null)}
-              className={cn(
-                "rounded-xl border border-[var(--border-custom)] bg-white p-6 sm:p-7 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] transition-all duration-200 flex flex-col justify-between group hover:-translate-y-0.5 relative overflow-hidden",
-                activeIdx === idx && "border-[var(--brand-primary)]/40"
-              )}
-            >
-              <div>
-                <div className="mb-4 relative z-10">
-                  <div className="inline-flex p-3 rounded-lg bg-[var(--surface-raised)] text-[var(--foreground)] border border-[var(--border-custom)] group-hover:bg-[var(--brand-primary)] group-hover:text-white group-hover:border-[var(--brand-primary)] transition-colors duration-200">
-                    {ind.icon}
-                  </div>
-                </div>
+        {/* ─── Interactive Industry Tab Bar ─── */}
+        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 pt-1 no-scrollbar mb-10">
+          {Object.values(industriesData).map((ind) => {
+            const isSelected = activeTab === ind.id;
+            return (
+              <button
+                key={ind.id}
+                type="button"
+                onClick={() => setActiveTab(ind.id)}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-3 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer select-none border",
+                  isSelected
+                    ? "bg-[var(--surface-dark)] text-white border-[var(--surface-dark)] shadow-md scale-[1.02]"
+                    : "bg-[var(--surface)] text-[var(--foreground-muted)] border-[var(--border-custom)] hover:text-[var(--foreground)] hover:bg-white"
+                )}
+              >
+                <span className={cn("shrink-0", isSelected ? "text-[var(--brand-primary)]" : "text-[var(--foreground-subtle)]")}>
+                  {ind.icon}
+                </span>
+                <span>{ind.title.split(" ")[0]}</span>
+              </button>
+            );
+          })}
+        </div>
 
-                <h3 className="text-lg font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--brand-primary)] transition-colors">
-                  {ind.title}
+        {/* ─── Active Tab Content Showcase ─── */}
+        <div className="rounded-xl border border-[var(--border-custom)] bg-[var(--surface)] p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-card)]">
+          <div className="grid lg:grid-cols-12 gap-10 items-center">
+            {/* Left Column: Sector Details & CTAs */}
+            <div className="lg:col-span-6 space-y-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] text-xs font-bold border border-[var(--brand-emerald)]/20">
+                <ShieldCheck className="h-3.5 w-3.5" />
+                <span>{currentInd.badge}</span>
+              </div>
+
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
+                  {currentInd.title}
                 </h3>
-                <p className="text-base text-[var(--foreground-muted)] leading-relaxed mb-5">
-                  {ind.description}
+                <p className="text-sm font-semibold text-[var(--brand-primary)] mt-1">
+                  {currentInd.tagline}
                 </p>
               </div>
 
-              <div className="pt-3.5 border-t border-[var(--border-subtle)] relative z-10 flex items-center justify-between">
-                <span className="text-xs font-semibold text-[var(--brand-emerald)] flex items-center gap-1">
-                  <Shield className="h-3.5 w-3.5" />
-                  {ind.stats}
-                </span>
-                <button
-                  type="button"
-                  onClick={onBookDemo}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-[var(--brand-primary)] group-hover:underline cursor-pointer"
+              <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
+                {currentInd.description}
+              </p>
+
+              {/* Capability Checklist */}
+              <div className="space-y-2.5 pt-2">
+                {currentInd.features.map((feat, idx) => (
+                  <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[var(--foreground)]">
+                    <CheckCircle2 className="h-4 w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+                <Link
+                  href={currentInd.href}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[var(--brand-primary)] text-white text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] hover:opacity-95 transition-opacity"
                 >
-                  <span>{ind.linkText}</span>
-                  <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                </button>
+                  <span>Explore {currentInd.title}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Button
+                  variant="outline"
+                  size="default"
+                  onClick={onBookDemo}
+                  className="w-full sm:w-auto text-xs sm:text-sm"
+                >
+                  <span>Book Live Walkthrough</span>
+                </Button>
               </div>
             </div>
-          ))}
+
+            {/* Right Column: Live Mockup & Telemetry Card */}
+            <div className="lg:col-span-6 space-y-4">
+              <div className="rounded-xl border border-[var(--border-custom)] bg-white p-5 sm:p-6 shadow-sm space-y-4">
+                <div className="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)]">
+                  <div className="flex items-center gap-2">
+                    <div className="p-1.5 rounded bg-[var(--brand-primary-light)] text-[var(--brand-primary)]">
+                      {currentInd.icon}
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-[var(--foreground)]">
+                        {currentInd.mockupData.title}
+                      </div>
+                      <div className="text-[11px] text-[var(--foreground-muted)]">
+                        Real-time live synchronization
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-[11px] font-bold text-[var(--brand-emerald)] bg-[var(--brand-emerald-light)] px-2 py-0.5 rounded border border-[var(--brand-emerald)]/20">
+                    {currentInd.mockupData.stat}
+                  </span>
+                </div>
+
+                {/* Items in Roster */}
+                <div className="space-y-2">
+                  {currentInd.mockupData.items.map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] hover:bg-white transition-all text-xs space-y-1"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <div className="font-bold text-[var(--foreground)]">{item.name}</div>
+                          <div className="text-[11px] font-mono text-[var(--foreground-subtle)]">
+                            TAG: {item.tag} &bull; Custody: <strong className="text-[var(--foreground)]">{item.custodian}</strong>
+                          </div>
+                        </div>
+                        <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] border border-[var(--brand-emerald)]/20 shrink-0">
+                          {item.status}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between text-[11px] text-[var(--foreground-muted)] pt-1 border-t border-[var(--border-subtle)]">
+                        <span>Details: {item.value}</span>
+                        <span className="text-[var(--brand-primary)] font-semibold">Active Tag</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom preview banner with visual asset */}
+                <div className="relative h-28 w-full rounded-lg overflow-hidden border border-[var(--border-custom)] group">
+                  <Image
+                    src={currentInd.image}
+                    alt={currentInd.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/40 to-transparent flex items-end p-3">
+                    <div className="text-white text-xs font-bold flex items-center justify-between w-full">
+                      <span>Field-proven across 12,000+ organizations</span>
+                      <Link href={currentInd.href} className="inline-flex items-center gap-1 text-[var(--brand-primary-light)] hover:underline">
+                        <span>Deep Dive</span>
+                        <ArrowRight className="h-3 w-3" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ─── Bottom Navigation to All Industry Pages ─── */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/industries"
+            className="inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] hover:underline"
+          >
+            <span>View All Industry Solutions & Compliance Frameworks</span>
+            <ArrowRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
@@ -143,3 +347,4 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
 }
 
 export default IndustrySolutions;
+

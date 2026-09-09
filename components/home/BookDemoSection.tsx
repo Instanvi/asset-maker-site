@@ -50,7 +50,7 @@ export function BookDemoSection() {
               </li>
               <li className="flex items-center gap-2.5">
                 <CheckCircle className="h-4 w-4 text-[var(--brand-emerald)] shrink-0" />
-                <span>Explore mobile scanning and UrsaAI condition grading in real time</span>
+                <span>Explore mobile scanning and automated digital inspections in real time</span>
               </li>
             </ul>
           </div>

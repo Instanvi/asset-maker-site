@@ -2,13 +2,13 @@
 
 import React, { useState } from "react";
 import {
-  Sparkles,
   CheckCircle2,
   XCircle,
   Eye,
   Camera,
   FileCheck,
   ShieldAlert,
+  ShieldCheck,
   ArrowRight,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -27,7 +27,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
       tagline: "Total Real-Time Visibility",
       icon: <Eye className="h-5 w-5" />,
       assetMasterText:
-        "UrsaAI watches every scan, transfer, and check-out, then keeps the record current on its own. You always know where it is and who has it.",
+        "Asset Master automatically captures every scan, transfer, and checkout, keeping the master record synchronized in real time. You always know current location and active custody.",
       spreadsheetText:
         "A spreadsheet row that goes stale the moment someone forgets to update it.",
     },
@@ -36,7 +36,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
       tagline: "Instant Field Condition Grading",
       icon: <Camera className="h-5 w-5" />,
       assetMasterText:
-        "Snap a photo and UrsaAI reads it, grades the condition, fills the checklist, and flags damage before you finish the walk.",
+        "Execute digital checklists on mobile, attach geotagged photo proof, and automatically log pass/fail defect status directly from the field.",
       spreadsheetText:
         "Paper forms, emailed photos, and inspection logs living in someone’s inbox.",
     },
@@ -45,7 +45,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
       tagline: "Instant Chain of Custody",
       icon: <FileCheck className="h-5 w-5" />,
       assetMasterText:
-        "UrsaAI assembles the full history, chain of custody, and documentation the moment you ask. Walk into any audit ready.",
+        "Instantly compile complete lifecycle history, custody handover signatures, and tamper-proof compliance logs for internal and external auditors.",
       spreadsheetText:
         "Weeks of manual reconciliation across files, folders, and departments.",
     },
@@ -54,7 +54,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
       tagline: "Proactive Risk Prevention",
       icon: <ShieldAlert className="h-5 w-5" />,
       assetMasterText:
-        "UrsaAI watches certification dates and inspection status, flags what is slipping, and writes the report before anyone asks for proof.",
+        "Continuously monitor warranty expirations and inspection schedules, automatically flagging overdue items and generating audit-ready reports.",
       spreadsheetText:
         "Reactive scrambling when regulators, insurers, or executives ask for proof.",
     },
@@ -100,20 +100,20 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
 
           {/* Side-by-Side Detailed Breakdown */}
           <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
-            {/* Asset Master (Powered by UrsaAI) */}
+            {/* Asset Master */}
             <div className="rounded-lg border-2 border-[var(--brand-primary)]/40 bg-white p-5 sm:p-6 shadow-[var(--shadow-soft)] relative flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3.5">
                   <div className="flex items-center gap-2">
                     <div className="p-2 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)]">
-                      <Sparkles className="h-4 w-4" />
+                      <ShieldCheck className="h-4 w-4" />
                     </div>
                     <div>
                       <h4 className="text-base font-extrabold text-[var(--foreground)]">
                         Asset Master
                       </h4>
                       <span className="text-xs text-[var(--brand-primary)] font-semibold">
-                        Powered by UrsaAI
+                        Continuous Operational Intelligence
                       </span>
                     </div>
                   </div>
