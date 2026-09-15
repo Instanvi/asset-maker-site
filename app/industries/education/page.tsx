@@ -54,7 +54,6 @@ export default function EducationIndustryPage() {
       <Header onBookDemo={() => setIsDemoModalOpen(true)} />
 
       <main className="flex-1 pt-14 lg:pt-18">
-        {/* ─── 1. BREADCRUMB & HERO ─── */}
         <section className="relative pb-16 lg:pb-24 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
           <div className="hero-mesh-glow" />
           <div className="hero-grid-pattern" />
