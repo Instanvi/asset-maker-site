@@ -250,26 +250,26 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
   ];
 
   return (
-    <section id="systems" className="py-20 lg:py-28 bg-[var(--surface)] border-t border-[var(--border-custom)]">
+    <section id="systems" className="py-16 sm:py-20 lg:py-28 bg-[var(--surface)] border-t border-[var(--border-custom)]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
+          <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
             One Unified Architecture
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
             The Single System of Record <span className="text-[var(--brand-primary)]">from First Tag to Final Audit.</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
             Eliminate disconnected spreadsheets and siloed software. Asset Master connects physical identity, custody, lifecycle health, and regulatory compliance into one operational spine.
           </p>
         </div>
 
         {/* Dual-Column Interactive Architecture */}
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Interactive Vertical Step Pipeline (01 to 07) */}
           <div className="lg:col-span-4 space-y-2">
-            <div className="flex items-center justify-between px-2 pb-2 text-xs font-bold text-[var(--foreground-muted)] uppercase tracking-wider border-b border-[var(--border-custom)]">
+            <div className="flex items-center justify-between px-2 pb-2 text-[10px] sm:text-xs font-bold text-[var(--foreground-muted)] uppercase tracking-wider border-b border-[var(--border-custom)]">
               <span>Operational Pipeline</span>
               <span>7 Modules</span>
             </div>
@@ -283,7 +283,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                     type="button"
                     onClick={() => setActiveStep(idx)}
                     className={cn(
-                      "w-full text-left p-3 rounded-lg border transition-all cursor-pointer flex items-start gap-3 select-none",
+                      "w-full text-left p-2.5 sm:p-3 rounded-lg border transition-all cursor-pointer flex items-start gap-2 sm:gap-3 select-none",
                       isActive
                         ? "bg-white border-[var(--brand-primary)] shadow-sm shadow-[var(--brand-primary-glow)] ring-1 ring-[var(--brand-primary)]/20"
                         : "bg-white/70 border-[var(--border-custom)] hover:bg-white hover:border-[var(--border-hover)]"
@@ -291,7 +291,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                   >
                     <div
                       className={cn(
-                        "p-2 rounded-md shrink-0 transition-colors",
+                        "p-1.5 sm:p-2 rounded-md shrink-0 transition-colors",
                         isActive
                           ? "bg-[var(--brand-primary-light)] text-[var(--brand-primary)]"
                           : "bg-[var(--surface)] text-[var(--foreground-muted)]"
@@ -304,7 +304,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                       <div className="flex items-center justify-between gap-2">
                         <span
                           className={cn(
-                            "text-xs font-mono font-bold",
+                            "text-[10px] sm:text-xs font-mono font-bold",
                             isActive ? "text-[var(--brand-primary)]" : "text-[var(--foreground-subtle)]"
                           )}
                         >
@@ -312,7 +312,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                         </span>
                         <span
                           className={cn(
-                            "text-[10px] font-bold uppercase tracking-wider",
+                            "text-[9px] sm:text-[10px] font-bold uppercase tracking-wider hidden sm:inline",
                             isActive ? "text-[var(--brand-primary)]" : "text-[var(--foreground-subtle)]"
                           )}
                         >
@@ -322,13 +322,13 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
 
                       <h4
                         className={cn(
-                          "text-sm font-bold tracking-tight mt-0.5",
+                          "text-xs sm:text-sm font-bold tracking-tight mt-0.5",
                           isActive ? "text-[var(--foreground)]" : "text-[var(--foreground-muted)]"
                         )}
                       >
                         {step.title}
                       </h4>
-                      <p className="text-xs text-[var(--foreground-subtle)] truncate mt-0.5 font-normal">
+                      <p className="text-[10px] sm:text-xs text-[var(--foreground-subtle)] truncate mt-0.5 font-normal hidden sm:block">
                         {step.shortDesc}
                       </p>
                     </div>
@@ -347,33 +347,34 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
 
           {/* Right Column: High-Fidelity Interactive Cockpit Canvas */}
           <div className="lg:col-span-8">
-            <div className="rounded-xl border border-[var(--border-custom)] bg-white p-5 sm:p-7 shadow-[var(--shadow-card)] relative overflow-hidden">
+            <div className="rounded-lg sm:rounded-xl border border-[var(--border-custom)] bg-white p-4 sm:p-5 lg:p-7 shadow-[var(--shadow-card)] relative overflow-hidden">
               {/* Studio Canvas Header */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-[var(--border-subtle)]">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-md bg-[var(--brand-primary-light)] text-[var(--brand-primary)]">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-3 pb-3 sm:pb-4 mb-4 sm:mb-5 border-b border-[var(--border-subtle)]">
+                <div className="flex items-center gap-2 sm:gap-2.5">
+                  <div className="p-1.5 sm:p-2 rounded-md bg-[var(--brand-primary-light)] text-[var(--brand-primary)]">
                     {steps[activeStep].icon}
                   </div>
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono font-bold text-[var(--brand-primary)]">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
+                      <span className="text-[10px] sm:text-xs font-mono font-bold text-[var(--brand-primary)]">
                         STEP {steps[activeStep].number}
                       </span>
-                      <span className="text-xs font-bold text-[var(--foreground-subtle)]">•</span>
-                      <span className="text-xs font-bold text-[var(--foreground-muted)] uppercase tracking-wider">
+                      <span className="text-[10px] sm:text-xs font-bold text-[var(--foreground-subtle)] hidden xs:inline">•</span>
+                      <span className="text-[9px] sm:text-xs font-bold text-[var(--foreground-muted)] uppercase tracking-wider hidden xs:inline">
                         {steps[activeStep].tagline}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold text-[var(--foreground)] tracking-tight">
+                    <h3 className="text-sm sm:text-base lg:text-lg font-bold text-[var(--foreground)] tracking-tight">
                       {steps[activeStep].title}
                     </h3>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-[var(--brand-emerald)] bg-[var(--brand-emerald-light)] px-2.5 py-1 rounded-md border border-[var(--brand-emerald)]/20">
-                    <ShieldCheck className="h-3.5 w-3.5" />
-                    Live System Active
+                  <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-[var(--brand-emerald)] bg-[var(--brand-emerald-light)] px-2 sm:px-2.5 py-1 rounded-md border border-[var(--brand-emerald)]/20">
+                    <ShieldCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                    <span className="hidden xs:inline">Live System Active</span>
+                    <span className="xs:hidden">Active</span>
                   </span>
                 </div>
               </div>
@@ -983,9 +984,9 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
               )}
 
               {/* Studio Canvas Bottom Action Footer */}
-              <div className="mt-5 pt-4 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="flex items-center gap-2 text-xs text-[var(--foreground-muted)]">
-                  <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
+              <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
+                <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-[var(--foreground-muted)] text-center sm:text-left">
+                  <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0" />
                   <span>SOC 2 Type II certified &bull; Real-time cryptographic ledger</span>
                 </div>
 
@@ -994,9 +995,10 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                     variant="primary"
                     size="sm"
                     onClick={onBookDemo}
-                    className="w-full sm:w-auto text-xs"
+                    className="w-full sm:w-auto text-[11px] sm:text-xs"
                   >
-                    <span>Schedule Custom Walkthrough</span>
+                    <span className="hidden xs:inline">Schedule Custom Walkthrough</span>
+                    <span className="xs:hidden">Schedule Demo</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
                 </div>

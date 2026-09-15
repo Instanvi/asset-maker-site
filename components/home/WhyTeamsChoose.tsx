@@ -54,7 +54,7 @@ export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
               <Button
                 variant="primary"
                 size="lg"
-                onClick={onBookDemo}
+                href="/demo"
                 className="w-full sm:w-auto text-xs shadow-[var(--shadow-glow)]"
               >
                 <span>Book a Demo</span>

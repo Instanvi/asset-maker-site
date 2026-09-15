@@ -312,7 +312,7 @@ export default function HowItWorksPage() {
                 <Button
                   variant="primary"
                   size="xl"
-                  onClick={handleOpenDemoModal}
+                  href="/demo"
                   className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                 >
                   <span>Book a Demo</span>
@@ -321,7 +321,7 @@ export default function HowItWorksPage() {
                 <Button
                   variant="emerald"
                   size="xl"
-                  onClick={handleOpenDemoModal}
+                  href="/demo"
                   className="w-full sm:w-auto text-base"
                 >
                   <span>Try It Free - No Credit Card</span>
@@ -331,9 +331,7 @@ export default function HowItWorksPage() {
           </div>
         </section>
 
-        {/* ═════════════════════════════════════════════════════════════════
-            PHASE NAVIGATION TABS
-           ═════════════════════════════════════════════════════════════════ */}
+
         <section className="sticky top-[var(--header-height,72px)] z-40 bg-white/95 backdrop-blur-md border-b border-[var(--border-custom)] py-3">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
@@ -529,42 +527,17 @@ export default function HowItWorksPage() {
                     </div>
 
                     {/* Interactive Demo CTA */}
-                    <button
-                      type="button"
-                      onClick={handleOpenDemoModal}
-                      className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--border-custom)] text-sm font-semibold text-[var(--foreground)] transition-colors cursor-pointer"
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      href="/demo"
+                      className="mt-4 w-full"
                     >
                       <ArrowRight className="h-4 w-4" />
                       <span>See This Workflow in Action</span>
-                    </button>
+                    </Button>
                   </div>
                 ))}
-              </div>
-
-              {/* Mobile-First Badge */}
-              <div className="mt-12 p-6 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-lg bg-white border border-blue-200">
-                    <Smartphone className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-base font-bold text-blue-900">
-                      Works Offline. Syncs When Connected.
-                    </div>
-                    <p className="text-sm text-blue-700">
-                      Field teams can scan and inspect assets without internet. All data syncs automatically when back online.
-                    </p>
-                  </div>
-                </div>
-                <Button
-                  variant="primary"
-                  size="sm"
-                  onClick={handleOpenDemoModal}
-                  className="shrink-0"
-                >
-                  <span>Test Mobile App</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
               </div>
             </div>
           </section>
@@ -659,7 +632,7 @@ export default function HowItWorksPage() {
                     <Button
                       variant="primary"
                       size="lg"
-                      onClick={handleOpenDemoModal}
+                      href="/demo"
                       className="w-full md:w-auto"
                     >
                       <span>Schedule Automation Demo</span>
@@ -749,7 +722,7 @@ export default function HowItWorksPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={handleOpenDemoModal}
+                href="/demo"
                 className="w-full sm:w-auto text-lg shadow-[var(--shadow-glow)]"
               >
                 <span>Book a Live Walkthrough</span>
@@ -758,7 +731,7 @@ export default function HowItWorksPage() {
               <Button
                 variant="emerald"
                 size="xl"
-                onClick={handleOpenDemoModal}
+                href="/demo"
                 className="w-full sm:w-auto text-lg"
               >
                 <span>Start Free Trial - No Credit Card</span>

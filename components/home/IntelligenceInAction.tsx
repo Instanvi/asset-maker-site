@@ -10,6 +10,7 @@ import {
   Building,
   ArrowRight,
 } from "lucide-react";
+import Button from "../ui/Button";
 
 interface IntelligenceInActionProps {
   onBookDemo: () => void;
@@ -106,14 +107,13 @@ export function IntelligenceInAction({ onBookDemo }: IntelligenceInActionProps) 
               </div>
 
               <div className="mt-5 pt-3.5 border-t border-[var(--border-subtle)]">
-                <button
-                  type="button"
-                  onClick={onBookDemo}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[var(--brand-primary)] group-hover:underline cursor-pointer"
+                <Button
+                  variant="outline"
+                  className="inline-flex items-center gap-1.5 text-sm"
                 >
                   <span>{item.linkText}</span>
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </button>
+                </Button>
               </div>
             </div>
           ))}

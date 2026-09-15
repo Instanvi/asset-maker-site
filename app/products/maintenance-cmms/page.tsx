@@ -150,7 +150,7 @@ export default function MaintenanceCmmsPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book a CMMS Demo</span>
@@ -159,7 +159,7 @@ export default function MaintenanceCmmsPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Explore Platform</span>
@@ -436,7 +436,7 @@ export default function MaintenanceCmmsPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Schedule a 1-on-1 Demo</span>

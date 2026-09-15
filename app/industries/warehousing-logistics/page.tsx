@@ -88,7 +88,7 @@ export default function WarehousingLogisticsPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book a Logistics Demo</span>
@@ -97,7 +97,7 @@ export default function WarehousingLogisticsPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Try for Free</span>
@@ -192,7 +192,7 @@ export default function WarehousingLogisticsPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => setIsDemoModalOpen(true)}
+                      href="/demo"
                       className="text-xs"
                     >
                       <span>Simulate Shift Checkout</span>
@@ -363,7 +363,7 @@ export default function WarehousingLogisticsPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book a Logistics Demo</span>

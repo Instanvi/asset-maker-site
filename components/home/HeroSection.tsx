@@ -126,7 +126,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
+    <section className="relative pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-24 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
       {/* Multi-Spectrum Ambient Mesh Lighting */}
       <div className="hero-mesh-glow" />
 
@@ -142,31 +142,31 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-10 items-center">
           {/* Left Column: Clear, Punchy Copy & CTAs */}
-          <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left">
             <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
               Total Operational Accountability
             </p>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.1] sm:leading-[1.08]">
               Go Beyond Tracking.{" "}
               <span className="text-[var(--brand-primary)]">
                 Complete Asset Intelligence.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Track physical assets, automate digital field inspections, and prove compliance in seconds. Asset Master centralizes your lifecycle records, warranties, and tamper-proof custody without spreadsheets.
             </p>
 
             {/* CTAs */}
-            <div className="pt-1 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
+            <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
               <Button
                 variant="primary"
                 size="xl"
-                onClick={onBookDemo}
-                className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
+                href="/demo"
+                className="w-full sm:w-auto text-sm sm:text-base shadow-[var(--shadow-glow)]"
               >
                 <span>Book a Live Demo</span>
                 <ArrowRight className="h-4 w-4" />
@@ -174,25 +174,25 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
               <Button
                 variant="outline"
                 size="xl"
-                onClick={onBookDemo}
-                className="w-full sm:w-auto text-base"
+                href="/demo"
+                className="w-full sm:w-auto text-sm sm:text-base"
               >
                 <span>Try for Free</span>
               </Button>
             </div>
 
             {/* Trust Badges Strip */}
-            <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
+            <div className="pt-3 sm:pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 text-[11px] sm:text-xs text-[var(--foreground-muted)] font-medium">
               <div className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
+                <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)]" />
                 <span>SOC 2 Type II Certified</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
+                <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-primary)]" />
                 <span>ISO 27001 Compliant</span>
               </div>
               <div className="flex items-center gap-1.5">
-                <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
+                <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-primary)]" />
                 <span>Deploy in &lt; 15 Mins</span>
               </div>
             </div>
@@ -202,68 +202,71 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
           <div className="lg:col-span-6">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               {/* Simulator Studio Top View Selector Tabs */}
-              <div className="flex items-center justify-between gap-1.5 mb-2.5 bg-[var(--surface-raised)] p-1 rounded-lg border border-[var(--border-custom)]">
+              <div className="flex items-center justify-between gap-1 sm:gap-1.5 mb-2 sm:mb-2.5 bg-[var(--surface-raised)] p-1 rounded-lg border border-[var(--border-custom)]">
                 <button
                   type="button"
                   onClick={() => setActiveTab("dashboard")}
                   className={cn(
-                    "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-bold transition-all cursor-pointer select-none",
+                    "flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-2 sm:px-3 rounded-md text-[10px] sm:text-xs font-bold transition-all cursor-pointer select-none",
                     activeTab === "dashboard"
                       ? "bg-white text-[var(--brand-primary)] shadow-xs border border-[var(--border-custom)]"
                       : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
                   )}
                 >
-                  <Eye className="h-3.5 w-3.5" />
-                  <span>Asset Hub</span>
+                  <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  <span className="hidden xs:inline">Asset Hub</span>
+                  <span className="xs:hidden">Hub</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setActiveTab("scanner")}
                   className={cn(
-                    "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-bold transition-all cursor-pointer select-none",
+                    "flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-2 sm:px-3 rounded-md text-[10px] sm:text-xs font-bold transition-all cursor-pointer select-none",
                     activeTab === "scanner"
                       ? "bg-white text-[var(--brand-primary)] shadow-xs border border-[var(--border-custom)]"
                       : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
                   )}
                 >
-                  <QrCode className="h-3.5 w-3.5" />
-                  <span>Mobile Scanner</span>
+                  <QrCode className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  <span className="hidden xs:inline">Mobile Scanner</span>
+                  <span className="xs:hidden">Scan</span>
                 </button>
 
                 <button
                   type="button"
                   onClick={() => setActiveTab("inspection")}
                   className={cn(
-                    "flex-1 flex items-center justify-center gap-1.5 py-2 px-3 rounded-md text-xs font-bold transition-all cursor-pointer select-none",
+                    "flex-1 flex items-center justify-center gap-1 sm:gap-1.5 py-1.5 sm:py-2 px-2 sm:px-3 rounded-md text-[10px] sm:text-xs font-bold transition-all cursor-pointer select-none",
                     activeTab === "inspection"
                       ? "bg-white text-[var(--brand-primary)] shadow-xs border border-[var(--border-custom)]"
                       : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
                   )}
                 >
-                  <ClipboardCheck className="h-3.5 w-3.5" />
-                  <span>Field Audit</span>
+                  <ClipboardCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
+                  <span className="hidden xs:inline">Field Audit</span>
+                  <span className="xs:hidden">Audit</span>
                 </button>
               </div>
 
               {/* Main Interactive Container Card */}
-              <div className="relative rounded-xl border border-[var(--border-custom)] bg-white p-5 sm:p-6 shadow-[var(--shadow-card)] overflow-hidden">
+              <div className="relative rounded-xl border border-[var(--border-custom)] bg-white p-4 sm:p-5 lg:p-6 shadow-[var(--shadow-card)] overflow-hidden">
                 {/* Asset Picker Pills */}
-                <div className="flex items-center gap-1.5 mb-4 overflow-x-auto pb-1 no-scrollbar border-b border-[var(--border-subtle)] pb-3">
+                <div className="flex items-center gap-1.5 mb-3 sm:mb-4 overflow-x-auto pb-2 sm:pb-1 no-scrollbar border-b border-[var(--border-subtle)] pb-3">
                   {assets.map((asset, idx) => (
                     <button
                       key={asset.id}
                       type="button"
                       onClick={() => setSelectedAssetIndex(idx)}
                       className={cn(
-                        "flex items-center gap-1.5 px-2.5 py-1.5 rounded-md text-xs font-bold transition-all border cursor-pointer select-none shrink-0",
+                        "flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded-md text-[10px] sm:text-xs font-bold transition-all border cursor-pointer select-none shrink-0",
                         selectedAssetIndex === idx
                           ? "bg-[var(--brand-primary-light)] text-[var(--brand-primary)] border-[var(--brand-primary)]/40 shadow-xs"
                           : "bg-[var(--surface)] text-[var(--foreground-muted)] border-[var(--border-custom)] hover:bg-white"
                       )}
                     >
                       <span className="scale-75">{asset.icon}</span>
-                      <span>{asset.name.split(" ")[0]} {asset.name.split(" ")[1]}</span>
+                      <span className="whitespace-nowrap">{asset.name.split(" ")[0]} {asset.name.split(" ")[1]}</span>
                     </button>
                   ))}
                 </div>
@@ -286,39 +289,39 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                     </div>
 
                     {/* Key Metric Blocks */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      <div className="p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
-                        <div className="text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
+                    <div className="grid grid-cols-2 gap-2">
+                      <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
+                        <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
                           Book Value
                         </div>
-                        <div className="text-xs font-bold text-[var(--foreground)] mt-0.5">
+                        <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5">
                           {currentAsset.bookValue}
                         </div>
                       </div>
 
-                      <div className="p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
-                        <div className="text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
+                      <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
+                        <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
                           Health Score
                         </div>
-                        <div className="text-xs font-bold text-[var(--brand-emerald)] mt-0.5">
+                        <div className="text-[11px] sm:text-xs font-bold text-[var(--brand-emerald)] mt-0.5">
                           {currentAsset.conditionScore}% (A+)
                         </div>
                       </div>
 
-                      <div className="p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
-                        <div className="text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
+                      <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
+                        <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
                           Warranty
                         </div>
-                        <div className="text-xs font-bold text-[var(--foreground)] mt-0.5">
+                        <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5">
                           {currentAsset.warrantyUntil}
                         </div>
                       </div>
 
-                      <div className="p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
-                        <div className="text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
+                      <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
+                        <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
                           Custody
                         </div>
-                        <div className="text-xs font-bold text-[var(--foreground)] mt-0.5 truncate">
+                        <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5 truncate">
                           {isCheckedOut ? "In Field" : currentAsset.custodian.split(" ")[0]}
                         </div>
                       </div>
@@ -352,7 +355,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         variant="primary"
                         size="sm"
                         className="flex-1 text-xs"
-                        onClick={onBookDemo}
+                        href="/demo"
                       >
                         <FileCheck className="h-3.5 w-3.5" />
                         <span>Generate Audit Record</span>
@@ -454,7 +457,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                       <Button
                         variant="primary"
                         size="sm"
-                        onClick={onBookDemo}
+                        href="/demo"
                         className="text-xs"
                       >
                         Submit Inspection

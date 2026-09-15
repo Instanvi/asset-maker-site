@@ -167,23 +167,23 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
   const currentInd = industriesData[activeTab as keyof typeof industriesData] || industriesData.construction;
 
   return (
-    <section id="industries" className="py-20 lg:py-28 bg-white border-t border-[var(--border-custom)] relative overflow-hidden">
+    <section id="industries" className="py-16 sm:py-20 lg:py-28 bg-white border-t border-[var(--border-custom)] relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
             Built for Your Industry
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
             Tailored for your sector. <span className="text-[var(--brand-primary)]">Zero compromise.</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
             Every sector manages physical equipment with distinct regulatory and operational rules. Discover our specialized industry workflows.
           </p>
         </div>
 
         {/* ─── Interactive Industry Tab Bar ─── */}
-        <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 pt-1 no-scrollbar mb-10">
+        <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 sm:pb-4 pt-1 no-scrollbar mb-8 sm:mb-10">
           {Object.values(industriesData).map((ind) => {
             const isSelected = activeTab === ind.id;
             return (
@@ -192,67 +192,69 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
                 type="button"
                 onClick={() => setActiveTab(ind.id)}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-3 rounded-lg font-bold text-xs sm:text-sm whitespace-nowrap transition-all cursor-pointer select-none border",
+                  "flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-bold text-[11px] sm:text-xs lg:text-sm whitespace-nowrap transition-all cursor-pointer select-none border",
                   isSelected
                     ? "bg-[var(--surface-dark)] text-white border-[var(--surface-dark)] shadow-md scale-[1.02]"
                     : "bg-[var(--surface)] text-[var(--foreground-muted)] border-[var(--border-custom)] hover:text-[var(--foreground)] hover:bg-white"
                 )}
               >
-                <span className={cn("shrink-0", isSelected ? "text-[var(--brand-primary)]" : "text-[var(--foreground-subtle)]")}>
+                <span className={cn("shrink-0 scale-90 sm:scale-100", isSelected ? "text-[var(--brand-primary)]" : "text-[var(--foreground-subtle)]")}>
                   {ind.icon}
                 </span>
-                <span>{ind.title.split(" ")[0]}</span>
+                <span className="hidden xs:inline">{ind.title.split(" ")[0]}</span>
+                <span className="xs:hidden">{ind.title.split(" ")[0].slice(0, 5)}.</span>
               </button>
             );
           })}
         </div>
 
         {/* ─── Active Tab Content Showcase ─── */}
-        <div className="rounded-xl border border-[var(--border-custom)] bg-[var(--surface)] p-6 sm:p-8 lg:p-10 shadow-[var(--shadow-card)]">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
+        <div className="rounded-lg sm:rounded-xl border border-[var(--border-custom)] bg-[var(--surface)] p-4 sm:p-6 lg:p-8 xl:p-10 shadow-[var(--shadow-card)]">
+          <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
             {/* Left Column: Sector Details & CTAs */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] text-xs font-bold border border-[var(--brand-emerald)]/20">
-                <ShieldCheck className="h-3.5 w-3.5" />
+            <div className="lg:col-span-6 space-y-4 sm:space-y-6">
+              <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] text-[10px] sm:text-xs font-bold border border-[var(--brand-emerald)]/20">
+                <ShieldCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 <span>{currentInd.badge}</span>
               </div>
 
               <div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
                   {currentInd.title}
                 </h3>
-                <p className="text-sm font-semibold text-[var(--brand-primary)] mt-1">
+                <p className="text-xs sm:text-sm font-semibold text-[var(--brand-primary)] mt-1">
                   {currentInd.tagline}
                 </p>
               </div>
 
-              <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
+              <p className="text-sm sm:text-base text-[var(--foreground-muted)] leading-relaxed">
                 {currentInd.description}
               </p>
 
               {/* Capability Checklist */}
-              <div className="space-y-2.5 pt-2">
+              <div className="space-y-2 sm:space-y-2.5 pt-2">
                 {currentInd.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm font-semibold text-[var(--foreground)]">
-                    <CheckCircle2 className="h-4 w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
+                  <div key={idx} className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm font-semibold text-[var(--foreground)]">
+                    <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
                     <span>{feat}</span>
                   </div>
                 ))}
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-4 flex flex-col sm:flex-row items-center gap-3">
+              <div className="pt-3 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3">
                 <Link
                   href={currentInd.href}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md bg-[var(--brand-primary)] text-white text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] hover:opacity-95 transition-opacity"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-md bg-[var(--brand-primary)] text-white text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] hover:opacity-95 transition-opacity"
                 >
-                  <span>Explore {currentInd.title}</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <span className="hidden xs:inline">Explore {currentInd.title}</span>
+                  <span className="xs:hidden">Explore Industry</span>
+                  <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </Link>
                 <Button
                   variant="outline"
                   size="default"
-                  onClick={onBookDemo}
+                  href="/demo"
                   className="w-full sm:w-auto text-xs sm:text-sm"
                 >
                   <span>Book Live Walkthrough</span>

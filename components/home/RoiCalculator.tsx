@@ -154,7 +154,7 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
             <Button
               variant="primary"
               size="lg"
-              onClick={onBookDemo}
+              href="/demo"
               className="w-full justify-center text-sm shadow-[var(--shadow-glow)]"
             >
               <span>Get Full Customized ROI Report</span>

@@ -94,7 +94,7 @@ export default function ConstructionIndustryPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book a Construction Demo</span>
@@ -103,7 +103,7 @@ export default function ConstructionIndustryPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Try for Free</span>
@@ -199,7 +199,7 @@ export default function ConstructionIndustryPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => setIsDemoModalOpen(true)}
+                      href="/demo"
                       className="text-xs"
                     >
                       <UserCheck className="h-3.5 w-3.5" />
@@ -401,7 +401,7 @@ export default function ConstructionIndustryPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book a Construction Demo</span>

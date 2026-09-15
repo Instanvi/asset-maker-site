@@ -156,7 +156,7 @@ export default function IntegrationsApiPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Explore Integrations</span>
@@ -165,7 +165,7 @@ export default function IntegrationsApiPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>View API Documentation</span>
@@ -368,7 +368,7 @@ export default function IntegrationsApiPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book an Architecture Walkthrough</span>

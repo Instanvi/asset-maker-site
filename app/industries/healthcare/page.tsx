@@ -93,7 +93,7 @@ export default function HealthcareIndustryPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book a Healthcare Demo</span>
@@ -102,7 +102,7 @@ export default function HealthcareIndustryPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Explore Platform</span>
@@ -210,7 +210,7 @@ export default function HealthcareIndustryPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => setIsDemoModalOpen(true)}
+                      href="/demo"
                       className="text-xs"
                     >
                       <span>Locate Equipment</span>
@@ -381,7 +381,7 @@ export default function HealthcareIndustryPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book a Healthcare Demo</span>

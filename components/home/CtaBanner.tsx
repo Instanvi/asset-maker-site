@@ -11,7 +11,6 @@ interface CtaBannerProps {
 export function CtaBanner({ onBookDemo }: CtaBannerProps) {
   return (
     <section className="py-20 lg:py-28 bg-[var(--surface-dark)] text-white relative overflow-hidden">
-      {/* Background Decorative Ambient Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[var(--brand-primary)]/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-5">
@@ -31,7 +30,7 @@ export function CtaBanner({ onBookDemo }: CtaBannerProps) {
           <Button
             variant="primary"
             size="xl"
-            onClick={onBookDemo}
+            href="/demo"
             className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
           >
             <span>Book a Demo</span>
@@ -40,8 +39,8 @@ export function CtaBanner({ onBookDemo }: CtaBannerProps) {
           <Button
             variant="outline"
             size="xl"
-            href="#demo"
-            className="w-full sm:w-auto text-base bg-white/5 border-white/20 text-white hover:bg-white/10 hover:text-white"
+            href="/contact"
+            className="w-full sm:w-auto text-base"
           >
             Talk to Sales
           </Button>

@@ -478,68 +478,6 @@ export default function DemoPage() {
           </div>
         </section>
 
-        {/* Customer Success Stories */}
-        <section className="py-20 bg-white border-t border-[var(--border-custom)]">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-14">
-              <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Join 2,000+ Organizations{" "}
-                <span className="text-[var(--brand-primary)]">Tracking Smarter</span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                {
-                  company: "Global Construction Inc.",
-                  industry: "Construction",
-                  result: "98% reduction in tool loss",
-                  quote: "The demo showed us exactly how to track equipment across 50 job sites. Implementation was faster than promised.",
-                },
-                {
-                  company: "Healthcare Systems Alliance",
-                  industry: "Healthcare",
-                  result: "100% audit compliance achieved",
-                  quote: "Asset Master's audit trail feature eliminated our Joint Commission compliance headaches completely.",
-                },
-                {
-                  company: "Tech Corp International",
-                  industry: "IT & Technology",
-                  result: "2,500 laptops tracked effortlessly",
-                  quote: "The Microsoft Intune integration they showed in the demo was the game-changer we needed.",
-                },
-              ].map((story, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 rounded-xl border border-[var(--border-custom)] bg-[var(--surface)] space-y-4"
-                >
-                  <div className="flex items-center gap-1 text-amber-500">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-current" />
-                    ))}
-                  </div>
-
-                  <p className="text-sm text-[var(--foreground-muted)] italic leading-relaxed">
-                    "{story.quote}"
-                  </p>
-
-                  <div className="pt-3 border-t border-[var(--border-subtle)]">
-                    <div className="font-bold text-sm text-[var(--foreground)]">
-                      {story.company}
-                    </div>
-                    <div className="text-xs text-[var(--foreground-subtle)]">
-                      {story.industry}
-                    </div>
-                    <div className="mt-2 inline-flex items-center gap-1.5 text-xs font-bold text-[var(--brand-emerald)]">
-                      <Award className="h-3.5 w-3.5" />
-                      <span>{story.result}</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Final CTA */}
         <section className="py-16 bg-[var(--surface-dark)] text-white">

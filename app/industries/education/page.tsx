@@ -79,7 +79,7 @@ export default function EducationIndustryPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book an Education Demo</span>
@@ -88,7 +88,7 @@ export default function EducationIndustryPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Explore Features</span>
@@ -159,7 +159,7 @@ export default function EducationIndustryPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => setIsDemoModalOpen(true)}
+                      href="/demo"
                       className="text-xs"
                     >
                       <span>Simulate Student Checkout</span>
@@ -330,7 +330,7 @@ export default function EducationIndustryPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book an Education Demo</span>

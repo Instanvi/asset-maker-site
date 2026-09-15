@@ -138,7 +138,7 @@ export function CustomerStory({ onBookDemo }: CustomerStoryProps) {
           <div className="mt-7 pt-5 border-t border-[var(--border-custom)] flex flex-col sm:flex-row items-center justify-between gap-4">
             <Button
               variant="outline"
-              onClick={onBookDemo}
+              href="/demo"
               size="sm"
               className="text-xs font-bold"
             >

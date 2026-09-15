@@ -86,7 +86,7 @@ export default function ItFacilitiesIndustryPage() {
                   <Button
                     variant="primary"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
                     <span>Book an IT & Facilities Demo</span>
@@ -95,7 +95,7 @@ export default function ItFacilitiesIndustryPage() {
                   <Button
                     variant="outline"
                     size="xl"
-                    onClick={() => setIsDemoModalOpen(true)}
+                    href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
                     <span>Try for Free</span>
@@ -185,7 +185,7 @@ export default function ItFacilitiesIndustryPage() {
                     <Button
                       variant="primary"
                       size="sm"
-                      onClick={() => setIsDemoModalOpen(true)}
+                      href="/demo"
                       className="text-xs"
                     >
                       <span>Simulate Handover</span>
@@ -373,7 +373,6 @@ export default function ItFacilitiesIndustryPage() {
           </div>
         </section>
 
-        {/* ─── 4. CTA BANNER ─── */}
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -386,7 +385,7 @@ export default function ItFacilitiesIndustryPage() {
               <Button
                 variant="primary"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
+                href="/demo"
                 className="w-full sm:w-auto text-base"
               >
                 <span>Book a Live Demo</span>

@@ -144,8 +144,8 @@ export function Header({ onBookDemo }: HeaderProps) {
                 activeMenu === "product" && "text-[var(--brand-primary)] font-bold bg-[var(--surface-raised)]"
               )}
             >
-              <span>Product</span>
-              <ChevronDown className={cn("h-4 w-4 text-[var(--foreground-subtle)] transition-transform", activeMenu === "product" && "rotate-180 text-[var(--brand-primary)]")} />
+              <span className="text-base">Product</span>
+              <ChevronDown className={cn("h-5 w-5 text-[var(--foreground-subtle)] transition-transform", activeMenu === "product" && "rotate-180 text-[var(--brand-primary)]")} />
             </button>
 
             <button
@@ -157,30 +157,30 @@ export function Header({ onBookDemo }: HeaderProps) {
                 activeMenu === "industries" && "text-[var(--brand-primary)] font-bold bg-[var(--surface-raised)]"
               )}
             >
-              <span>Industries</span>
-              <ChevronDown className={cn("h-4 w-4 text-[var(--foreground-subtle)] transition-transform", activeMenu === "industries" && "rotate-180 text-[var(--brand-primary)]")} />
+              <span className="text-base">Industries</span>
+              <ChevronDown className={cn("h-5 w-5 text-[var(--foreground-subtle)] transition-transform", activeMenu === "industries" && "rotate-180 text-[var(--brand-primary)]")} />
             </button>
 
             <Link
               href="/how-it-works"
               onClick={() => setActiveMenu(null)}
-              className="px-3.5 py-2 text-sm font-semibold text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-all rounded-md"
+              className="px-3.5 py-2 text-base font-semibold text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-all rounded-md"
             >
               How It Works
             </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button variant="emerald" size="lg" className="font-bold text-xs">
-              <Link href="/demo">Try for Free</Link>
+            <Button variant="emerald" size="lg" className="font-bold text-base">
+              <Link href="/contact">Contact Us</Link>
             </Button>
-            <Button variant="primary" size="lg" className="font-bold text-xs shadow-[var(--shadow-glow)]">
+            <Button variant="primary" size="lg" className="font-bold text-base shadow-[var(--shadow-glow)]">
               <Link href="/demo">Book a Demo</Link>
             </Button>
           </div>
 
           <div className="flex items-center gap-2 xl:hidden">
-            <Button variant="primary" size="sm" className="text-xs px-3">
+            <Button variant="primary" size="sm" className="text-base px-3">
               <Link href="/demo">Book Demo</Link>
             </Button>
             <button
