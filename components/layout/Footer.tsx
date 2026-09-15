@@ -18,7 +18,7 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
               Track assets, automate maintenance, and keep a full audit trail - from a phone.
             </p>
-            <div className="pt-2 flex items-center gap-2 text-xs text-slate-400">
+            <div className="pt-2 flex items-center gap-2 text-sm text-slate-400">
               <MapPin className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
               <span>Douala, Cameroon</span>
             </div>
@@ -53,6 +53,7 @@ export function Footer() {
               <li><Link href="/demo" className="hover:text-white transition-colors">Book a Demo</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
