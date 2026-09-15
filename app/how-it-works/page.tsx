@@ -14,7 +14,6 @@ import {
   Shield,
   CheckCircle2,
   ArrowRight,
-  Play,
   Clock,
   Users,
   FileCheck,
@@ -42,7 +41,6 @@ import BookDemoModal from "@/components/home/BookDemoModal";
 export default function HowItWorksPage() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [activePhaseIndex, setActivePhaseIndex] = useState(0);
-  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
   const handleOpenDemoModal = () => {
     setIsDemoModalOpen(true);
@@ -249,9 +247,6 @@ export default function HowItWorksPage() {
       <Header onBookDemo={handleOpenDemoModal} />
 
       <main className="flex-1">
-        {/* ═════════════════════════════════════════════════════════════════
-            HERO SECTION: HOW IT WORKS OVERVIEW
-           ═════════════════════════════════════════════════════════════════ */}
         <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
           <div className="hero-mesh-glow" />
           <div className="hero-grid-pattern" />
@@ -270,7 +265,7 @@ export default function HowItWorksPage() {
               </h1>
 
               <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-3xl mx-auto leading-relaxed">
-                From physical tag generation to real-time custody transfers to automated compliance reporting — here's the complete workflow that eliminates spreadsheets, ghost assets, and audit headaches.
+                From physical tag generation to real-time custody transfers to automated compliance reporting - here's the complete workflow that eliminates spreadsheets, ghost assets, and audit headaches.
               </p>
 
               {/* Quick Stats Bar */}
@@ -320,8 +315,8 @@ export default function HowItWorksPage() {
                   onClick={handleOpenDemoModal}
                   className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                 >
-                  <Play className="h-4 w-4" />
-                  <span>Watch 3-Minute Demo Video</span>
+                  <span>Book a Demo</span>
+                  <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
                   variant="emerald"
@@ -329,7 +324,7 @@ export default function HowItWorksPage() {
                   onClick={handleOpenDemoModal}
                   className="w-full sm:w-auto text-base"
                 >
-                  <span>Try It Free — No Credit Card</span>
+                  <span>Try It Free - No Credit Card</span>
                 </Button>
               </div>
             </div>
@@ -539,7 +534,7 @@ export default function HowItWorksPage() {
                       onClick={handleOpenDemoModal}
                       className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--surface)] hover:bg-[var(--surface-raised)] border border-[var(--border-custom)] text-sm font-semibold text-[var(--foreground)] transition-colors cursor-pointer"
                     >
-                      <Play className="h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" />
                       <span>See This Workflow in Action</span>
                     </button>
                   </div>
@@ -592,7 +587,7 @@ export default function HowItWorksPage() {
                   <span className="text-[var(--brand-primary)]">Thinks For You</span>
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
-                  Asset Master runs 24/7 in the background, calculating depreciation, predicting failures, generating compliance reports, and syncing with your enterprise systems — without human intervention.
+                  Asset Master runs 24/7 in the background, calculating depreciation, predicting failures, generating compliance reports, and syncing with your enterprise systems - without human intervention.
                 </p>
               </div>
 
@@ -658,7 +653,7 @@ export default function HowItWorksPage() {
                       Set It Once. It Runs Forever.
                     </h3>
                     <p className="text-base text-slate-300 leading-relaxed mb-6">
-                      Asset Master doesn't need daily management. Configure your workflows once, and the system handles depreciation calculations, warranty alerts, work order creation, ERP synchronization, and audit reports — automatically.
+                      Asset Master doesn't need daily management. Configure your workflows once, and the system handles depreciation calculations, warranty alerts, work order creation, ERP synchronization, and audit reports - automatically.
                     </p>
 
                     <Button
@@ -706,7 +701,7 @@ export default function HowItWorksPage() {
                 <span className="text-[var(--brand-primary)]">Asset Master Works.</span>
               </h2>
               <p className="mt-4 text-lg text-[var(--foreground-muted)] leading-relaxed max-w-3xl mx-auto">
-                From tag generation to real-time tracking to automated compliance — the complete system that eliminates manual asset management forever.
+                From tag generation to real-time tracking to automated compliance - the complete system that eliminates manual asset management forever.
               </p>
             </div>
 
@@ -720,7 +715,7 @@ export default function HowItWorksPage() {
                   Setup in Minutes
                 </div>
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  Import assets, print tags, and start tracking — all in under 15 minutes.
+                  Import assets, print tags, and start tracking - all in under 15 minutes.
                 </p>
               </div>
 
@@ -744,7 +739,7 @@ export default function HowItWorksPage() {
                   Auto-Pilot Intelligence
                 </div>
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  Depreciation, alerts, reports, and ERP sync — all automated 24/7.
+                  Depreciation, alerts, reports, and ERP sync - all automated 24/7.
                 </p>
               </div>
             </div>
@@ -766,7 +761,7 @@ export default function HowItWorksPage() {
                 onClick={handleOpenDemoModal}
                 className="w-full sm:w-auto text-lg"
               >
-                <span>Start Free Trial — No Credit Card</span>
+                <span>Start Free Trial - No Credit Card</span>
               </Button>
             </div>
 

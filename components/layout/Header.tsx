@@ -48,14 +48,9 @@ export function Header({ onBookDemo }: HeaderProps) {
 
   const handleDemoClick = () => {
     setActiveMenu(null);
-    if (onBookDemo) {
-      onBookDemo();
-    } else {
-      document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
-  /* Product — what the platform actually does */
+  /* Product - what the platform actually does */
   const productItems: MenuItem[] = [
     {
       title: "Asset Tracking & Tags",
@@ -89,7 +84,7 @@ export function Header({ onBookDemo }: HeaderProps) {
     },
   ];
 
-  /* Industries — matches the industries you actually built content for */
+  /* Industries - matches the industries you actually built content for */
   const industryItems: MenuItem[] = [
     {
       title: "Construction & Field Crews",
@@ -167,33 +162,26 @@ export function Header({ onBookDemo }: HeaderProps) {
             </button>
 
             <Link
-              href="/#how"
+              href="/how-it-works"
               onClick={() => setActiveMenu(null)}
               className="px-3.5 py-2 text-sm font-semibold text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-all rounded-md"
             >
               How It Works
             </Link>
-            <Link
-              href="/#pricing"
-              onClick={() => setActiveMenu(null)}
-              className="px-3.5 py-2 text-sm font-semibold text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-all rounded-md"
-            >
-              Pricing
-            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button variant="emerald" size="lg" onClick={handleDemoClick} className="font-bold text-xs">
-              Try for Free
+            <Button variant="emerald" size="lg" className="font-bold text-xs">
+              <Link href="/demo">Try for Free</Link>
             </Button>
-            <Button variant="primary" size="lg" onClick={handleDemoClick} className="font-bold text-xs shadow-[var(--shadow-glow)]">
-              Book a Demo
+            <Button variant="primary" size="lg" className="font-bold text-xs shadow-[var(--shadow-glow)]">
+              <Link href="/demo">Book a Demo</Link>
             </Button>
           </div>
 
           <div className="flex items-center gap-2 xl:hidden">
-            <Button variant="primary" size="sm" onClick={handleDemoClick} className="text-xs px-3">
-              Book Demo
+            <Button variant="primary" size="sm" className="text-xs px-3">
+              <Link href="/demo">Book Demo</Link>
             </Button>
             <button
               type="button"
@@ -240,7 +228,9 @@ export function Header({ onBookDemo }: HeaderProps) {
         )}
       </header>
 
-      <MobileDrawer isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} onBookDemo={handleDemoClick} />
+      <MobileDrawer isOpen={isMobileOpen} onClose={() => setIsMobileOpen(false)} onBookDemo={function (): void {
+        throw new Error("Function not implemented.");
+      } } />
     </>
   );
 }

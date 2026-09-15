@@ -119,8 +119,8 @@ export default function AssetTrackingPage() {
     <div className="min-h-screen flex flex-col bg-white text-[var(--foreground)]">
       <Header onBookDemo={() => setIsDemoModalOpen(true)} />
 
-      <main className="flex-1 pt-14 lg:pt-18">
-        <section className="relative pb-16 lg:pb-24 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
+      <main className="flex-1">
+        <section className="relative pt-28 pb-16 lg:pt-36 lg:pb-20 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
           <div className="hero-mesh-glow" />
           <div className="hero-grid-pattern" />
 
@@ -504,9 +504,7 @@ export default function AssetTrackingPage() {
               <Button
                 variant="outline"
                 size="xl"
-                onClick={() => setIsDemoModalOpen(true)}
-                className="w-full sm:w-auto text-base text-white border-slate-700 hover:bg-slate-800"
-              >
+                onClick={() => setIsDemoModalOpen(true)}>
                 <span>Start Free Trial</span>
               </Button>
             </div>

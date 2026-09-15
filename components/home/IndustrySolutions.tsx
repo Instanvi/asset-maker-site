@@ -49,7 +49,7 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
         "Anodized Aluminum Asset Tags for extreme weather",
       ],
       mockupData: {
-        title: "Austin Site #4 — Heavy Equipment Ledger",
+        title: "Austin Site #4 - Heavy Equipment Ledger",
         stat: "34 Active Assets on Site",
         items: [
           { name: "CAT 320 Hydraulic Excavator", tag: "AM-CAT-320", status: "Operational", custodian: "Marcus Vance", value: "$185,000" },

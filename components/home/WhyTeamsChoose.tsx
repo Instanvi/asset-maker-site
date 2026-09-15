@@ -71,7 +71,7 @@ export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
             </div>
 
             <div className="pt-2 text-xs font-bold text-[var(--brand-emerald)]">
-              Asset management becomes proactive — not reactive.
+              Asset management becomes proactive - not reactive.
             </div>
           </div>
 

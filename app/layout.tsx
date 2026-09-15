@@ -27,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`h-full ${manrope.variable}`}>
-      <body className="min-h-full flex flex-col bg-white text-slate-900 font-sans text-base antialiased selection:bg-blue-600/15 selection:text-blue-700">
+      <body 
+        className="min-h-full flex flex-col bg-white text-slate-900 font-sans text-base antialiased selection:bg-blue-600/15 selection:text-blue-700"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
