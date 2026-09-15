@@ -243,7 +243,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
         {/* Drawer Actions */}
         <div className="p-5 border-t border-[var(--border-custom)] bg-[var(--surface)] space-y-2">
           <Button
-            variant="emerald"
+            variant="dark"
             className="w-full justify-center text-xs"
             size="lg"
             onClick={() => {

@@ -319,7 +319,7 @@ export default function HowItWorksPage() {
                   <ArrowRight className="h-4 w-4" />
                 </Button>
                 <Button
-                  variant="emerald"
+                  variant="dark"
                   size="xl"
                   href="/demo"
                   className="w-full sm:w-auto text-base"
@@ -729,7 +729,7 @@ export default function HowItWorksPage() {
                 <ArrowRight className="h-5 w-5" />
               </Button>
               <Button
-                variant="emerald"
+                variant="dark"
                 size="xl"
                 href="/demo"
                 className="w-full sm:w-auto text-lg"

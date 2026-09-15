@@ -171,7 +171,7 @@ export function Header({ onBookDemo }: HeaderProps) {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
-            <Button variant="emerald" size="lg" className="font-bold text-base">
+            <Button variant="dark" size="lg" className="font-bold text-base">
               <Link href="/contact">Contact Us</Link>
             </Button>
             <Button variant="primary" size="lg" className="font-bold text-base shadow-[var(--shadow-glow)]">
