@@ -33,7 +33,6 @@ export default function HomePage() {
       <Header onBookDemo={handleOpenDemoModal} />
 
       <main className="flex-1">
-        {/* 1. Hero Section with Live Simulated Scanner Mockup */}
         <HeroSection onBookDemo={handleOpenDemoModal} />
 
         {/* 2. Global Compliance & Scale Stats */}

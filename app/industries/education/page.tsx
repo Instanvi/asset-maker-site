@@ -53,23 +53,13 @@ export default function EducationIndustryPage() {
     <div className="min-h-screen flex flex-col bg-white text-[var(--foreground)]">
       <Header onBookDemo={() => setIsDemoModalOpen(true)} />
 
-      <main className="flex-1 pt-24 lg:pt-28">
+      <main className="flex-1 pt-14 lg:pt-18">
         {/* ─── 1. BREADCRUMB & HERO ─── */}
         <section className="relative pb-16 lg:pb-24 overflow-hidden hero-gradient-canvas border-b border-[var(--border-subtle)]">
           <div className="hero-mesh-glow" />
           <div className="hero-grid-pattern" />
 
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-            {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-[var(--foreground-muted)] mb-6">
-              <Link href="/" className="hover:text-[var(--brand-primary)] transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span>Industries</span>
-              <span>/</span>
-              <span className="text-[var(--brand-primary)] font-bold">K-12 & Higher Education</span>
-            </div>
 
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-10 items-center">
               {/* Left Column Copy */}
