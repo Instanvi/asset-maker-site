@@ -16,16 +16,16 @@ const logos = [
 
 export function LogoMarquee() {
   return (
-    <div className="py-8 bg-white border-y border-[var(--border-subtle)] overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-5 text-center">
-        <p className="text-xs font-bold uppercase tracking-widest text-[var(--foreground-muted)]">
+    <div className="py-6 sm:py-8 bg-white border-y border-[var(--border-subtle)] overflow-hidden">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-4 sm:mb-5 text-center">
+        <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--foreground-muted)]">
           Trusted by operations & fleet teams
         </p>
       </div>
 
       <div className="group flex w-max animate-marquee hover:[animation-play-state:paused]">
         {/* First copy */}
-        <div className="flex items-center gap-16 px-8">
+        <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8">
           {logos.map((logo) => (
             <div
               key={`a-${logo.alt}`}
@@ -34,15 +34,21 @@ export function LogoMarquee() {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                style={{ height: `calc(${logo.h} * 0.7)`, width: "auto" }}
+                className="object-contain sm:hidden"
+              />
+              <img
+                src={logo.src}
+                alt={logo.alt}
                 style={{ height: logo.h, width: "auto" }}
-                className="object-contain"
+                className="object-contain hidden sm:block"
               />
             </div>
           ))}
         </div>
 
         {/* Second copy */}
-        <div className="flex items-center gap-16 px-8" aria-hidden="true">
+        <div className="flex items-center gap-8 sm:gap-12 lg:gap-16 px-4 sm:px-6 lg:px-8" aria-hidden="true">
           {logos.map((logo) => (
             <div
               key={`b-${logo.alt}`}
@@ -51,8 +57,14 @@ export function LogoMarquee() {
               <img
                 src={logo.src}
                 alt={logo.alt}
+                style={{ height: `calc(${logo.h} * 0.7)`, width: "auto" }}
+                className="object-contain sm:hidden"
+              />
+              <img
+                src={logo.src}
+                alt={logo.alt}
                 style={{ height: logo.h, width: "auto" }}
-                className="object-contain"
+                className="object-contain hidden sm:block"
               />
             </div>
           ))}

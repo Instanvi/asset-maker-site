@@ -22,34 +22,34 @@ export function BookDemoSection() {
   };
 
   return (
-    <section id="demo" className="py-20 lg:py-28 bg-white border-t border-[var(--border-custom)] relative">
+    <section id="demo" className="py-16 sm:py-20 lg:py-28 bg-white border-t border-[var(--border-custom)] relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Intro Text */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-xs font-bold uppercase tracking-wider mb-2">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:space-y-6">
+            <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
               <span>Book a Personalized Demo</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
               See how Asset Master <span className="text-[var(--brand-primary)]">transforms your operations.</span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
               Get a 1-on-1 walkthrough customized to your industry workflows, asset volume, and compliance standards.
             </p>
 
-            <ul className="space-y-3 pt-2 text-sm text-[var(--foreground)] font-medium">
-              <li className="flex items-center gap-2.5">
-                <CheckCircle className="h-4 w-4 text-[var(--brand-emerald)] shrink-0" />
+            <ul className="space-y-2.5 sm:space-y-3 pt-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
+              <li className="flex items-start gap-2 sm:gap-2.5">
+                <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
                 <span>Live demo tailored to your specific asset types and jobsite needs</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle className="h-4 w-4 text-[var(--brand-emerald)] shrink-0" />
+              <li className="flex items-start gap-2 sm:gap-2.5">
+                <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
                 <span>Learn how to import existing spreadsheets in under 15 minutes</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle className="h-4 w-4 text-[var(--brand-emerald)] shrink-0" />
+              <li className="flex items-start gap-2 sm:gap-2.5">
+                <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
                 <span>Explore mobile scanning and automated digital inspections in real time</span>
               </li>
             </ul>
@@ -57,16 +57,16 @@ export function BookDemoSection() {
 
           {/* Right Form Card with Input & Select */}
           <div className="lg:col-span-6">
-            <div className="rounded-3xl border border-[var(--border-custom)] bg-[var(--surface)] p-8 sm:p-10 shadow-[var(--shadow-card)]">
+            <div className="rounded-2xl sm:rounded-3xl border border-[var(--border-custom)] bg-[var(--surface)] p-5 sm:p-8 lg:p-10 shadow-[var(--shadow-card)]">
               {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="mx-auto h-14 w-14 rounded-full bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] flex items-center justify-center">
-                    <CheckCircle className="h-8 w-8" />
+                <div className="py-8 sm:py-12 text-center space-y-3 sm:space-y-4">
+                  <div className="mx-auto h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] flex items-center justify-center">
+                    <CheckCircle className="h-7 w-7 sm:h-8 sm:w-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-[var(--foreground)]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
                     Demo Request Received!
                   </h3>
-                  <p className="text-sm text-[var(--foreground-muted)] max-w-sm mx-auto">
+                  <p className="text-xs sm:text-sm text-[var(--foreground-muted)] max-w-sm mx-auto">
                     An Asset Master product specialist will reach out to{" "}
                     <span className="font-bold text-[var(--foreground)]">{formData.email}</span> within 2 hours to confirm your session.
                   </p>
@@ -80,17 +80,17 @@ export function BookDemoSection() {
                   </Button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-xl font-bold text-[var(--foreground)] mb-1">
+                <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-[var(--foreground)] mb-1">
                     Request a Live Walkthrough
                   </h3>
-                  <p className="text-xs text-[var(--foreground-muted)] mb-4">
+                  <p className="text-[10px] sm:text-xs text-[var(--foreground-muted)] mb-4">
                     No credit card required. Free 14-day full access included.
                   </p>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
+                      <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
                         Full Name
                       </label>
                       <Input
@@ -103,7 +103,7 @@ export function BookDemoSection() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
+                      <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
                         Work Email
                       </label>
                       <Input
@@ -118,7 +118,7 @@ export function BookDemoSection() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
+                    <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
                       Company / Organization Name
                     </label>
                     <Input
@@ -130,9 +130,9 @@ export function BookDemoSection() {
                     />
                   </div>
 
-                  <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
+                      <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
                         Primary Industry
                       </label>
                       <Select
@@ -150,7 +150,7 @@ export function BookDemoSection() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
+                      <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
                         Estimated Assets Count
                       </label>
                       <Select
@@ -169,10 +169,10 @@ export function BookDemoSection() {
                     type="submit"
                     variant="primary"
                     size="lg"
-                    className="w-full justify-center text-sm font-bold shadow-[var(--shadow-glow)] mt-2"
+                    className="w-full justify-center text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] mt-2"
                   >
                     <span>Schedule My Demo</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </Button>
                 </form>
               )}
