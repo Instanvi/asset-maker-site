@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { X, ChevronDown, QrCode, Wrench, ClipboardCheck, Laptop, Layers, HardHat, Box, GraduationCap, Stethoscope, Warehouse } from "lucide-react";
+import { X, ChevronDown, QrCode, Wrench, ClipboardCheck, Laptop, Layers, HardHat, Box, GraduationCap, Stethoscope, Warehouse, LogIn } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -243,24 +243,29 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
         {/* Drawer Actions */}
         <div className="p-5 border-t border-[var(--border-custom)] bg-[var(--surface)] space-y-2">
           <Button
+            variant="outline"
+            className="w-full justify-center text-xs"
+            size="lg"
+            onClick={onClose}
+          >
+            <LogIn className="h-4 w-4" />
+            Login
+          </Button>
+          <Button
             variant="dark"
             className="w-full justify-center text-xs"
             size="lg"
-            onClick={() => {
-              onClose();
-              onBookDemo();
-            }}
+            href="/contact"
+            onClick={onClose}
           >
-            Try for Free
+            Contact Us
           </Button>
           <Button
             variant="primary"
             className="w-full justify-center text-xs"
             size="lg"
-            onClick={() => {
-              onClose();
-              onBookDemo();
-            }}
+            href="/demo"
+            onClick={onClose}
           >
             Book a Demo
           </Button>

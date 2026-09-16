@@ -174,10 +174,10 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
               <Button
                 variant="outline"
                 size="xl"
-                href="/demo"
+                href="/contact"
                 className="w-full sm:w-auto text-sm sm:text-base"
               >
-                <span>Try for Free</span>
+                <span>Contact Sales</span>
               </Button>
             </div>
 

@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
 import "flag-icons/css/flag-icons.min.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-manrope",
-  display: "swap",
-});
 
 type Props = {
   children: React.ReactNode;
@@ -49,7 +41,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`h-full ${manrope.variable}`}>
+    <html lang={locale} className="h-full" suppressHydrationWarning>
       <body 
         className="min-h-full flex flex-col bg-white text-slate-900 font-sans text-base antialiased selection:bg-blue-600/15 selection:text-blue-700"
         suppressHydrationWarning

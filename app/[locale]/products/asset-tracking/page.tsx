@@ -151,14 +151,6 @@ export default function AssetTrackingPage() {
                     <span>Book a Live Demo</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
-                  <Button
-                    variant="outline"
-                    size="xl"
-                    href="/demo"
-                    className="w-full sm:w-auto text-base"
-                  >
-                    <span>Try for Free</span>
-                  </Button>
                 </div>
 
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
@@ -500,12 +492,6 @@ export default function AssetTrackingPage() {
               >
                 <span>Schedule a 1-on-1 Demo</span>
                 <ArrowRight className="h-4 w-4" />
-              </Button>
-              <Button
-                variant="outline"
-                size="xl"
-                href="/demo">
-                <span>Start Free Trial</span>
               </Button>
             </div>
           </div>

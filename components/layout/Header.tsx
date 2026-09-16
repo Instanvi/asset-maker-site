@@ -16,6 +16,7 @@ import {
   GraduationCap,
   Stethoscope,
   Warehouse,
+  LogIn,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import MobileDrawer from "./MobileDrawer";
@@ -173,6 +174,13 @@ export function Header({ onBookDemo }: HeaderProps) {
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <LanguageSwitcher />
+            <button
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors rounded-lg"
+              aria-label="Login"
+            >
+              <LogIn className="h-5 w-5" />
+              <span className="hidden xl:inline">Login</span>
+            </button>
             <Button variant="dark" size="lg" className="font-bold text-base">
               <Link href="/contact">Contact Us</Link>
             </Button>
@@ -182,6 +190,12 @@ export function Header({ onBookDemo }: HeaderProps) {
           </div>
 
           <div className="flex items-center gap-2 xl:hidden">
+            <button
+              className="p-2 rounded-lg text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors"
+              aria-label="Login"
+            >
+              <LogIn className="h-5 w-5" />
+            </button>
             <Button variant="primary" size="sm" className="text-base px-3">
               <Link href="/demo">Book Demo</Link>
             </Button>
