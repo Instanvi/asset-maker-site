@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import MobileDrawer from "./MobileDrawer";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { cn } from "@/lib/utils";
 
 interface HeaderProps {
@@ -171,6 +172,7 @@ export function Header({ onBookDemo }: HeaderProps) {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3 shrink-0">
+            <LanguageSwitcher />
             <Button variant="dark" size="lg" className="font-bold text-base">
               <Link href="/contact">Contact Us</Link>
             </Button>

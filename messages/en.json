@@ -1,0 +1,43 @@
+{
+  "Metadata": {
+    "title": "Asset Master | Intelligent Asset Tracking & Lifecycle Platform",
+    "description": "Complete operational accountability in one platform. Track assets, automate inspections, and prove compliance without chasing spreadsheets.",
+    "keywords": "asset management, asset tracking, IT asset tracking, ITAM, CMMS, barcode scanner, QR asset tracking, equipment tracking, inspection workflows, audit compliance"
+  },
+  "common": {
+    "bookDemo": "Book a Demo",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contact": "Contact",
+    "readMore": "Read More",
+    "viewAll": "View All"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "industries": "Industries",
+    "pricing": "Pricing",
+    "resources": "Resources",
+    "demo": "Demo",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Complete operational accountability in one platform",
+    "subtitle": "Track assets, automate inspections, and prove compliance without chasing spreadsheets.",
+    "cta": {
+      "primary": "Book a Demo",
+      "secondary": "Watch 2-Min Tour"
+    }
+  },
+  "footer": {
+    "tagline": "Complete operational accountability in one platform",
+    "products": "Products",
+    "industries": "Industries",
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "copyright": "© 2025 Asset Master. All rights reserved."
+  }
+}
