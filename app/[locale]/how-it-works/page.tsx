@@ -37,8 +37,10 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import BookDemoModal from "@/components/home/BookDemoModal";
+import { useTranslations } from "next-intl";
 
 export default function HowItWorksPage() {
+  const t = useTranslations();
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [activePhaseIndex, setActivePhaseIndex] = useState(0);
 
@@ -56,44 +58,41 @@ export default function HowItWorksPage() {
   const setupSteps = [
     {
       number: "1",
-      title: "Import Your Asset List",
-      description:
-        "Drag & drop a CSV/Excel file, sync from your ERP (SAP, NetSuite, Intune), or manually add assets one by one. Asset Master instantly creates your master registry with all financial metadata.",
+      title: t("howItWorks.setup.steps.step1.title"),
+      description: t("howItWorks.setup.steps.step1.description"),
       icon: <Database className="h-5 w-5" />,
-      time: "2-5 minutes",
+      time: t("howItWorks.setup.steps.step1.time"),
       features: [
-        "Bulk CSV upload with validation",
-        "Direct ERP API integration",
-        "Manual entry with autocomplete",
-        "Duplicate detection & merging",
+        t("howItWorks.setup.steps.step1.features.bulkUpload"),
+        t("howItWorks.setup.steps.step1.features.erpIntegration"),
+        t("howItWorks.setup.steps.step1.features.manualEntry"),
+        t("howItWorks.setup.steps.step1.features.duplicateDetection"),
       ],
     },
     {
       number: "2",
-      title: "Generate QR / Barcode Tags",
-      description:
-        "Click one button to print weatherproof asset labels (QR codes, Code 128 barcodes, or RFID tags). Each tag is cryptographically linked to your asset record with tamper-evident verification.",
+      title: t("howItWorks.setup.steps.step2.title"),
+      description: t("howItWorks.setup.steps.step2.description"),
       icon: <QrCode className="h-5 w-5" />,
-      time: "5-10 minutes",
+      time: t("howItWorks.setup.steps.step2.time"),
       features: [
-        "Print on any label printer (Dymo, Brother, Zebra)",
-        "UV-resistant & waterproof materials",
-        "Serialized unique identifiers",
-        "Embedded blockchain hash for authenticity",
+        t("howItWorks.setup.steps.step2.features.printerSupport"),
+        t("howItWorks.setup.steps.step2.features.durability"),
+        t("howItWorks.setup.steps.step2.features.serialization"),
+        t("howItWorks.setup.steps.step2.features.blockchain"),
       ],
     },
     {
       number: "3",
-      title: "Affix Tags to Physical Assets",
-      description:
-        "Stick or mount the printed labels directly on your laptops, excavators, medical equipment, or tools. The tag becomes the permanent identity that connects the physical object to its digital twin.",
+      title: t("howItWorks.setup.steps.step3.title"),
+      description: t("howItWorks.setup.steps.step3.description"),
       icon: <Box className="h-5 w-5" />,
-      time: "5-10 minutes",
+      time: t("howItWorks.setup.steps.step3.time"),
       features: [
-        "Adhesive labels for IT hardware",
-        "Metal rivets for heavy machinery",
-        "Embedded RFID for mobile equipment",
-        "Photo capture during tagging for verification",
+        t("howItWorks.setup.steps.step3.features.adhesiveLabels"),
+        t("howItWorks.setup.steps.step3.features.metalRivets"),
+        t("howItWorks.setup.steps.step3.features.embeddedRfid"),
+        t("howItWorks.setup.steps.step3.features.photoCapture"),
       ],
     },
   ];
@@ -104,58 +103,54 @@ export default function HowItWorksPage() {
   const usageWorkflows = [
     {
       id: "checkout",
-      title: "Quick Check-Out & Custody Transfer",
-      description:
-        "Scan the asset tag with any smartphone or barcode scanner. Asset Master instantly logs the custodian change, GPS location, timestamp, and prompts for an e-signature confirmation. Zero paperwork.",
+      title: t("howItWorks.usage.workflows.checkout.title"),
+      description: t("howItWorks.usage.workflows.checkout.description"),
       icon: <Users className="h-5 w-5" />,
       color: "emerald",
       steps: [
-        "Employee scans QR code with phone",
-        "System verifies asset availability",
-        "Custodian signs digitally on screen",
-        "Audit trail updated in real-time",
+        t("howItWorks.usage.workflows.checkout.steps.step1"),
+        t("howItWorks.usage.workflows.checkout.steps.step2"),
+        t("howItWorks.usage.workflows.checkout.steps.step3"),
+        t("howItWorks.usage.workflows.checkout.steps.step4"),
       ],
     },
     {
       id: "inspection",
-      title: "Mobile Field Inspections",
-      description:
-        "Technicians use the Asset Master mobile app to run digital checklists (OSHA, ISO 55001, custom protocols). Failed checks instantly flag defects, trigger work orders, and lock the asset from checkout until repaired.",
+      title: t("howItWorks.usage.workflows.inspection.title"),
+      description: t("howItWorks.usage.workflows.inspection.description"),
       icon: <ClipboardCheck className="h-5 w-5" />,
       color: "primary",
       steps: [
-        "Scan asset to load inspection template",
-        "Complete checklist with photo evidence",
-        "System auto-scores compliance grade",
-        "Defect alerts sent to maintenance team",
+        t("howItWorks.usage.workflows.inspection.steps.step1"),
+        t("howItWorks.usage.workflows.inspection.steps.step2"),
+        t("howItWorks.usage.workflows.inspection.steps.step3"),
+        t("howItWorks.usage.workflows.inspection.steps.step4"),
       ],
     },
     {
       id: "location",
-      title: "Real-Time GPS Location Tracking",
-      description:
-        "Every scan captures the GPS coordinates. See where your excavators, trucks, or portable generators are located on a live map. Set geofence alerts to prevent unauthorized movement outside designated jobsites or campuses.",
+      title: t("howItWorks.usage.workflows.location.title"),
+      description: t("howItWorks.usage.workflows.location.description"),
       icon: <MapPin className="h-5 w-5" />,
       color: "cyan",
       steps: [
-        "Automatic GPS tagging on every scan",
-        "Historical movement trail visualization",
-        "Geofence boundary alerts",
-        "Last-known location always visible",
+        t("howItWorks.usage.workflows.location.steps.step1"),
+        t("howItWorks.usage.workflows.location.steps.step2"),
+        t("howItWorks.usage.workflows.location.steps.step3"),
+        t("howItWorks.usage.workflows.location.steps.step4"),
       ],
     },
     {
       id: "maintenance",
-      title: "Automated Maintenance Scheduling",
-      description:
-        "Asset Master tracks service intervals, warranty expiration, and preventative maintenance due dates. The system auto-creates work orders in your CMMS (or its built-in work order module) and emails technicians 30 days before due dates.",
+      title: t("howItWorks.usage.workflows.maintenance.title"),
+      description: t("howItWorks.usage.workflows.maintenance.description"),
       icon: <Settings className="h-5 w-5" />,
       color: "amber",
       steps: [
-        "Set maintenance intervals (days/hours/cycles)",
-        "System monitors usage & triggers alerts",
-        "Auto-create Jira/ServiceNow tickets",
-        "Technician receives push notification",
+        t("howItWorks.usage.workflows.maintenance.steps.step1"),
+        t("howItWorks.usage.workflows.maintenance.steps.step2"),
+        t("howItWorks.usage.workflows.maintenance.steps.step3"),
+        t("howItWorks.usage.workflows.maintenance.steps.step4"),
       ],
     },
   ];
@@ -166,54 +161,50 @@ export default function HowItWorksPage() {
   const intelligenceFeatures = [
     {
       id: "depreciation",
-      title: "Automated Financial Depreciation",
-      description:
-        "Asset Master calculates straight-line (SLN) and MACRS depreciation schedules in real-time. Every asset shows its current book value, accumulated depreciation, and salvage forecast. Export GL entries directly to your ERP.",
+      title: t("howItWorks.intelligence.features.depreciation.title"),
+      description: t("howItWorks.intelligence.features.depreciation.description"),
       icon: <TrendingUp className="h-6 w-6" />,
       benefits: [
-        "Real-time book value calculations",
-        "GAAP & IFRS compliant methods",
-        "Automated journal entry generation",
-        "Quarterly reconciliation reports",
+        t("howItWorks.intelligence.features.depreciation.benefits.benefit1"),
+        t("howItWorks.intelligence.features.depreciation.benefits.benefit2"),
+        t("howItWorks.intelligence.features.depreciation.benefits.benefit3"),
+        t("howItWorks.intelligence.features.depreciation.benefits.benefit4"),
       ],
     },
     {
       id: "compliance",
-      title: "Tamper-Proof Audit Trail",
-      description:
-        "Every checkout, return, inspection, and status change is cryptographically signed and timestamped. Asset Master creates an immutable blockchain-style ledger that auditors can verify without trusting you.",
+      title: t("howItWorks.intelligence.features.compliance.title"),
+      description: t("howItWorks.intelligence.features.compliance.description"),
       icon: <Shield className="h-6 w-6" />,
       benefits: [
-        "SHA-256 hashed transaction records",
-        "Immutable append-only log",
-        "Time-series forensic investigation",
-        "One-click auditor access tokens",
+        t("howItWorks.intelligence.features.compliance.benefits.benefit1"),
+        t("howItWorks.intelligence.features.compliance.benefits.benefit2"),
+        t("howItWorks.intelligence.features.compliance.benefits.benefit3"),
+        t("howItWorks.intelligence.features.compliance.benefits.benefit4"),
       ],
     },
     {
       id: "integrations",
-      title: "Enterprise Integrations & APIs",
-      description:
-        "Connect Asset Master to Microsoft Intune, Jamf Pro, SAP S/4HANA, NetSuite, Jira, ServiceNow, and 500+ apps via Zapier. Two-way sync keeps your asset data consistent across all systems without duplicate entry.",
+      title: t("howItWorks.intelligence.features.integrations.title"),
+      description: t("howItWorks.intelligence.features.integrations.description"),
       icon: <Workflow className="h-6 w-6" />,
       benefits: [
-        "REST API with OAuth 2.0 security",
-        "Webhook triggers for automation",
-        "Pre-built connectors for ERP/MDM",
-        "Custom integration via API docs",
+        t("howItWorks.intelligence.features.integrations.benefits.benefit1"),
+        t("howItWorks.intelligence.features.integrations.benefits.benefit2"),
+        t("howItWorks.intelligence.features.integrations.benefits.benefit3"),
+        t("howItWorks.intelligence.features.integrations.benefits.benefit4"),
       ],
     },
     {
       id: "analytics",
-      title: "Predictive Analytics & Reporting",
-      description:
-        "Asset Master's AI engine predicts maintenance failures, identifies ghost assets, and forecasts replacement budgets. One-click reports show utilization rates, TCO analysis, and compliance dashboards for executives.",
+      title: t("howItWorks.intelligence.features.analytics.title"),
+      description: t("howItWorks.intelligence.features.analytics.description"),
       icon: <BarChart3 className="h-6 w-6" />,
       benefits: [
-        "ML-powered failure prediction",
-        "Underutilized asset detection",
-        "Total cost of ownership (TCO) analysis",
-        "Executive dashboard with KPIs",
+        t("howItWorks.intelligence.features.analytics.benefits.benefit1"),
+        t("howItWorks.intelligence.features.analytics.benefits.benefit2"),
+        t("howItWorks.intelligence.features.analytics.benefits.benefit3"),
+        t("howItWorks.intelligence.features.analytics.benefits.benefit4"),
       ],
     },
   ];
@@ -224,20 +215,20 @@ export default function HowItWorksPage() {
   const phases = [
     {
       id: 0,
-      label: "Phase 1: Setup",
-      tagline: "< 15 Minutes",
+      label: t("howItWorks.phases.phase1.id"),
+      tagline: t("howItWorks.phases.phase1.tagline"),
       icon: <Zap className="h-4 w-4" />,
     },
     {
       id: 1,
-      label: "Phase 2: Daily Operations",
-      tagline: "Real-Time Tracking",
+      label: t("howItWorks.phases.phase2.id"),
+      tagline: t("howItWorks.phases.phase2.tagline"),
       icon: <Smartphone className="h-4 w-4" />,
     },
     {
       id: 2,
-      label: "Phase 3: Intelligence",
-      tagline: "Automation & Insights",
+      label: t("howItWorks.phases.phase3.id"),
+      tagline: t("howItWorks.phases.phase3.tagline"),
       icon: <Cloud className="h-4 w-4" />,
     },
   ];
@@ -254,55 +245,55 @@ export default function HowItWorksPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto space-y-6">
               <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                End-to-End Operational Blueprint
+                {t("howItWorks.hero.badge")}
               </p>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                How Asset Master{" "}
+                {t("howItWorks.hero.title")}{" "}
                 <span className="text-[var(--brand-primary)]">
-                  Actually Works
+                  {t("howItWorks.hero.titleHighlight")}
                 </span>
               </h1>
 
               <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-3xl mx-auto leading-relaxed">
-                From physical tag generation to real-time custody transfers to automated compliance reporting - here's the complete workflow that eliminates spreadsheets, ghost assets, and audit headaches.
+                {t("howItWorks.hero.description")}
               </p>
 
               {/* Quick Stats Bar */}
               <div className="pt-4 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl mx-auto">
                 <div className="p-3 rounded-lg bg-white border border-[var(--border-custom)] text-center">
                   <div className="text-2xl font-extrabold text-[var(--brand-primary)]">
-                    &lt; 15 min
+                    {t("howItWorks.hero.stats.setupTime")}
                   </div>
                   <div className="text-xs font-medium text-[var(--foreground-muted)] mt-1">
-                    Initial Setup Time
+                    {t("howItWorks.hero.stats.setupTimeLabel")}
                   </div>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white border border-[var(--border-custom)] text-center">
                   <div className="text-2xl font-extrabold text-[var(--brand-primary)]">
-                    Zero
+                    {t("howItWorks.hero.stats.spreadsheets")}
                   </div>
                   <div className="text-xs font-medium text-[var(--foreground-muted)] mt-1">
-                    Spreadsheets Required
+                    {t("howItWorks.hero.stats.spreadsheetsLabel")}
                   </div>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white border border-[var(--border-custom)] text-center">
                   <div className="text-2xl font-extrabold text-[var(--brand-primary)]">
-                    100%
+                    {t("howItWorks.hero.stats.auditReady")}
                   </div>
                   <div className="text-xs font-medium text-[var(--foreground-muted)] mt-1">
-                    Audit-Ready Records
+                    {t("howItWorks.hero.stats.auditReadyLabel")}
                   </div>
                 </div>
 
                 <div className="p-3 rounded-lg bg-white border border-[var(--border-custom)] text-center">
                   <div className="text-2xl font-extrabold text-[var(--brand-primary)]">
-                    Real-Time
+                    {t("howItWorks.hero.stats.tracking")}
                   </div>
                   <div className="text-xs font-medium text-[var(--foreground-muted)] mt-1">
-                    Custody Tracking
+                    {t("howItWorks.hero.stats.trackingLabel")}
                   </div>
                 </div>
               </div>
@@ -315,7 +306,7 @@ export default function HowItWorksPage() {
                   href="/demo"
                   className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                 >
-                  <span>Book a Demo</span>
+                  <span>{t("howItWorks.hero.cta.bookDemo")}</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </div>
@@ -363,15 +354,15 @@ export default function HowItWorksPage() {
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-xs font-bold mb-4">
                   <Zap className="h-3.5 w-3.5" />
-                  <span>Phase 1: Initial Setup</span>
+                  <span>{t("howItWorks.setup.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-                  Get Operational in{" "}
-                  <span className="text-[var(--brand-primary)]">Under 15 Minutes</span>
+                  {t("howItWorks.setup.title")}{" "}
+                  <span className="text-[var(--brand-primary)]">{t("howItWorks.setup.titleHighlight")}</span>
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
-                  No software installation, no IT department delays, no complex training. Just three simple steps to tag every asset in your organization.
+                  {t("howItWorks.setup.description")}
                 </p>
               </div>
 
@@ -400,7 +391,7 @@ export default function HowItWorksPage() {
                           <div className="flex-1">
                             <div className="flex items-center gap-2 mb-1">
                               <span className="text-xs font-mono font-bold text-[var(--brand-primary)]">
-                                STEP {step.number}
+                                {t("howItWorks.common.step")} {step.number}
                               </span>
                               <span className="text-xs font-bold text-[var(--foreground-subtle)]">•</span>
                               <span className="text-xs font-bold text-[var(--brand-emerald)]">
@@ -442,10 +433,10 @@ export default function HowItWorksPage() {
               <div className="mt-12 p-6 rounded-xl bg-gradient-to-br from-emerald-50 to-green-50 border border-emerald-200 text-center">
                 <div className="flex items-center justify-center gap-2 text-emerald-800 mb-2">
                   <CheckCircle2 className="h-5 w-5" />
-                  <span className="text-lg font-bold">You're Now Asset-Tracking Ready!</span>
+                  <span className="text-lg font-bold">{t("howItWorks.setup.completionBadge.title")}</span>
                 </div>
                 <p className="text-sm text-emerald-700">
-                  Your master asset registry is created, tags are generated, and your team can start scanning immediately. Zero training required.
+                  {t("howItWorks.setup.completionBadge.description")}
                 </p>
               </div>
             </div>
@@ -461,15 +452,15 @@ export default function HowItWorksPage() {
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-xs font-bold mb-4">
                   <Smartphone className="h-3.5 w-3.5" />
-                  <span>Phase 2: Daily Field Operations</span>
+                  <span>{t("howItWorks.usage.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-                  Real-Time Tracking{" "}
-                  <span className="text-[var(--brand-primary)]">That Actually Works</span>
+                  {t("howItWorks.usage.title")}{" "}
+                  <span className="text-[var(--brand-primary)]">{t("howItWorks.usage.titleHighlight")}</span>
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
-                  Every scan, checkout, and inspection is logged instantly. No manual data entry. No spreadsheet updates. Just scan the QR code and Asset Master does the rest.
+                  {t("howItWorks.usage.description")}
                 </p>
               </div>
 
@@ -506,7 +497,7 @@ export default function HowItWorksPage() {
                     {/* Step-by-Step Flow */}
                     <div className="space-y-2 pt-4 border-t border-[var(--border-subtle)]">
                       <div className="text-xs font-bold uppercase tracking-wider text-[var(--foreground-subtle)] mb-2">
-                        Automated Workflow
+                        {t("howItWorks.common.automatedWorkflow")}
                       </div>
                       {workflow.steps.map((step, sIdx) => (
                         <div key={sIdx} className="flex items-start gap-2 text-sm">
@@ -526,7 +517,7 @@ export default function HowItWorksPage() {
                       className="mt-4 w-full"
                     >
                       <ArrowRight className="h-4 w-4" />
-                      <span>See This Workflow in Action</span>
+                      <span>{t("howItWorks.usage.workflows.checkout.cta")}</span>
                     </Button>
                   </div>
                 ))}
@@ -544,15 +535,15 @@ export default function HowItWorksPage() {
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-xs font-bold mb-4">
                   <Cloud className="h-3.5 w-3.5" />
-                  <span>Phase 3: Intelligence & Automation</span>
+                  <span>{t("howItWorks.intelligence.badge")}</span>
                 </div>
 
                 <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-                  The System That{" "}
-                  <span className="text-[var(--brand-primary)]">Thinks For You</span>
+                  {t("howItWorks.intelligence.title")}{" "}
+                  <span className="text-[var(--brand-primary)]">{t("howItWorks.intelligence.titleHighlight")}</span>
                 </h2>
                 <p className="mt-4 text-base sm:text-lg text-[var(--foreground-muted)] leading-relaxed">
-                  Asset Master runs 24/7 in the background, calculating depreciation, predicting failures, generating compliance reports, and syncing with your enterprise systems - without human intervention.
+                  {t("howItWorks.intelligence.description")}
                 </p>
               </div>
 
@@ -583,7 +574,7 @@ export default function HowItWorksPage() {
                     {/* Card Body with Benefits */}
                     <div className="p-6 space-y-3">
                       <div className="text-xs font-bold uppercase tracking-wider text-[var(--foreground-subtle)]">
-                        Key Benefits
+                        {t("howItWorks.common.keyBenefits")}
                       </div>
                       {feature.benefits.map((benefit, bIdx) => (
                         <div
@@ -611,14 +602,14 @@ export default function HowItWorksPage() {
                   <div>
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold mb-4">
                       <RefreshCw className="h-3 w-3" />
-                      <span>Zero-Touch Operations</span>
+                      <span>{t("howItWorks.intelligence.automation.badge")}</span>
                     </div>
 
                     <h3 className="text-2xl font-bold mb-3">
-                      Set It Once. It Runs Forever.
+                      {t("howItWorks.intelligence.automation.title")}
                     </h3>
                     <p className="text-base text-slate-300 leading-relaxed mb-6">
-                      Asset Master doesn't need daily management. Configure your workflows once, and the system handles depreciation calculations, warranty alerts, work order creation, ERP synchronization, and audit reports - automatically.
+                      {t("howItWorks.intelligence.automation.description")}
                     </p>
 
                     <Button
@@ -627,18 +618,18 @@ export default function HowItWorksPage() {
                       href="/demo"
                       className="w-full md:w-auto"
                     >
-                      <span>Schedule Automation Demo</span>
+                      <span>{t("howItWorks.intelligence.automation.cta")}</span>
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
 
                   <div className="space-y-3">
                     {[
-                      "Nightly depreciation batch processing",
-                      "Warranty expiration email alerts (30/60/90 days)",
-                      "Automated Jira/ServiceNow ticket creation",
-                      "Real-time ERP GL entry synchronization",
-                      "Monthly compliance report generation",
+                      t("howItWorks.intelligence.automation.items.item1"),
+                      t("howItWorks.intelligence.automation.items.item2"),
+                      t("howItWorks.intelligence.automation.items.item3"),
+                      t("howItWorks.intelligence.automation.items.item4"),
+                      t("howItWorks.intelligence.automation.items.item5"),
                     ].map((item, idx) => (
                       <div
                         key={idx}
@@ -662,11 +653,11 @@ export default function HowItWorksPage() {
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center space-y-8">
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-                That's How{" "}
-                <span className="text-[var(--brand-primary)]">Asset Master Works.</span>
+                {t("howItWorks.summary.title")}{" "}
+                <span className="text-[var(--brand-primary)]">{t("howItWorks.summary.titleHighlight")}</span>
               </h2>
               <p className="mt-4 text-lg text-[var(--foreground-muted)] leading-relaxed max-w-3xl mx-auto">
-                From tag generation to real-time tracking to automated compliance - the complete system that eliminates manual asset management forever.
+                {t("howItWorks.summary.description")}
               </p>
             </div>
 
@@ -677,10 +668,10 @@ export default function HowItWorksPage() {
                   <Zap className="h-6 w-6" />
                 </div>
                 <div className="text-lg font-bold text-[var(--foreground)] mb-2">
-                  Setup in Minutes
+                  {t("howItWorks.summary.pillars.setup.title")}
                 </div>
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  Import assets, print tags, and start tracking - all in under 15 minutes.
+                  {t("howItWorks.summary.pillars.setup.description")}
                 </p>
               </div>
 
@@ -689,10 +680,10 @@ export default function HowItWorksPage() {
                   <Smartphone className="h-6 w-6" />
                 </div>
                 <div className="text-lg font-bold text-[var(--foreground)] mb-2">
-                  Real-Time Field Ops
+                  {t("howItWorks.summary.pillars.realTime.title")}
                 </div>
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  Scan QR codes with any phone. Instant custody transfers and inspections.
+                  {t("howItWorks.summary.pillars.realTime.description")}
                 </p>
               </div>
 
@@ -701,10 +692,10 @@ export default function HowItWorksPage() {
                   <Cloud className="h-6 w-6" />
                 </div>
                 <div className="text-lg font-bold text-[var(--foreground)] mb-2">
-                  Auto-Pilot Intelligence
+                  {t("howItWorks.summary.pillars.intelligence.title")}
                 </div>
                 <p className="text-sm text-[var(--foreground-muted)]">
-                  Depreciation, alerts, reports, and ERP sync - all automated 24/7.
+                  {t("howItWorks.summary.pillars.intelligence.description")}
                 </p>
               </div>
             </div>
@@ -717,7 +708,7 @@ export default function HowItWorksPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-lg shadow-[var(--shadow-glow)]"
               >
-                <span>Book a Live Walkthrough</span>
+                <span>{t("howItWorks.summary.cta.bookDemo")}</span>
                 <ArrowRight className="h-5 w-5" />
               </Button>
             </div>
@@ -726,15 +717,15 @@ export default function HowItWorksPage() {
             <div className="pt-8 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center gap-6 text-sm text-[var(--foreground-muted)] font-medium">
               <div className="flex items-center gap-2">
                 <Shield className="h-4 w-4 text-[var(--brand-emerald)]" />
-                <span>SOC 2 Type II Certified</span>
+                <span>{t("howItWorks.summary.trustBadges.soc2")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                <span>ISO 27001 Compliant</span>
+                <span>{t("howItWorks.summary.trustBadges.iso27001")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
-                <span>99.99% Uptime SLA</span>
+                <span>{t("howItWorks.summary.trustBadges.uptime")}</span>
               </div>
             </div>
           </div>

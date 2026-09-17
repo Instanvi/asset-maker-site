@@ -479,5 +479,245 @@
         }
       }
     }
+  },
+  "howItWorks": {
+    "meta": {
+      "title": "How Asset Master Actually Works | Complete Operational Blueprint",
+      "description": "From physical tag generation to real-time custody transfers to automated compliance reporting - the complete workflow that eliminates spreadsheets, ghost assets, and audit headaches."
+    },
+    "hero": {
+      "badge": "End-to-End Operational Blueprint",
+      "title": "How Asset Master",
+      "titleHighlight": "Actually Works",
+      "description": "From physical tag generation to real-time custody transfers to automated compliance reporting - here's the complete workflow that eliminates spreadsheets, ghost assets, and audit headaches.",
+      "stats": {
+        "setupTime": "< 15 min",
+        "setupTimeLabel": "Initial Setup Time",
+        "spreadsheets": "Zero",
+        "spreadsheetsLabel": "Spreadsheets Required",
+        "auditReady": "100%",
+        "auditReadyLabel": "Audit-Ready Records",
+        "tracking": "Real-Time",
+        "trackingLabel": "Custody Tracking"
+      },
+      "cta": {
+        "bookDemo": "Book a Demo"
+      }
+    },
+    "phases": {
+      "phase1": {
+        "id": "Phase 1: Setup",
+        "tagline": "< 15 Minutes"
+      },
+      "phase2": {
+        "id": "Phase 2: Daily Operations",
+        "tagline": "Real-Time Tracking"
+      },
+      "phase3": {
+        "id": "Phase 3: Intelligence",
+        "tagline": "Automation & Insights"
+      }
+    },
+    "setup": {
+      "badge": "Phase 1: Initial Setup",
+      "title": "Get Operational in",
+      "titleHighlight": "Under 15 Minutes",
+      "description": "No software installation, no IT department delays, no complex training. Just three simple steps to tag every asset in your organization.",
+      "steps": {
+        "step1": {
+          "number": "1",
+          "title": "Import Your Asset List",
+          "description": "Drag & drop a CSV/Excel file, sync from your ERP (SAP, NetSuite, Intune), or manually add assets one by one. Asset Master instantly creates your master registry with all financial metadata.",
+          "time": "2-5 minutes",
+          "features": {
+            "bulkUpload": "Bulk CSV upload with validation",
+            "erpIntegration": "Direct ERP API integration",
+            "manualEntry": "Manual entry with autocomplete",
+            "duplicateDetection": "Duplicate detection & merging"
+          }
+        },
+        "step2": {
+          "number": "2",
+          "title": "Generate QR / Barcode Tags",
+          "description": "Click one button to print weatherproof asset labels (QR codes, Code 128 barcodes, or RFID tags). Each tag is cryptographically linked to your asset record with tamper-evident verification.",
+          "time": "5-10 minutes",
+          "features": {
+            "printerSupport": "Print on any label printer (Dymo, Brother, Zebra)",
+            "durability": "UV-resistant & waterproof materials",
+            "serialization": "Serialized unique identifiers",
+            "blockchain": "Embedded blockchain hash for authenticity"
+          }
+        },
+        "step3": {
+          "number": "3",
+          "title": "Affix Tags to Physical Assets",
+          "description": "Stick or mount the printed labels directly on your laptops, excavators, medical equipment, or tools. The tag becomes the permanent identity that connects the physical object to its digital twin.",
+          "time": "5-10 minutes",
+          "features": {
+            "adhesiveLabels": "Adhesive labels for IT hardware",
+            "metalRivets": "Metal rivets for heavy machinery",
+            "embeddedRfid": "Embedded RFID for mobile equipment",
+            "photoCapture": "Photo capture during tagging for verification"
+          }
+        }
+      },
+      "completionBadge": {
+        "title": "You're Now Asset-Tracking Ready!",
+        "description": "Your master asset registry is created, tags are generated, and your team can start scanning immediately. Zero training required."
+      }
+    },
+    "usage": {
+      "badge": "Phase 2: Daily Field Operations",
+      "title": "Real-Time Tracking",
+      "titleHighlight": "That Actually Works",
+      "description": "Every scan, checkout, and inspection is logged instantly. No manual data entry. No spreadsheet updates. Just scan the QR code and Asset Master does the rest.",
+      "workflows": {
+        "checkout": {
+          "title": "Quick Check-Out & Custody Transfer",
+          "description": "Scan the asset tag with any smartphone or barcode scanner. Asset Master instantly logs the custodian change, GPS location, timestamp, and prompts for an e-signature confirmation. Zero paperwork.",
+          "label": "Automated Workflow",
+          "steps": {
+            "step1": "Employee scans QR code with phone",
+            "step2": "System verifies asset availability",
+            "step3": "Custodian signs digitally on screen",
+            "step4": "Audit trail updated in real-time"
+          },
+          "cta": "See This Workflow in Action"
+        },
+        "inspection": {
+          "title": "Mobile Field Inspections",
+          "description": "Technicians use the Asset Master mobile app to run digital checklists (OSHA, ISO 55001, custom protocols). Failed checks instantly flag defects, trigger work orders, and lock the asset from checkout until repaired.",
+          "label": "Automated Workflow",
+          "steps": {
+            "step1": "Scan asset to load inspection template",
+            "step2": "Complete checklist with photo evidence",
+            "step3": "System auto-scores compliance grade",
+            "step4": "Defect alerts sent to maintenance team"
+          },
+          "cta": "See This Workflow in Action"
+        },
+        "location": {
+          "title": "Real-Time GPS Location Tracking",
+          "description": "Every scan captures the GPS coordinates. See where your excavators, trucks, or portable generators are located on a live map. Set geofence alerts to prevent unauthorized movement outside designated jobsites or campuses.",
+          "label": "Automated Workflow",
+          "steps": {
+            "step1": "Automatic GPS tagging on every scan",
+            "step2": "Historical movement trail visualization",
+            "step3": "Geofence boundary alerts",
+            "step4": "Last-known location always visible"
+          },
+          "cta": "See This Workflow in Action"
+        },
+        "maintenance": {
+          "title": "Automated Maintenance Scheduling",
+          "description": "Asset Master tracks service intervals, warranty expiration, and preventative maintenance due dates. The system auto-creates work orders in your CMMS (or its built-in work order module) and emails technicians 30 days before due dates.",
+          "label": "Automated Workflow",
+          "steps": {
+            "step1": "Set maintenance intervals (days/hours/cycles)",
+            "step2": "System monitors usage & triggers alerts",
+            "step3": "Auto-create Jira/ServiceNow tickets",
+            "step4": "Technician receives push notification"
+          },
+          "cta": "See This Workflow in Action"
+        }
+      }
+    },
+    "intelligence": {
+      "badge": "Phase 3: Intelligence & Automation",
+      "title": "The System That",
+      "titleHighlight": "Thinks For You",
+      "description": "Asset Master runs 24/7 in the background, calculating depreciation, predicting failures, generating compliance reports, and syncing with your enterprise systems - without human intervention.",
+      "features": {
+        "depreciation": {
+          "title": "Automated Financial Depreciation",
+          "description": "Asset Master calculates straight-line (SLN) and MACRS depreciation schedules in real-time. Every asset shows its current book value, accumulated depreciation, and salvage forecast. Export GL entries directly to your ERP.",
+          "label": "Key Benefits",
+          "benefits": {
+            "benefit1": "Real-time book value calculations",
+            "benefit2": "GAAP & IFRS compliant methods",
+            "benefit3": "Automated journal entry generation",
+            "benefit4": "Quarterly reconciliation reports"
+          }
+        },
+        "compliance": {
+          "title": "Tamper-Proof Audit Trail",
+          "description": "Every checkout, return, inspection, and status change is cryptographically signed and timestamped. Asset Master creates an immutable blockchain-style ledger that auditors can verify without trusting you.",
+          "label": "Key Benefits",
+          "benefits": {
+            "benefit1": "SHA-256 hashed transaction records",
+            "benefit2": "Immutable append-only log",
+            "benefit3": "Time-series forensic investigation",
+            "benefit4": "One-click auditor access tokens"
+          }
+        },
+        "integrations": {
+          "title": "Enterprise Integrations & APIs",
+          "description": "Connect Asset Master to Microsoft Intune, Jamf Pro, SAP S/4HANA, NetSuite, Jira, ServiceNow, and 500+ apps via Zapier. Two-way sync keeps your asset data consistent across all systems without duplicate entry.",
+          "label": "Key Benefits",
+          "benefits": {
+            "benefit1": "REST API with OAuth 2.0 security",
+            "benefit2": "Webhook triggers for automation",
+            "benefit3": "Pre-built connectors for ERP/MDM",
+            "benefit4": "Custom integration via API docs"
+          }
+        },
+        "analytics": {
+          "title": "Predictive Analytics & Reporting",
+          "description": "Asset Master's AI engine predicts maintenance failures, identifies ghost assets, and forecasts replacement budgets. One-click reports show utilization rates, TCO analysis, and compliance dashboards for executives.",
+          "label": "Key Benefits",
+          "benefits": {
+            "benefit1": "ML-powered failure prediction",
+            "benefit2": "Underutilized asset detection",
+            "benefit3": "Total cost of ownership (TCO) analysis",
+            "benefit4": "Executive dashboard with KPIs"
+          }
+        }
+      },
+      "automation": {
+        "badge": "Zero-Touch Operations",
+        "title": "Set It Once. It Runs Forever.",
+        "description": "Asset Master doesn't need daily management. Configure your workflows once, and the system handles depreciation calculations, warranty alerts, work order creation, ERP synchronization, and audit reports - automatically.",
+        "cta": "Schedule Automation Demo",
+        "items": {
+          "item1": "Nightly depreciation batch processing",
+          "item2": "Warranty expiration email alerts (30/60/90 days)",
+          "item3": "Automated Jira/ServiceNow ticket creation",
+          "item4": "Real-time ERP GL entry synchronization",
+          "item5": "Monthly compliance report generation"
+        }
+      }
+    },
+    "summary": {
+      "title": "That's How",
+      "titleHighlight": "Asset Master Works.",
+      "description": "From tag generation to real-time tracking to automated compliance - the complete system that eliminates manual asset management forever.",
+      "pillars": {
+        "setup": {
+          "title": "Setup in Minutes",
+          "description": "Import assets, print tags, and start tracking - all in under 15 minutes."
+        },
+        "realTime": {
+          "title": "Real-Time Field Ops",
+          "description": "Scan QR codes with any phone. Instant custody transfers and inspections."
+        },
+        "intelligence": {
+          "title": "Auto-Pilot Intelligence",
+          "description": "Depreciation, alerts, reports, and ERP sync - all automated 24/7."
+        }
+      },
+      "cta": {
+        "bookDemo": "Book a Live Walkthrough"
+      },
+      "trustBadges": {
+        "soc2": "SOC 2 Type II Certified",
+        "iso27001": "ISO 27001 Compliant",
+        "uptime": "99.99% Uptime SLA"
+      }
+    },
+    "common": {
+      "step": "STEP",
+      "automatedWorkflow": "Automated Workflow",
+      "keyBenefits": "Key Benefits"
+    }
   }
 }

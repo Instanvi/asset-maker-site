@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { MapPin } from "lucide-react";
 
 export function Footer() {
@@ -14,7 +15,14 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           <div className="lg:col-span-2 space-y-4 pr-0 lg:pr-6">
-            <Link href="/" className="inline-block">
+            <Link href="/" className="inline-flex items-center gap-2.5">
+              <Image 
+                src="/assetMaster.svg" 
+                alt="AssetMaster Logo" 
+                width={32} 
+                height={32}
+                className="shrink-0"
+              />
               <span className="font-extrabold text-white text-2xl tracking-tight">
                 Asset<span className="text-[var(--brand-primary)]">Master</span>
               </span>
