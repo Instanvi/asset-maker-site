@@ -719,5 +719,238 @@
       "automatedWorkflow": "Automated Workflow",
       "keyBenefits": "Key Benefits"
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact Asset Master | Get Expert Support & Sales Assistance",
+      "description": "Have questions about Asset Master? Contact our team for technical support, sales inquiries, or product demonstrations. Average response time: 4 hours."
+    },
+    "hero": {
+      "title": "Get in Touch",
+      "titleHighlight": "with Our Team",
+      "description": "Have questions about Asset Master? Our team is ready to help you understand how our platform can transform your asset tracking operations.",
+      "contactMethods": {
+        "email": {
+          "title": "Email Us",
+          "address": "support@assetmaster.com"
+        },
+        "phone": {
+          "title": "Call Us",
+          "number": "+237 652 88 67 98",
+          "hours": "Mon-Fri, 9am-6pm WAT"
+        },
+        "visit": {
+          "title": "Visit Us",
+          "location": "Douala, Cameroon"
+        }
+      },
+      "badges": {
+        "responseTime": "< 4 Hour Response Time",
+        "secure": "100% Secure Communication"
+      }
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "description": "Fill out the form below and we'll get back to you within 24 hours.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Smith",
+      "email": "Email Address",
+      "emailPlaceholder": "john.smith@company.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+237 xxx xxx xxx (optional)",
+      "company": "Company Name",
+      "companyPlaceholder": "Acme Corporation (optional)",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjects": {
+        "general": "General Inquiry",
+        "sales": "Sales & Pricing",
+        "technical": "Technical Support",
+        "partnership": "Partnership Opportunities",
+        "feedback": "Product Feedback",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell us how we can help you...",
+      "send": "Send Message",
+      "sending": "Sending Message...",
+      "required": "*",
+      "privacy": "By submitting this form, you agree to our",
+      "privacyLink": "Privacy Policy"
+    },
+    "success": {
+      "title": "Message Sent Successfully!",
+      "description": "Thank you for reaching out to Asset Master. We've received your message and will respond within 24 hours.",
+      "nextSteps": {
+        "title": "What happens next?",
+        "step1": "You'll receive a confirmation email immediately",
+        "step2": "Our team will review your inquiry",
+        "step3": "We'll respond within 24 hours with a solution"
+      },
+      "returnHome": "Return to Home"
+    },
+    "support": {
+      "badge": "Multiple Ways to Get Support",
+      "title": "Multiple Ways to",
+      "titleHighlight": "Get Support",
+      "description": "Choose the support channel that works best for you. We're committed to responding quickly and solving your challenges.",
+      "technical": {
+        "title": "Technical Support",
+        "description": "24/7 technical assistance for urgent issues, bugs, and system downtime. Our engineering team responds within 2 hours.",
+        "email": "support@assetmaster.com"
+      },
+      "sales": {
+        "title": "Sales Inquiries",
+        "description": "Speak with our sales team about pricing, enterprise plans, custom integrations, and volume discounts.",
+        "email": "sales@assetmaster.com"
+      },
+      "docs": {
+        "title": "Documentation & FAQs",
+        "description": "Browse our comprehensive knowledge base with setup guides, API docs, video tutorials, and troubleshooting tips.",
+        "link": "Visit Help Center"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "description": "Quick answers to common questions about contacting our team.",
+      "questions": {
+        "q1": {
+          "question": "What's your average response time?",
+          "answer": "We respond to all inquiries within 4 hours during business hours. Technical support tickets receive priority responses within 2 hours, and critical outages are addressed immediately."
+        },
+        "q2": {
+          "question": "Do you offer phone support?",
+          "answer": "Yes! Enterprise customers receive dedicated phone support. Contact our sales team to learn more about enterprise plans with phone and Slack support channels."
+        },
+        "q3": {
+          "question": "Can I schedule a call with your team?",
+          "answer": "Absolutely. Visit our demo page to schedule a 30-minute consultation with an Asset Master expert at your convenience."
+        },
+        "q4": {
+          "question": "Do you provide implementation assistance?",
+          "answer": "Yes. We offer white-glove onboarding, data migration, custom training sessions, and dedicated success managers for enterprise accounts."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prefer to Talk? Let's Connect.",
+      "description": "Our team is standing by to answer your questions and help you get started with Asset Master.",
+      "sendMessage": "Send Us a Message",
+      "scheduleDemo": "Schedule a Demo"
+    }
+  },
+  "demo": {
+    "meta": {
+      "title": "Book a Demo | See Asset Master in Action",
+      "description": "Schedule a personalized walkthrough with our asset management experts. See live demonstrations of barcode scanning, custody transfers, and compliance reporting."
+    },
+    "hero": {
+      "title": "See Asset Master",
+      "titleHighlight": "in Action",
+      "description": "Book a live, personalized walkthrough with our asset management experts. We'll show you exactly how Asset Master solves your specific tracking challenges.",
+      "whatYouWillSee": {
+        "title": "What You'll See in Your Demo:",
+        "items": {
+          "item1": "Live mobile barcode & QR scanning demonstration",
+          "item2": "Real-time custody transfer workflows",
+          "item3": "Automated depreciation & compliance reporting",
+          "item4": "Custom fields tailored to your industry",
+          "item5": "Integration with your existing systems"
+        }
+      },
+      "badges": {
+        "duration": "30-Min Live Session",
+        "noCommitment": "No Commitment Required",
+        "rating": "4.9/5 Demo Rating"
+      }
+    },
+    "form": {
+      "title": "Schedule Your Demo",
+      "description": "Fill out the form below and we'll be in touch within 24 hours to confirm your preferred time slot.",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "John",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Smith",
+      "email": "Work Email",
+      "emailPlaceholder": "john.smith@company.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+1 (555) 123-4567",
+      "company": "Company",
+      "companyPlaceholder": "Acme Corp",
+      "jobTitle": "Job Title",
+      "jobTitlePlaceholder": "Facilities Manager",
+      "companySize": "Company Size",
+      "companySizePlaceholder": "Select company size",
+      "companySizes": {
+        "size1": "1-10 employees",
+        "size2": "11-50 employees",
+        "size3": "51-200 employees",
+        "size4": "201-500 employees",
+        "size5": "501-1000 employees",
+        "size6": "1000+ employees"
+      },
+      "industry": "Industry",
+      "industryPlaceholder": "Select industry",
+      "industries": {
+        "construction": "Construction",
+        "healthcare": "Healthcare",
+        "education": "Education",
+        "it": "IT & Technology",
+        "manufacturing": "Manufacturing",
+        "warehousing": "Warehousing & Logistics",
+        "government": "Government",
+        "other": "Other"
+      },
+      "preferredTime": "Preferred Demo Time",
+      "preferredTimePlaceholder": "Select preferred time",
+      "timeSlots": {
+        "morning": "Morning (9am - 12pm)",
+        "afternoon": "Afternoon (12pm - 3pm)",
+        "lateAfternoon": "Late Afternoon (3pm - 6pm)"
+      },
+      "message": "Tell Us About Your Asset Tracking Needs (Optional)",
+      "messagePlaceholder": "e.g., We need to track 500 construction tools across 10 job sites...",
+      "submit": "Book Your Demo",
+      "submitting": "Scheduling Your Demo...",
+      "required": "*",
+      "privacy": "By submitting this form, you agree to our",
+      "privacyLink": "Privacy Policy"
+    },
+    "success": {
+      "title": "Demo Request Received!",
+      "description": "Thank you for scheduling a demo with Asset Master. Our team will contact you within 24 hours to confirm your preferred time slot.",
+      "nextSteps": {
+        "title": "What happens next?",
+        "step1": "You'll receive a confirmation email within 1 hour",
+        "step2": "Our team will send you a calendar invite with Zoom link",
+        "step3": "Join the demo at your scheduled time"
+      },
+      "returnHome": "Return to Home"
+    },
+    "whyDemo": {
+      "badge": "Why Schedule a Personalized Demo?",
+      "title": "Why Schedule a",
+      "titleHighlight": "Personalized Demo?",
+      "description": "Generic product tours don't show you what matters. Our 1-on-1 demos are tailored to your specific industry, asset types, and operational challenges.",
+      "benefits": {
+        "tailored": {
+          "title": "Tailored to Your Industry",
+          "description": "Whether you're tracking construction equipment, IT hardware, or medical devices, we'll show you workflows designed for your specific use case."
+        },
+        "live": {
+          "title": "See It Work Live",
+          "description": "Watch real-time barcode scanning, GPS tracking, and audit trail generation. No pre-recorded videos or mockups - just live demonstrations."
+        },
+        "roi": {
+          "title": "ROI Calculation",
+          "description": "We'll show you exactly how much time and money Asset Master saves based on your asset count, team size, and current tracking processes."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to See Asset Master in Action?",
+      "description": "Schedule your personalized demo today and discover why thousands of organizations trust Asset Master for physical asset tracking.",
+      "scheduleDemo": "Schedule Demo Now"
+    }
   }
 }

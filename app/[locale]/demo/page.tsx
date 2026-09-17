@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -25,6 +26,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export default function DemoPage() {
+  const t = useTranslations("demo");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -60,29 +62,29 @@ export default function DemoPage() {
   };
 
   const companySizes = [
-    "1-10 employees",
-    "11-50 employees",
-    "51-200 employees",
-    "201-500 employees",
-    "501-1000 employees",
-    "1000+ employees",
+    t("form.companySizes.size1"),
+    t("form.companySizes.size2"),
+    t("form.companySizes.size3"),
+    t("form.companySizes.size4"),
+    t("form.companySizes.size5"),
+    t("form.companySizes.size6"),
   ];
 
   const industries = [
-    "Construction",
-    "Healthcare",
-    "Education",
-    "IT & Technology",
-    "Manufacturing",
-    "Warehousing & Logistics",
-    "Government",
-    "Other",
+    t("form.industries.construction"),
+    t("form.industries.healthcare"),
+    t("form.industries.education"),
+    t("form.industries.it"),
+    t("form.industries.manufacturing"),
+    t("form.industries.warehousing"),
+    t("form.industries.government"),
+    t("form.industries.other"),
   ];
 
   const timeSlots = [
-    "Morning (9am - 12pm)",
-    "Afternoon (12pm - 3pm)",
-    "Late Afternoon (3pm - 6pm)",
+    t("form.timeSlots.morning"),
+    t("form.timeSlots.afternoon"),
+    t("form.timeSlots.lateAfternoon"),
   ];
 
   return (
@@ -101,26 +103,26 @@ export default function DemoPage() {
               <div className="space-y-6 text-center lg:text-left">
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  See Asset Master{" "}
-                  <span className="text-[var(--brand-primary)]">in Action</span>
+                  {t("hero.title")}{" "}
+                  <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  Book a live, personalized walkthrough with our asset management experts. We'll show you exactly how Asset Master solves your specific tracking challenges.
+                  {t("hero.description")}
                 </p>
 
                 {/* What You'll See */}
                 <div className="pt-4 space-y-3">
                   <div className="text-sm font-bold text-[var(--foreground)] uppercase tracking-wide">
-                    What You'll See in Your Demo:
+                    {t("hero.whatYouWillSee.title")}
                   </div>
                   <div className="space-y-2">
                     {[
-                      "Live mobile barcode & QR scanning demonstration",
-                      "Real-time custody transfer workflows",
-                      "Automated depreciation & compliance reporting",
-                      "Custom fields tailored to your industry",
-                      "Integration with your existing systems",
+                      t("hero.whatYouWillSee.items.item1"),
+                      t("hero.whatYouWillSee.items.item2"),
+                      t("hero.whatYouWillSee.items.item3"),
+                      t("hero.whatYouWillSee.items.item4"),
+                      t("hero.whatYouWillSee.items.item5"),
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-start gap-2.5">
                         <CheckCircle2 className="h-5 w-5 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
@@ -134,15 +136,15 @@ export default function DemoPage() {
                 <div className="pt-6 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <Video className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>30-Min Live Session</span>
+                    <span>{t("hero.badges.duration")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Shield className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>No Commitment Required</span>
+                    <span>{t("hero.badges.noCommitment")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Star className="h-4 w-4 text-amber-500" />
-                    <span>4.9/5 Demo Rating</span>
+                    <span>{t("hero.badges.rating")}</span>
                   </div>
                 </div>
               </div>
@@ -153,10 +155,10 @@ export default function DemoPage() {
                   <div className="rounded-xl border border-[var(--border-custom)] bg-white p-6 sm:p-8 shadow-[var(--shadow-card)]">
                     <div className="mb-6">
                       <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
-                        Schedule Your Demo
+                        {t("form.title")}
                       </h2>
                       <p className="text-sm text-[var(--foreground-muted)]">
-                        Fill out the form below and we'll be in touch within 24 hours to confirm your preferred time slot.
+                        {t("form.description")}
                       </p>
                     </div>
 

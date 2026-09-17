@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -22,6 +23,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export default function ContactPage() {
+  const t = useTranslations("contact");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -53,12 +55,12 @@ export default function ContactPage() {
   };
 
   const subjects = [
-    "General Inquiry",
-    "Sales & Pricing",
-    "Technical Support",
-    "Partnership Opportunities",
-    "Product Feedback",
-    "Other",
+    t("form.subjects.general"),
+    t("form.subjects.sales"),
+    t("form.subjects.technical"),
+    t("form.subjects.partnership"),
+    t("form.subjects.feedback"),
+    t("form.subjects.other"),
   ];
 
   return (
@@ -76,12 +78,12 @@ export default function ContactPage() {
               <div className="space-y-6 text-center lg:text-left">
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  Get in Touch{" "}
-                  <span className="text-[var(--brand-primary)]">with Our Team</span>
+                  {t("hero.title")}{" "}
+                  <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                  Have questions about Asset Master? Our team is ready to help you understand how our platform can transform your asset tracking operations.
+                  {t("hero.description")}
                 </p>
 
                 {/* Contact Methods */}
@@ -92,13 +94,13 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-[var(--foreground)] mb-1">
-                        Email Us
+                        {t("hero.contactMethods.email.title")}
                       </div>
                       <a
-                        href="mailto:support@assetmaster.com"
+                        href={`mailto:${t("hero.contactMethods.email.address")}`}
                         className="text-sm text-[var(--brand-primary)] hover:underline"
                       >
-                        support@assetmaster.com
+                        {t("hero.contactMethods.email.address")}
                       </a>
                     </div>
                   </div>
@@ -109,16 +111,16 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-[var(--foreground)] mb-1">
-                        Call Us
+                        {t("hero.contactMethods.phone.title")}
                       </div>
                       <a
-                        href="tel:+237652886798"
+                        href={`tel:${t("hero.contactMethods.phone.number")}`}
                         className="text-sm text-[var(--brand-primary)] hover:underline"
                       >
-                        +237 652 88 67 98
+                        {t("hero.contactMethods.phone.number")}
                       </a>
                       <div className="text-xs text-[var(--foreground-subtle)] mt-0.5">
-                        Mon-Fri, 9am-6pm WAT
+                        {t("hero.contactMethods.phone.hours")}
                       </div>
                     </div>
                   </div>
@@ -129,10 +131,10 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="text-sm font-bold text-[var(--foreground)] mb-1">
-                        Visit Us
+                        {t("hero.contactMethods.visit.title")}
                       </div>
                       <p className="text-sm text-[var(--foreground-muted)]">
-                        Douala, Cameroon
+                        {t("hero.contactMethods.visit.location")}
                       </p>
                     </div>
                   </div>
@@ -142,11 +144,11 @@ export default function ContactPage() {
                 <div className="pt-6 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <Clock className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>&lt; 4 Hour Response Time</span>
+                    <span>{t("hero.badges.responseTime")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Shield className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>100% Secure Communication</span>
+                    <span>{t("hero.badges.secure")}</span>
                   </div>
                 </div>
               </div>
@@ -157,10 +159,10 @@ export default function ContactPage() {
                   <div className="rounded-xl border border-[var(--border-custom)] bg-white p-6 sm:p-8 shadow-[var(--shadow-card)]">
                     <div className="mb-6">
                       <h2 className="text-2xl font-bold text-[var(--foreground)] mb-2">
-                        Send Us a Message
+                        {t("form.title")}
                       </h2>
                       <p className="text-sm text-[var(--foreground-muted)]">
-                        Fill out the form below and we'll get back to you within 24 hours.
+                        {t("form.description")}
                       </p>
                     </div>
 
@@ -168,7 +170,7 @@ export default function ContactPage() {
                       {/* Full Name */}
                       <div>
                         <label htmlFor="name" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Full Name *
+                          {t("form.fullName")} {t("form.required")}
                         </label>
                         <input
                           type="text"
@@ -178,14 +180,14 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all"
-                          placeholder="John Smith"
+                          placeholder={t("form.fullNamePlaceholder")}
                         />
                       </div>
 
                       {/* Email */}
                       <div>
                         <label htmlFor="email" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Email Address *
+                          {t("form.email")} {t("form.required")}
                         </label>
                         <input
                           type="email"
@@ -195,14 +197,14 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all"
-                          placeholder="john.smith@company.com"
+                          placeholder={t("form.emailPlaceholder")}
                         />
                       </div>
 
                       {/* Phone */}
                       <div>
                         <label htmlFor="phone" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Phone Number
+                          {t("form.phone")}
                         </label>
                         <input
                           type="tel"
@@ -211,14 +213,14 @@ export default function ContactPage() {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all"
-                          placeholder="+237 xxx xxx xxx (optional)"
+                          placeholder={t("form.phonePlaceholder")}
                         />
                       </div>
 
                       {/* Company */}
                       <div>
                         <label htmlFor="company" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Company Name
+                          {t("form.company")}
                         </label>
                         <input
                           type="text"
@@ -227,14 +229,14 @@ export default function ContactPage() {
                           value={formData.company}
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all"
-                          placeholder="Acme Corporation (optional)"
+                          placeholder={t("form.companyPlaceholder")}
                         />
                       </div>
 
                       {/* Subject */}
                       <div>
                         <label htmlFor="subject" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Subject *
+                          {t("form.subject")} {t("form.required")}
                         </label>
                         <select
                           id="subject"
@@ -244,7 +246,7 @@ export default function ContactPage() {
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all"
                         >
-                          <option value="">Select a subject</option>
+                          <option value="">{t("form.subjectPlaceholder")}</option>
                           {subjects.map((subj) => (
                             <option key={subj} value={subj}>
                               {subj}
@@ -256,7 +258,7 @@ export default function ContactPage() {
                       {/* Message */}
                       <div>
                         <label htmlFor="message" className="block text-xs font-bold text-[var(--foreground)] mb-1.5">
-                          Message *
+                          {t("form.message")} {t("form.required")}
                         </label>
                         <textarea
                           id="message"
@@ -266,7 +268,7 @@ export default function ContactPage() {
                           value={formData.message}
                           onChange={handleChange}
                           className="w-full px-3 py-2.5 text-sm rounded-lg border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)] focus:ring-2 focus:ring-[var(--brand-primary)]/20 transition-all resize-none"
-                          placeholder="Tell us how we can help you..."
+                          placeholder={t("form.messagePlaceholder")}
                         />
                       </div>
 
@@ -281,21 +283,21 @@ export default function ContactPage() {
                         {isSubmitting ? (
                           <>
                             <Clock className="h-4 w-4 animate-spin" />
-                            <span>Sending Message...</span>
+                            <span>{t("form.sending")}</span>
                           </>
                         ) : (
                           <>
                             <Send className="h-4 w-4" />
-                            <span>Send Message</span>
+                            <span>{t("form.send")}</span>
                             <ArrowRight className="h-4 w-4" />
                           </>
                         )}
                       </Button>
 
                       <p className="text-xs text-center text-[var(--foreground-muted)] pt-2">
-                        By submitting this form, you agree to our{" "}
+                        {t("form.privacy")}{" "}
                         <a href="/privacy" className="text-[var(--brand-primary)] hover:underline">
-                          Privacy Policy
+                          {t("form.privacyLink")}
                         </a>
                         .
                       </p>
@@ -309,29 +311,29 @@ export default function ContactPage() {
 
                     <div>
                       <h3 className="text-2xl font-bold text-[var(--foreground)] mb-2">
-                        Message Sent Successfully!
+                        {t("success.title")}
                       </h3>
                       <p className="text-base text-[var(--foreground-muted)]">
-                        Thank you for reaching out to Asset Master. We've received your message and will respond within 24 hours.
+                        {t("success.description")}
                       </p>
                     </div>
 
                     <div className="p-4 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)] text-left space-y-2">
                       <div className="text-sm font-bold text-[var(--foreground)]">
-                        What happens next?
+                        {t("success.nextSteps.title")}
                       </div>
                       <div className="space-y-1.5 text-sm text-[var(--foreground-muted)]">
                         <div className="flex items-start gap-2">
                           <span className="font-bold text-[var(--brand-primary)]">1.</span>
-                          <span>You'll receive a confirmation email immediately</span>
+                          <span>{t("success.nextSteps.step1")}</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="font-bold text-[var(--brand-primary)]">2.</span>
-                          <span>Our team will review your inquiry</span>
+                          <span>{t("success.nextSteps.step2")}</span>
                         </div>
                         <div className="flex items-start gap-2">
                           <span className="font-bold text-[var(--brand-primary)]">3.</span>
-                          <span>We'll respond within 24 hours with a solution</span>
+                          <span>{t("success.nextSteps.step3")}</span>
                         </div>
                       </div>
                     </div>
@@ -342,7 +344,7 @@ export default function ContactPage() {
                       onClick={() => (window.location.href = "/")}
                       className="w-full"
                     >
-                      <span>Return to Home</span>
+                      <span>{t("success.returnHome")}</span>
                     </Button>
                   </div>
                 )}
@@ -356,11 +358,11 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Multiple Ways to{" "}
-                <span className="text-[var(--brand-primary)]">Get Support</span>
+                {t("support.title")}{" "}
+                <span className="text-[var(--brand-primary)]">{t("support.titleHighlight")}</span>
               </h2>
               <p className="mt-4 text-base text-[var(--foreground-muted)] leading-relaxed">
-                Choose the support channel that works best for you. We're committed to responding quickly and solving your challenges.
+                {t("support.description")}
               </p>
             </div>
 
@@ -371,16 +373,16 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[var(--foreground)] mb-2">
-                    Technical Support
+                    {t("support.technical.title")}
                   </h3>
                   <p className="text-sm text-[var(--foreground-muted)] leading-relaxed mb-4">
-                    24/7 technical assistance for urgent issues, bugs, and system downtime. Our engineering team responds within 2 hours.
+                    {t("support.technical.description")}
                   </p>
                   <a
-                    href="mailto:support@assetmaster.com"
+                    href={`mailto:${t("support.technical.email")}`}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-primary)] hover:underline"
                   >
-                    <span>support@assetmaster.com</span>
+                    <span>{t("support.technical.email")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -392,16 +394,16 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[var(--foreground)] mb-2">
-                    Sales Inquiries
+                    {t("support.sales.title")}
                   </h3>
                   <p className="text-sm text-[var(--foreground-muted)] leading-relaxed mb-4">
-                    Speak with our sales team about pricing, enterprise plans, custom integrations, and volume discounts.
+                    {t("support.sales.description")}
                   </p>
                   <a
-                    href="mailto:sales@assetmaster.com"
+                    href={`mailto:${t("support.sales.email")}`}
                     className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand-emerald)] hover:underline"
                   >
-                    <span>sales@assetmaster.com</span>
+                    <span>{t("support.sales.email")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -413,16 +415,16 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[var(--foreground)] mb-2">
-                    Documentation & FAQs
+                    {t("support.docs.title")}
                   </h3>
                   <p className="text-sm text-[var(--foreground-muted)] leading-relaxed mb-4">
-                    Browse our comprehensive knowledge base with setup guides, API docs, video tutorials, and troubleshooting tips.
+                    {t("support.docs.description")}
                   </p>
                   <a
                     href="#"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-600 hover:underline"
                   >
-                    <span>Visit Help Center</span>
+                    <span>{t("support.docs.link")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -436,30 +438,30 @@ export default function ContactPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions
+                {t("faq.title")}
               </h2>
               <p className="mt-4 text-base text-[var(--foreground-muted)]">
-                Quick answers to common questions about contacting our team.
+                {t("faq.description")}
               </p>
             </div>
 
             <div className="space-y-4">
               {[
                 {
-                  q: "What's your average response time?",
-                  a: "We respond to all inquiries within 4 hours during business hours. Technical support tickets receive priority responses within 2 hours, and critical outages are addressed immediately.",
+                  q: t("faq.questions.q1.question"),
+                  a: t("faq.questions.q1.answer"),
                 },
                 {
-                  q: "Do you offer phone support?",
-                  a: "Yes! Enterprise customers receive dedicated phone support. Contact our sales team to learn more about enterprise plans with phone and Slack support channels.",
+                  q: t("faq.questions.q2.question"),
+                  a: t("faq.questions.q2.answer"),
                 },
                 {
-                  q: "Can I schedule a call with your team?",
-                  a: "Absolutely. Visit our demo page to schedule a 30-minute consultation with an Asset Master expert at your convenience.",
+                  q: t("faq.questions.q3.question"),
+                  a: t("faq.questions.q3.answer"),
                 },
                 {
-                  q: "Do you provide implementation assistance?",
-                  a: "Yes. We offer white-glove onboarding, data migration, custom training sessions, and dedicated success managers for enterprise accounts.",
+                  q: t("faq.questions.q4.question"),
+                  a: t("faq.questions.q4.answer"),
                 },
               ].map((faq, idx) => (
                 <div
@@ -482,10 +484,10 @@ export default function ContactPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Prefer to Talk? Let's Connect.
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Our team is standing by to answer your questions and help you get started with Asset Master.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -495,7 +497,7 @@ export default function ContactPage() {
                 className="w-full sm:w-auto text-base"
               >
                 <Mail className="h-4 w-4" />
-                <span>Send Us a Message</span>
+                <span>{t("cta.sendMessage")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
@@ -504,7 +506,7 @@ export default function ContactPage() {
                 onClick={() => (window.location.href = "/demo")}
                 className="w-full"
               >
-                <span>Schedule a Demo</span>
+                <span>{t("cta.scheduleDemo")}</span>
               </Button>
             </div>
           </div>
