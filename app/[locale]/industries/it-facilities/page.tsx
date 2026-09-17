@@ -19,6 +19,7 @@ import {
   Thermometer,
   Zap,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -26,34 +27,35 @@ import BookDemoModal from "@/components/home/BookDemoModal";
 import { cn } from "@/lib/utils";
 
 export default function ItFacilitiesIndustryPage() {
+  const t = useTranslations("industries.itFacilities.page");
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeTab, setActiveTab] = useState<"it" | "facilities">("it");
 
   const itDevices = [
-    { id: "AM-MAC-991", name: "Apple MacBook Pro 16\" M3", custodian: "Sarah Jenkins", dept: "Engineering", status: "MDM Synced", encryption: "FileVault Active" },
-    { id: "AM-DSK-410", name: "Dell UltraSharp 32\" 4K Monitor", custodian: "Design Studio A", dept: "Product Design", status: "Assigned", encryption: "Asset Tagged" },
-    { id: "AM-SRV-102", name: "Dell PowerEdge R750 Server", custodian: "Server Room 2", dept: "Infrastructure", status: "Operational", encryption: "Encrypted" },
+    { id: "AM-MAC-991", name: t("hero.cockpit.itAssets.macbook"), custodian: t("hero.cockpit.custodians.sarah"), dept: t("hero.cockpit.departments.engineering"), status: t("hero.cockpit.status.mdmSynced"), encryption: t("hero.cockpit.encryption.fileVault") },
+    { id: "AM-DSK-410", name: t("hero.cockpit.itAssets.monitor"), custodian: t("hero.cockpit.custodians.design"), dept: t("hero.cockpit.departments.design"), status: t("hero.cockpit.status.assigned"), encryption: t("hero.cockpit.encryption.tagged") },
+    { id: "AM-SRV-102", name: t("hero.cockpit.itAssets.server"), custodian: t("hero.cockpit.custodians.server"), dept: t("hero.cockpit.departments.infrastructure"), status: t("hero.cockpit.status.operational"), encryption: t("hero.cockpit.encryption.encrypted") },
   ];
 
   const facilityAssets = [
-    { id: "AM-HVAC-01", name: "Trane Rooftop HVAC Unit #4", custodian: "Facilities Team", dept: "HQ Building", status: "Filter Due (5d)", encryption: "Quarterly CMMS" },
-    { id: "AM-UPS-201", name: "APC Symmetra 16kVA Backup UPS", custodian: "Datacenter", dept: "Electrical", status: "Battery 98%", encryption: "Calibrated" },
-    { id: "AM-GEN-002", name: "Cummins 250kW Emergency Generator", custodian: "Building Ops", dept: "Facilities", status: "Monthly Test Passed", encryption: "Compliant" },
+    { id: "AM-HVAC-01", name: t("hero.cockpit.facilityAssets.hvac"), custodian: t("hero.cockpit.custodians.facilities"), dept: t("hero.cockpit.departments.hq"), status: t("hero.cockpit.status.filterDue"), encryption: t("hero.cockpit.encryption.cmms") },
+    { id: "AM-UPS-201", name: t("hero.cockpit.facilityAssets.ups"), custodian: t("hero.cockpit.custodians.datacenter"), dept: t("hero.cockpit.departments.electrical"), status: t("hero.cockpit.status.battery"), encryption: t("hero.cockpit.encryption.calibrated") },
+    { id: "AM-GEN-002", name: t("hero.cockpit.facilityAssets.generator"), custodian: t("hero.cockpit.custodians.building"), dept: t("hero.cockpit.departments.facilities"), status: t("hero.cockpit.status.testPassed"), encryption: t("hero.cockpit.encryption.compliant") },
   ];
 
   const faqs = [
     {
-      q: "How does Asset Master bridge IT asset management and facilities operations?",
-      a: "Asset Master gives both IT and Facilities teams a unified single pane of glass. IT manages laptops, monitors, software licenses, and MDM posture, while Facilities manages HVAC, backup power, security systems, and preventative maintenance schedules.",
+      q: t("faq.questions.q1.question"),
+      a: t("faq.questions.q1.answer"),
     },
     {
-      q: "Can we track remote worker equipment and automate retrieval during departures?",
-      a: "Yes. Asset Master tracks hardware bundles assigned to remote employees and provides automated offboarding checklists with pre-paid return shipping label generation.",
+      q: t("faq.questions.q2.question"),
+      a: t("faq.questions.q2.answer"),
     },
     {
-      q: "How does the system support SOC 2 and ISO 27001 facilities audits?",
-      a: "Asset Master maintains immutable logs of physical access hardware, server room assets, maintenance schedules, and device encryption compliance required by compliance auditors.",
+      q: t("faq.questions.q3.question"),
+      a: t("faq.questions.q3.answer"),
     },
   ];
 
@@ -71,15 +73,15 @@ export default function ItFacilitiesIndustryPage() {
               {/* Left Column Copy */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                  Unified Endpoint & Building Operations
+                  {t("hero.badge")}
                 </p>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  From Staff Laptops to <span className="text-[var(--brand-primary)]">Facility Systems.</span>
+                  {t("hero.title")} <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                  Track employee laptops, monitors, software licenses, and building mechanical systems in one unified ledger. Eliminate lost hardware during offboarding and automate building maintenance schedules.
+                  {t("hero.description")}
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
@@ -89,7 +91,7 @@ export default function ItFacilitiesIndustryPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
-                    <span>Book an IT & Facilities Demo</span>
+                    <span>{t("hero.cta.bookDemo")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -97,15 +99,15 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>Jamf & Intune Auto-Sync</span>
+                    <span>{t("hero.badges.mdm")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>HVAC & Mechanical CMMS</span>
+                    <span>{t("hero.badges.cmms")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Lock className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>SOC 2 Type II Certified</span>
+                    <span>{t("hero.badges.soc2")}</span>
                   </div>
                 </div>
               </div>
@@ -126,7 +128,7 @@ export default function ItFacilitiesIndustryPage() {
                       )}
                     >
                       <Laptop className="h-3.5 w-3.5" />
-                      <span>IT Hardware Fleet</span>
+                      <span>{t("hero.cockpit.tabs.itFleet")}</span>
                     </button>
 
                     <button
@@ -140,7 +142,7 @@ export default function ItFacilitiesIndustryPage() {
                       )}
                     >
                       <Building className="h-3.5 w-3.5" />
-                      <span>Facility Mechanicals</span>
+                      <span>{t("hero.cockpit.tabs.facilities")}</span>
                     </button>
                   </div>
 
@@ -163,8 +165,8 @@ export default function ItFacilitiesIndustryPage() {
                           </span>
                         </div>
                         <div className="flex items-center justify-between text-[11px] text-[var(--foreground-muted)] pt-1 border-t border-[var(--border-subtle)]">
-                          <span>Security: <strong>{item.encryption}</strong></span>
-                          <span className="text-[var(--brand-primary)] font-semibold">Active Record</span>
+                          <span>{t("hero.cockpit.security")} <strong>{item.encryption}</strong></span>
+                          <span className="text-[var(--brand-primary)] font-semibold">{t("hero.cockpit.activeRecord")}</span>
                         </div>
                       </div>
                     ))}
@@ -172,7 +174,7 @@ export default function ItFacilitiesIndustryPage() {
 
                   <div className="flex items-center justify-between pt-1">
                     <span className="text-xs text-[var(--foreground-muted)]">
-                      Real-time sync with Jamf, Intune & building CMMS
+                      {t("hero.cockpit.instantSync")}
                     </span>
                     <Button
                       variant="primary"
@@ -180,7 +182,7 @@ export default function ItFacilitiesIndustryPage() {
                       href="/demo"
                       className="text-xs"
                     >
-                      <span>Simulate Handover</span>
+                      <span>{t("hero.cockpit.simulateHandover")}</span>
                     </Button>
                   </div>
                 </div>
@@ -194,10 +196,10 @@ export default function ItFacilitiesIndustryPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Key IT & Facilities Capabilities
+                {t("capabilities.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Complete control over physical <span className="text-[var(--brand-primary)]">workplaces and hardware.</span>
+                {t("capabilities.title")} <span className="text-[var(--brand-primary)]">{t("capabilities.titleHighlight")}</span>
               </h2>
             </div>
 
@@ -206,9 +208,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Laptop className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Automated MDM Synchronization</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.mdmSync.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Real-time two-way synchronization with Microsoft Intune and Jamf Pro. Automatically pulls device serials, OS patches, and FileVault disk encryption.
+                  {t("capabilities.mdmSync.description")}
                 </p>
               </div>
 
@@ -216,9 +218,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <UserCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Staff Onboarding & Offboarding</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.onboarding.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Assign device bundles to new hires with digital signatures. Run automated recovery checklists and pre-paid return labels when employees leave.
+                  {t("capabilities.onboarding.description")}
                 </p>
               </div>
 
@@ -226,9 +228,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Building className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">HVAC & Mechanical Maintenance</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.hvac.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Schedule preventative filter changes, generator load tests, and elevator inspections with automated recurring work orders.
+                  {t("capabilities.hvac.description")}
                 </p>
               </div>
 
@@ -236,9 +238,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Lock className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">SOC 2 & ISO 27001 Readiness</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.compliance.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Export complete tamper-proof chain of custody records and device encryption proof for annual security compliance audits.
+                  {t("capabilities.compliance.description")}
                 </p>
               </div>
 
@@ -246,9 +248,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Zap className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Helpdesk Ticketing Integrations</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.helpdesk.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Connect with Jira Service Management, ServiceNow, and Zendesk. Helpdesk technicians view full device history inside support tickets.
+                  {t("capabilities.helpdesk.description")}
                 </p>
               </div>
 
@@ -256,9 +258,9 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Layers className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Hardware Depreciation & E-Waste</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.depreciation.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Calculate straight-line 3-year IT depreciation. Log certified electronic waste disposal and data erasure certificates.
+                  {t("capabilities.depreciation.description")}
                 </p>
               </div>
             </div>
@@ -273,29 +275,29 @@ export default function ItFacilitiesIndustryPage() {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] text-xs font-bold border border-[var(--brand-emerald)]/20">
                     <ShieldCheck className="h-3.5 w-3.5" />
-                    <span>Global Tech Case Study &bull; CloudScale Networks</span>
+                    <span>{t("caseStudy.badge")}</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                    "We automated 1,400+ remote employee device handoffs and passed our SOC 2 Type II audit with zero findings."
+                    "{t("caseStudy.quote")}"
                   </h3>
 
                   <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
-                    "Asset Master eliminated the disconnect between our Jamf MDM data and physical hardware storage. When remote engineers depart, pre-paid return kits are dispatched automatically and laptop custody records stay immutable."
+                    "{t("caseStudy.testimonial")}"
                   </p>
 
                   <div className="flex items-center gap-4 pt-2">
                     <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-[var(--brand-primary)]">
                       <Image
                         src="/images/avatar-2.jpg"
-                        alt="Elena Rostova"
+                        alt={t("caseStudy.author")}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-[var(--foreground)]">Elena Rostova</div>
-                      <div className="text-xs text-[var(--foreground-muted)]">Head of Global IT & Workplace Operations</div>
+                      <div className="text-sm font-bold text-[var(--foreground)]">{t("caseStudy.author")}</div>
+                      <div className="text-xs text-[var(--foreground-muted)]">{t("caseStudy.role")}</div>
                     </div>
                   </div>
                 </div>
@@ -304,13 +306,13 @@ export default function ItFacilitiesIndustryPage() {
                   <div className="relative h-72 w-full rounded-xl overflow-hidden border border-[var(--border-custom)] shadow-md group">
                     <Image
                       src="/images/personOffice.jpg"
-                      alt="Modern IT and workplace facility management"
+                      alt={t("caseStudy.imageAlt")}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
                       <div className="text-white text-xs font-bold">
-                        Unified endpoint security and building operations ledger
+                        {t("caseStudy.imageCaption")}
                       </div>
                     </div>
                   </div>
@@ -325,10 +327,10 @@ export default function ItFacilitiesIndustryPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                IT & Facilities FAQ
+                {t("faq.badge")}
               </p>
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -368,10 +370,10 @@ export default function ItFacilitiesIndustryPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Ready to unify your IT hardware and building facilities?
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Schedule a personalized walkthrough of the Asset Master platform.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -380,7 +382,7 @@ export default function ItFacilitiesIndustryPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-base"
               >
-                <span>Book a Live Demo</span>
+                <span>{t("cta.bookDemo")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

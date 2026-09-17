@@ -50,7 +50,132 @@
   "industries": {
     "construction": {
       "title": "Construction & Field Crews",
-      "description": "Tools and equipment that move between sites daily."
+      "description": "Tools and equipment that move between sites daily.",
+      "page": {
+        "meta": {
+          "title": "Construction Asset Management | Jobsite Tool Tracking & OSHA Compliance",
+          "description": "Track construction equipment, heavy machinery, and tools across multiple jobsites. QR code scanning, GPS tracking, and automated OSHA pre-shift inspections."
+        },
+        "hero": {
+          "badge": "Built for General Contractors & Field Crews",
+          "title": "Jobsite Asset Tracking.",
+          "titleHighlight": "Zero Tool Loss.",
+          "description": "Stop losing expensive tools and heavy equipment across jobsites. Scan QR codes on any phone to check gear in or out, track transfers between job sites, and automate daily OSHA pre-shift inspections.",
+          "cta": {
+            "bookDemo": "Book a Construction Demo"
+          },
+          "badges": {
+            "toolCrib": "Tool Crib & Jobsite Check-Out",
+            "osha": "OSHA Safety Checklists",
+            "gps": "GPS Transfer Logs"
+          },
+          "cockpit": {
+            "title": "Active Jobsite Equipment Dispatch",
+            "siteA": "Austin Site #4",
+            "siteB": "Dallas Tower 2",
+            "instantCheckout": "Instant mobile check-out & transfer logging",
+            "simulateTransfer": "Simulate Site Transfer",
+            "assets": {
+              "catExcavator": "CAT 320 Hydraulic Excavator",
+              "generator": "Generac 50kW Mobile Generator",
+              "breaker": "Hilti TE 3000-AVR Breaker",
+              "boomLift": "JLG 660SJ Telescopic Boom Lift",
+              "compactor": "Wacker Neuson DPU6555 Compactor",
+              "gpsRover": "Trimble R12i GNSS GPS Rover"
+            },
+            "categories": {
+              "heavyFleet": "Heavy Fleet",
+              "powerSite": "Power & Site",
+              "demolition": "Demolition Tool",
+              "aerialLift": "Aerial Lift",
+              "earthmoving": "Earthmoving",
+              "surveying": "Surveying"
+            },
+            "custodians": {
+              "marcus": "Marcus Vance",
+              "crew2": "Crew #2 (Electrical)",
+              "dave": "Dave Martinez",
+              "apex": "Apex Steel Erectors",
+              "paving": "Paving Division",
+              "civil": "Civil Engineering"
+            },
+            "status": {
+              "operational": "Operational",
+              "inUse": "In Use",
+              "checkedOut": "Checked Out",
+              "inspected": "Inspected"
+            },
+            "tag": "TAG:",
+            "custody": "Custody:",
+            "class": "Class:"
+          }
+        },
+        "capabilities": {
+          "badge": "Construction Capabilities",
+          "title": "Built tough for the field.",
+          "titleHighlight": "Loved by project managers.",
+          "toolCrib": {
+            "title": "Tool Crib & Trailer Check-Out",
+            "description": "Fast QR code scanning at the tool crib. Assign equipment to individuals, crews, or subcontractors with automated return deadlines."
+          },
+          "interJobsite": {
+            "title": "Inter-Jobsite Transfer Audits",
+            "description": "Track equipment shipments between projects. Origin superintendents sign off on release and receiving superintendents confirm delivery on mobile."
+          },
+          "osha": {
+            "title": "OSHA Pre-Shift Inspections",
+            "description": "Mandatory pre-operation safety walkaround checklists for cranes, forklifts, and excavators. Flag safety defects before machines start."
+          },
+          "heavyFleet": {
+            "title": "Heavy Fleet Maintenance (CMMS)",
+            "description": "Schedule preventative engine service by runtime hours or calendar days. Dispatch field mechanics and track fluid changes and tire wear."
+          },
+          "jobCosting": {
+            "title": "Job Costing & Allocation",
+            "description": "Accurately allocate equipment depreciation, rental costs, and repair expenses to specific client job numbers and cost codes."
+          },
+          "barcodeTags": {
+            "title": "Anodized Metal Barcode Tags",
+            "description": "Deploy ultra-durable anodized aluminum asset tags engineered to withstand mud, concrete dust, UV exposure, and heavy jobsite wear."
+          }
+        },
+        "caseStudy": {
+          "badge": "Contractor Case Study • Austin Commercial",
+          "quote": "We recovered over $185,000 in lost tooling across 14 simultaneous job sites in our first 6 months.",
+          "testimonial": "Before Asset Master, tool hoarding in work trucks was rampant. Now every foreman scans QR tags when tools change hands. There's complete accountability, and pre-shift OSHA inspections are 100% compliant.",
+          "author": "Marcus Vance",
+          "role": "Vice President of Equipment Operations, Apex Build Group",
+          "imageAlt": "Rugged jobsite barcode scanning",
+          "imageCaption": "Ultra-rugged mobile scanning in concrete, mud, and dust"
+        },
+        "faq": {
+          "badge": "Construction FAQ",
+          "title": "Frequently Asked Questions for Contractors",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master prevent tool hoarding and lost equipment on jobsites?",
+              "answer": "Workers scan QR or barcode tags with their smartphones in under 3 seconds to check out tools. Superintendents and crib managers have real-time visibility into who holds every hammer drill, generator, and laser level across all active project sites."
+            },
+            "q2": {
+              "question": "Can we track equipment movement and GPS location between different jobsites?",
+              "answer": "Yes. Every scan records precise GPS coordinates. When heavy machinery or tool trailers move between sites, the system automatically logs transfer timestamps and updates the site inventory ledger."
+            },
+            "q3": {
+              "question": "How do pre-shift OSHA heavy equipment inspections work?",
+              "answer": "Equipment operators scan the machine's QR code on their phone before starting work to complete mandatory OSHA pre-shift walkaround checklists, snap condition photos, and flag hydraulic or brake defects immediately."
+            },
+            "q4": {
+              "question": "Can subcontractors and temporary crews be assigned tools?",
+              "answer": "Yes. You can assign temporary custody to subcontractor foremen, collect electronic sign-off signatures on mobile, and run automated return audits before project handover."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to eliminate tool loss and streamline your jobsites?",
+          "description": "Schedule a personalized walkthrough of the Asset Master construction suite.",
+          "bookDemo": "Book a Construction Demo"
+        }
+      }
     },
     "itFacilities": {
       "title": "IT & Facilities",
@@ -58,15 +183,501 @@
     },
     "education": {
       "title": "Education",
-      "description": "Devices and shared resources checked out across a campus."
+      "description": "Devices and shared resources checked out across a campus.",
+      "page": {
+        "meta": {
+          "title": "Education Asset Management | Student Device Tracking & Grant Compliance",
+          "description": "Manage student Chromebooks, iPads, STEM lab equipment, and campus facilities. Streamline 1:1 device rollouts and ensure Title I & E-Rate grant compliance."
+        },
+        "hero": {
+          "badge": "Built for School Districts & Universities",
+          "title": "1:1 Student Devices.",
+          "titleHighlight": "Campus-Wide Control.",
+          "description": "Manage student Chromebooks, iPads, STEM lab equipment, and campus facilities. Streamline annual device rollouts, track student fee balances, and ensure 100% grant audit compliance.",
+          "cta": {
+            "bookDemo": "Book an Education Demo",
+            "exploreFeatures": "Explore Features"
+          },
+          "badges": {
+            "rollouts": "High-Speed Student 1:1 Rollouts",
+            "sync": "Google Workspace & Clever Sync",
+            "titleI": "Title I & Grant Compliant"
+          },
+          "cockpit": {
+            "title": "Campus Device Deployment Station",
+            "fallRollout": "Fall Rollout: 1,840/1,850 Issued",
+            "instantScan": "Instant barcode scan to issue or return device",
+            "simulateCheckout": "Simulate Student Checkout",
+            "tag": "TAG:",
+            "assignedTo": "Assigned to:",
+            "condition": "Condition:",
+            "readyForReturn": "Ready for EOY Return",
+            "assets": {
+              "chromebook300e": "Lenovo 300e Chromebook Touch",
+              "chromebook3110": "Dell Chromebook 3110 2-in-1",
+              "labquest": "Vernier LabQuest 3 STEM Sensor Kit"
+            },
+            "students": {
+              "liam": "Liam O'Connor (Grade 9)",
+              "emma": "Emma Watson (Grade 11)",
+              "physicsLab": "AP Physics Lab 2"
+            },
+            "tags": {
+              "cb104": "SCH-K12-8819",
+              "cb219": "SCH-K12-9901",
+              "lb004": "SCH-STEM-401"
+            },
+            "status": {
+              "assigned": "Assigned",
+              "inLab": "In Lab"
+            },
+            "conditions": {
+              "good": "Good",
+              "pristine": "Pristine",
+              "calibrated": "Calibrated"
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "Education Capabilities",
+          "title": "Designed for K-12 school districts",
+          "titleHighlight": "and university campuses.",
+          "studentDevices": {
+            "title": "1:1 Student Device Deployments",
+            "description": "Fast barcode scanning at device pickup stations. Issue thousands of student laptops per day with automated email receipts and parent agreement signoffs."
+          },
+          "stemLab": {
+            "title": "STEM & Science Lab Tracking",
+            "description": "Track specialized lab microscopes, 3D printers, VR headsets, and robotics kits across classrooms, departments, and campus buildings."
+          },
+          "grantAudit": {
+            "title": "Grant & Funding Source Audits",
+            "description": "Tag assets by grant fund (Title I, E-Rate, ESSER, Perkins). Generate 100% compliant physical reconciliation reports for state audit boards."
+          }
+        },
+        "caseStudy": {
+          "badge": "K-12 District Case Study • Oakridge Unified Schools",
+          "quote": "We distributed 6,800 Chromebooks in 3 days with zero missing laptops and 100% Title I grant reconciliation.",
+          "testimonial": "Asset Master streamlined our entire fall registration checkout. Tech assistants scanned student IDs and device barcodes in under 4 seconds per student. Parent agreements were signed digitally on tablet stations.",
+          "author": "Dr. Arthur Vance",
+          "role": "Chief Technology Officer, Oakridge Unified District",
+          "imageAlt": "Education technology rollout team",
+          "imageCaption": "1:1 student device logistics and Title I audit readiness"
+        },
+        "faq": {
+          "badge": "Education FAQ",
+          "title": "Frequently Asked Questions for Educators & IT Directors",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master handle 1:1 student device distribution at the start of the school year?",
+              "answer": "Staff scan the student ID barcode and device QR tag in one continuous flow, issuing hundreds of laptops per hour. Parent responsibility forms and digital signatures are logged instantaneously."
+            },
+            "q2": {
+              "question": "Can we track device damages, repairs, and insurance fees?",
+              "answer": "Yes. When a student brings in a broken screen or charging port, tech staff scan the tag, log the defect, and generate a repair work order with optional fine or fee billing."
+            },
+            "q3": {
+              "question": "Does Asset Master satisfy Title I, E-Rate, and federal grant compliance?",
+              "answer": "Yes. The platform tracks funding source tags (e.g. Title I, ESSER, E-Rate) on every device, maintaining audit-ready historical records for state and federal education auditors."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to streamline student device management across your district?",
+          "description": "Schedule a personalized walkthrough of the Asset Master education suite.",
+          "bookDemo": "Book an Education Demo"
+        }
+      }
     },
     "healthcare": {
       "title": "Healthcare",
-      "description": "Mobile equipment that needs to be findable in seconds."
+      "description": "Mobile equipment that needs to be findable in seconds.",
+      "page": {
+        "meta": {
+          "title": "Healthcare Asset Management | Medical Device Tracking & JCAHO Compliance",
+          "description": "Track mobile medical devices, manage biomedical calibration cycles, and ensure 100% compliance with Joint Commission and FDA standards. Eliminate lost infusion pumps and frantic searches."
+        },
+        "hero": {
+          "badge": "Built for Hospitals & Healthcare Networks",
+          "title": "Find Life-Saving Equipment.",
+          "titleHighlight": "Ensure Compliance.",
+          "description": "Track mobile medical devices, manage biomedical calibration cycles, and ensure 100% compliance with Joint Commission and FDA standards. Eliminate lost infusion pumps and frantic searches.",
+          "cta": {
+            "bookDemo": "Book a Healthcare Demo",
+            "explorePlatform": "Explore Platform"
+          },
+          "badges": {
+            "jcaho": "Joint Commission & FDA Ready",
+            "calibrations": "Automated BioMed Calibrations",
+            "locator": "Instant Wing & Room Locator"
+          },
+          "cockpit": {
+            "title": "Biomedical Device Status & Locator",
+            "wings": {
+              "cardiology": "Cardiology",
+              "icu": "ICU Wing",
+              "emergency": "Emergency"
+            },
+            "instantScan": "Instant mobile barcode scan for BioMed techs & nurses",
+            "locateEquipment": "Locate Equipment",
+            "tag": "TAG:",
+            "location": "Location:",
+            "calibration": "Calibration:",
+            "jcahoVerified": "JCAHO Verified",
+            "assets": {
+              "ultrasound": "Siemens Acuson Ultrasound System",
+              "ecg": "GE Healthcare MAC 5500 HD ECG",
+              "monitor": "Philips IntelliVue MX750 Monitor",
+              "ventilator": "Hamilton-C6 Mechanical Ventilator",
+              "infusion": "Baxter Sigma Spectrum Infusion Pump",
+              "ventilatorSystem": "Medtronic PB980 Ventilator System",
+              "defibrillator": "Zoll X Series Defibrillator / Monitor",
+              "ultrasoundPortable": "Mindray DP-50 Portable Ultrasound",
+              "cot": "Stryker Power-PRO XT Ambulance Cot"
+            },
+            "rooms": {
+              "cardioSuite": "Suite 210 (Cardiology)",
+              "examRoom": "Exam Room 4",
+              "recovery": "Recovery Bay 2",
+              "icuBed": "ICU Bed #4",
+              "cleanroom": "Cleanroom Storage",
+              "traumaBay": "Trauma Bay 1",
+              "triage": "Triage Station",
+              "ambulance": "Ambulance Bay"
+            },
+            "status": {
+              "calibratedReady": "Calibrated & Ready",
+              "inUse": "In Use",
+              "available": "Available",
+              "activeUse": "In Active Use",
+              "sterilized": "Sterilized & Staged",
+              "emergencyStandby": "Emergency Standby",
+              "operational": "Operational"
+            },
+            "calDates": {
+              "nov2028": "Valid to Nov 2028",
+              "jan2027": "Valid to Jan 2027",
+              "aug2027": "Valid to Aug 2027",
+              "jun2027": "Valid to Jun 2027",
+              "sep2027": "Valid to Sep 2027",
+              "dec2027": "Valid to Dec 2027",
+              "dailyTest": "Daily Self-Test Passed",
+              "may2027": "Valid to May 2027",
+              "certified2026": "Certified 2026"
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "Healthcare Capabilities",
+          "title": "Engineered for patient safety and",
+          "titleHighlight": "uncompromised compliance.",
+          "mobileLocator": {
+            "title": "Mobile Medical Asset Locator",
+            "description": "Locate infusion pumps, portable ultrasound systems, bladder scanners, and telemetry monitors in seconds across wings, floors, and rooms."
+          },
+          "biomedMaintenance": {
+            "title": "BioMed Preventative Maintenance",
+            "description": "Automate recurring calibration cycles and electrical safety inspections. Never miss annual Joint Commission inspection deadlines."
+          },
+          "audits": {
+            "title": "Joint Commission & FDA Audits",
+            "description": "Export 100% compliant medical device history reports, maintenance logs, and certified technician signatures for state health authorities."
+          }
+        },
+        "caseStudy": {
+          "badge": "Hospital Network Case Study • St. Jude Regional Health",
+          "quote": "Search time for mobile infusion pumps dropped from 22 minutes to under 15 seconds across our 420-bed facility.",
+          "testimonial": "Asset Master revolutionized our biomedical clinical workflow. BioMed technicians log safety calibration tests directly into the system, and when Joint Commission auditors arrived, we exported 100% compliant logs in 2 clicks.",
+          "author": "Dr. Danielle Morales, MD",
+          "role": "Director of Clinical Engineering & BioMed Services",
+          "imageAlt": "Healthcare compliance and clinical asset locator",
+          "imageCaption": "Joint Commission and FDA biomedical calibration records"
+        },
+        "faq": {
+          "badge": "Healthcare FAQ",
+          "title": "Frequently Asked Questions for Hospital Leaders",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master support Joint Commission (JCAHO) and FDA compliance?",
+              "answer": "Asset Master maintains continuous, tamper-evident audit records of 100% of biomedical calibration logs, electrical safety checks, preventative maintenance tickets, and sterilization records ready for Joint Commission and FDA surveys."
+            },
+            "q2": {
+              "question": "Can clinical staff find mobile equipment in seconds during emergencies?",
+              "answer": "Yes. Clinical staff can search on any hospital tablet or phone to instantly see the real-time room location and availability status of mobile telemetry, infusion pumps, ultrasound units, and crash carts."
+            },
+            "q3": {
+              "question": "How does preventative maintenance and calibration work for biomedical equipment?",
+              "answer": "The system automates recurring calibration schedules based on manufacturer guidelines and regulatory standards. BioMed technicians log test results and digital certification stickers directly in the mobile app."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to elevate your hospital's biomedical asset management?",
+          "description": "Schedule a personalized walkthrough of the Asset Master healthcare suite.",
+          "bookDemo": "Book a Healthcare Demo"
+        }
+      }
+    },
+    "itFacilities": {
+      "title": "IT & Facilities",
+      "description": "Devices and gear assigned to staff, with a record of every handoff.",
+      "page": {
+        "meta": {
+          "title": "IT & Facilities Asset Management | Hardware Tracking & SOC 2 Compliance",
+          "description": "Track employee laptops, monitors, software licenses, and building mechanical systems in one unified ledger. Eliminate lost hardware during offboarding and automate building maintenance schedules."
+        },
+        "hero": {
+          "badge": "Unified Endpoint & Building Operations",
+          "title": "From Staff Laptops to",
+          "titleHighlight": "Facility Systems.",
+          "description": "Track employee laptops, monitors, software licenses, and building mechanical systems in one unified ledger. Eliminate lost hardware during offboarding and automate building maintenance schedules.",
+          "cta": {
+            "bookDemo": "Book an IT & Facilities Demo"
+          },
+          "badges": {
+            "mdm": "Jamf & Intune Auto-Sync",
+            "cmms": "HVAC & Mechanical CMMS",
+            "soc2": "SOC 2 Type II Certified"
+          },
+          "cockpit": {
+            "tabs": {
+              "itFleet": "IT Hardware Fleet",
+              "facilities": "Facility Mechanicals"
+            },
+            "instantSync": "Real-time sync with Jamf, Intune & building CMMS",
+            "simulateHandover": "Simulate Handover",
+            "security": "Security:",
+            "activeRecord": "Active Record",
+            "itAssets": {
+              "macbook": "Apple MacBook Pro 16\" M3",
+              "monitor": "Dell UltraSharp 32\" 4K Monitor",
+              "server": "Dell PowerEdge R750 Server"
+            },
+            "facilityAssets": {
+              "hvac": "Trane Rooftop HVAC Unit #4",
+              "ups": "APC Symmetra 16kVA Backup UPS",
+              "generator": "Cummins 250kW Emergency Generator"
+            },
+            "custodians": {
+              "sarah": "Sarah Jenkins",
+              "design": "Design Studio A",
+              "server": "Server Room 2",
+              "facilities": "Facilities Team",
+              "datacenter": "Datacenter",
+              "building": "Building Ops"
+            },
+            "departments": {
+              "engineering": "Engineering",
+              "design": "Product Design",
+              "infrastructure": "Infrastructure",
+              "hq": "HQ Building",
+              "electrical": "Electrical",
+              "facilities": "Facilities"
+            },
+            "status": {
+              "mdmSynced": "MDM Synced",
+              "assigned": "Assigned",
+              "operational": "Operational",
+              "filterDue": "Filter Due (5d)",
+              "battery": "Battery 98%",
+              "testPassed": "Monthly Test Passed"
+            },
+            "encryption": {
+              "fileVault": "FileVault Active",
+              "tagged": "Asset Tagged",
+              "encrypted": "Encrypted",
+              "cmms": "Quarterly CMMS",
+              "calibrated": "Calibrated",
+              "compliant": "Compliant"
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "Key IT & Facilities Capabilities",
+          "title": "Complete control over physical",
+          "titleHighlight": "workplaces and hardware.",
+          "mdmSync": {
+            "title": "Automated MDM Synchronization",
+            "description": "Real-time two-way synchronization with Microsoft Intune and Jamf Pro. Automatically pulls device serials, OS patches, and FileVault disk encryption."
+          },
+          "onboarding": {
+            "title": "Staff Onboarding & Offboarding",
+            "description": "Assign device bundles to new hires with digital signatures. Run automated recovery checklists and pre-paid return labels when employees leave."
+          },
+          "hvac": {
+            "title": "HVAC & Mechanical Maintenance",
+            "description": "Schedule preventative filter changes, generator load tests, and elevator inspections with automated recurring work orders."
+          },
+          "compliance": {
+            "title": "SOC 2 & ISO 27001 Readiness",
+            "description": "Export complete tamper-proof chain of custody records and device encryption proof for annual security compliance audits."
+          },
+          "helpdesk": {
+            "title": "Helpdesk Ticketing Integrations",
+            "description": "Connect with Jira Service Management, ServiceNow, and Zendesk. Helpdesk technicians view full device history inside support tickets."
+          },
+          "depreciation": {
+            "title": "Hardware Depreciation & E-Waste",
+            "description": "Calculate straight-line 3-year IT depreciation. Log certified electronic waste disposal and data erasure certificates."
+          }
+        },
+        "caseStudy": {
+          "badge": "Global Tech Case Study • CloudScale Networks",
+          "quote": "We automated 1,400+ remote employee device handoffs and passed our SOC 2 Type II audit with zero findings.",
+          "testimonial": "Asset Master eliminated the disconnect between our Jamf MDM data and physical hardware storage. When remote engineers depart, pre-paid return kits are dispatched automatically and laptop custody records stay immutable.",
+          "author": "Elena Rostova",
+          "role": "Head of Global IT & Workplace Operations",
+          "imageAlt": "Modern IT and workplace facility management",
+          "imageCaption": "Unified endpoint security and building operations ledger"
+        },
+        "faq": {
+          "badge": "IT & Facilities FAQ",
+          "title": "Frequently Asked Questions",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master bridge IT asset management and facilities operations?",
+              "answer": "Asset Master gives both IT and Facilities teams a unified single pane of glass. IT manages laptops, monitors, software licenses, and MDM posture, while Facilities manages HVAC, backup power, security systems, and preventative maintenance schedules."
+            },
+            "q2": {
+              "question": "Can we track remote worker equipment and automate retrieval during departures?",
+              "answer": "Yes. Asset Master tracks hardware bundles assigned to remote employees and provides automated offboarding checklists with pre-paid return shipping label generation."
+            },
+            "q3": {
+              "question": "How does the system support SOC 2 and ISO 27001 facilities audits?",
+              "answer": "Asset Master maintains immutable logs of physical access hardware, server room assets, maintenance schedules, and device encryption compliance required by compliance auditors."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to unify your IT hardware and building facilities?",
+          "description": "Schedule a personalized walkthrough of the Asset Master platform.",
+          "bookDemo": "Book a Live Demo"
+        }
+      }
     },
     "warehousing": {
       "title": "Warehousing & Logistics",
-      "description": "Forklifts, scanners, bin locations, and inventory docks."
+      "description": "Forklifts, scanners, bin locations, and inventory docks.",
+      "page": {
+        "meta": {
+          "title": "Warehousing & Logistics Asset Management | Forklift & RF Scanner Tracking",
+          "description": "Stop losing expensive RF barcode scanners and track forklift fleet maintenance across distribution docks. Automate shift handovers, OSHA inspections, and facility equipment uptime."
+        },
+        "hero": {
+          "badge": "Built for Distribution Centers & Logistics Hubs",
+          "title": "Forklifts, Scanners & Docks.",
+          "titleHighlight": "Always Tracked.",
+          "description": "Stop losing expensive RF barcode scanners and track forklift fleet maintenance across distribution docks. Automate shift handovers, OSHA inspections, and facility equipment uptime.",
+          "cta": {
+            "bookDemo": "Book a Logistics Demo"
+          },
+          "badges": {
+            "checkout": "RF Scanner Shift Check-Out",
+            "osha": "Forklift OSHA Inspections",
+            "tracking": "Dock & Bay Asset Tracking"
+          },
+          "cockpit": {
+            "title": "Distribution Dock Asset Roster",
+            "docks": {
+              "outbound": "Outbound Hub",
+              "inbound": "Inbound Dock"
+            },
+            "instantScan": "Instant barcode scan to issue or return gear",
+            "simulateCheckout": "Simulate Shift Checkout",
+            "tag": "TAG:",
+            "operator": "Operator:",
+            "bay": "Bay:",
+            "batteryPower": "Battery / Power:",
+            "assets": {
+              "forkliftCrown": "Crown C-5 5,000lb LPG Forklift",
+              "scanner": "Zebra TC58 Android RF Barcode Scanner",
+              "palletJack": "Toyota Electric Walkie Pallet Jack",
+              "forkliftHyster": "Hyster J40XNT 3-Wheel Electric Forklift",
+              "scannerRugged": "Honeywell Granit 1990i Ultra-Rugged Scanner",
+              "wrapper": "Lantech Q-300 Automatic Stretch Wrapper"
+            },
+            "locations": {
+              "outboundDock": "Outbound Dock #3",
+              "pickingBay": "Picking Bay #12",
+              "receiving": "Receiving Bay #1",
+              "coldStorage": "Cold Storage Bay",
+              "bulkStorage": "Bulk Storage B",
+              "staging": "End-of-Line Staging"
+            },
+            "operators": {
+              "johnathan": "Johnathan Brooks",
+              "team": "Shift 1 Picking Team",
+              "carlos": "Carlos Gomez",
+              "nightShift": "Night Shift Crew",
+              "auditor": "Inventory Auditor",
+              "packaging": "Packaging Station"
+            },
+            "status": {
+              "operational": "Operational",
+              "inUse": "In Use",
+              "inspected": "Inspected",
+              "pmDue": "PM Due in 3d"
+            },
+            "battery": {
+              "percent92": "92%",
+              "percent78": "78%",
+              "percent100": "100%",
+              "percent84": "84%",
+              "percent95": "95%",
+              "hardwired": "Hardwired"
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "Logistics Capabilities",
+          "title": "Keep warehouse operations",
+          "titleHighlight": "moving without interruption.",
+          "scannerCheckout": {
+            "title": "RF Scanner Shift Check-Out",
+            "description": "Fast shift check-in and check-out for Zebra and Honeywell RF guns. Eliminate lost handheld terminals and dead battery bottlenecks."
+          },
+          "forkliftMaintenance": {
+            "title": "Forklift Fleet Maintenance (CMMS)",
+            "description": "Automate preventative maintenance schedules for electric and LPG forklifts, reach trucks, and order pickers based on operating hours."
+          },
+          "oshaChecklists": {
+            "title": "OSHA Pre-Operation Checklists",
+            "description": "Drivers complete mobile safety walkarounds before operating heavy machinery. Flag hydraulic leaks, horn defects, or tire damage."
+          }
+        },
+        "caseStudy": {
+          "badge": "Logistics Case Study • SwiftHub Distribution",
+          "quote": "We eliminated scanner loss across 3 distribution hubs and reduced forklift downtime by 38%.",
+          "testimonial": "With 400+ picking staff across three shifts, barcode scanners and battery cradles used to vanish weekly. Shift check-outs on Asset Master created instant worker accountability and automated forklift runtime service.",
+          "author": "Jackson Hayes",
+          "role": "Regional VP of Supply Chain & Fulfillment",
+          "imageAlt": "Distribution dock and freight logistics",
+          "imageCaption": "Dock asset tracking and multi-facility freight intelligence"
+        },
+        "faq": {
+          "badge": "Warehousing FAQ",
+          "title": "Frequently Asked Questions for Logistics Directors",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master help distribution centers track mobile RF scanners and battery packs?",
+              "answer": "Warehouse staff scan their employee badge and device QR tag at the start and end of their shift. Unreturned or misplaced barcode scanners and battery packs are immediately flagged to shift supervisors."
+            },
+            "q2": {
+              "question": "Can we track forklift OSHA inspections and battery charging cycles?",
+              "answer": "Yes. Forklift operators perform digital OSHA pre-shift walkaround inspections directly on mobile. Maintenance teams track battery water levels, runtime hours, and hydraulic maintenance intervals automatically."
+            },
+            "q3": {
+              "question": "Does Asset Master support multi-facility distribution networks?",
+              "answer": "Yes. Multi-site logistics networks can manage thousands of assets across regional fulfillment centers, cross-docks, and delivery hubs with centralized global roll-up reporting."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to take control of your warehouse and dock equipment?",
+          "description": "Schedule a personalized walkthrough of the Asset Master logistics suite.",
+          "bookDemo": "Book a Logistics Demo"
+        }
+      }
     }
   },
   "hero": {

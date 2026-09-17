@@ -19,6 +19,7 @@ import {
   Activity,
   Boxes,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -26,35 +27,36 @@ import BookDemoModal from "@/components/home/BookDemoModal";
 import { cn } from "@/lib/utils";
 
 export default function WarehousingLogisticsPage() {
+  const t = useTranslations("industries.warehousing.page");
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [selectedDock, setSelectedDock] = useState<"dockA" | "dockB">("dockA");
 
   const warehouseEquipment = {
     dockA: [
-      { id: "AM-FLK-102", name: "Crown C-5 5,000lb LPG Forklift", location: "Outbound Dock #3", operator: "Johnathan Brooks", status: "Operational", battery: "92%" },
-      { id: "AM-SCN-441", name: "Zebra TC58 Android RF Barcode Scanner", location: "Picking Bay #12", operator: "Shift 1 Picking Team", status: "In Use", battery: "78%" },
-      { id: "AM-PLT-889", name: "Toyota Electric Walkie Pallet Jack", location: "Receiving Bay #1", operator: "Carlos Gomez", status: "Inspected", battery: "100%" },
+      { id: "AM-FLK-102", name: t("hero.cockpit.assets.forkliftCrown"), location: t("hero.cockpit.locations.outboundDock"), operator: t("hero.cockpit.operators.johnathan"), status: t("hero.cockpit.status.operational"), battery: t("hero.cockpit.battery.percent92") },
+      { id: "AM-SCN-441", name: t("hero.cockpit.assets.scanner"), location: t("hero.cockpit.locations.pickingBay"), operator: t("hero.cockpit.operators.team"), status: t("hero.cockpit.status.inUse"), battery: t("hero.cockpit.battery.percent78") },
+      { id: "AM-PLT-889", name: t("hero.cockpit.assets.palletJack"), location: t("hero.cockpit.locations.receiving"), operator: t("hero.cockpit.operators.carlos"), status: t("hero.cockpit.status.inspected"), battery: t("hero.cockpit.battery.percent100") },
     ],
     dockB: [
-      { id: "AM-FLK-205", name: "Hyster J40XNT 3-Wheel Electric Forklift", location: "Cold Storage Bay", operator: "Night Shift Crew", status: "Operational", battery: "84%" },
-      { id: "AM-SCN-509", name: "Honeywell Granit 1990i Ultra-Rugged Scanner", location: "Bulk Storage B", operator: "Inventory Auditor", status: "In Use", battery: "95%" },
-      { id: "AM-WRP-003", name: "Lantech Q-300 Automatic Stretch Wrapper", location: "End-of-Line Staging", operator: "Packaging Station", status: "PM Due in 3d", battery: "Hardwired" },
+      { id: "AM-FLK-205", name: t("hero.cockpit.assets.forkliftHyster"), location: t("hero.cockpit.locations.coldStorage"), operator: t("hero.cockpit.operators.nightShift"), status: t("hero.cockpit.status.operational"), battery: t("hero.cockpit.battery.percent84") },
+      { id: "AM-SCN-509", name: t("hero.cockpit.assets.scannerRugged"), location: t("hero.cockpit.locations.bulkStorage"), operator: t("hero.cockpit.operators.auditor"), status: t("hero.cockpit.status.inUse"), battery: t("hero.cockpit.battery.percent95") },
+      { id: "AM-WRP-003", name: t("hero.cockpit.assets.wrapper"), location: t("hero.cockpit.locations.staging"), operator: t("hero.cockpit.operators.packaging"), status: t("hero.cockpit.status.pmDue"), battery: t("hero.cockpit.battery.hardwired") },
     ],
   };
 
   const faqs = [
     {
-      q: "How does Asset Master help distribution centers track mobile RF scanners and battery packs?",
-      a: "Warehouse staff scan their employee badge and device QR tag at the start and end of their shift. Unreturned or misplaced barcode scanners and battery packs are immediately flagged to shift supervisors.",
+      q: t("faq.questions.q1.question"),
+      a: t("faq.questions.q1.answer"),
     },
     {
-      q: "Can we track forklift OSHA inspections and battery charging cycles?",
-      a: "Yes. Forklift operators perform digital OSHA pre-shift walkaround inspections directly on mobile. Maintenance teams track battery water levels, runtime hours, and hydraulic maintenance intervals automatically.",
+      q: t("faq.questions.q2.question"),
+      a: t("faq.questions.q2.answer"),
     },
     {
-      q: "Does Asset Master support multi-facility distribution networks?",
-      a: "Yes. Multi-site logistics networks can manage thousands of assets across regional fulfillment centers, cross-docks, and delivery hubs with centralized global roll-up reporting.",
+      q: t("faq.questions.q3.question"),
+      a: t("faq.questions.q3.answer"),
     },
   ];
 
@@ -73,15 +75,15 @@ export default function WarehousingLogisticsPage() {
               {/* Left Column Copy */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                  Built for Distribution Centers & Logistics Hubs
+                  {t("hero.badge")}
                 </p>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  Forklifts, Scanners & Docks. <span className="text-[var(--brand-primary)]">Always Tracked.</span>
+                  {t("hero.title")} <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                  Stop losing expensive RF barcode scanners and track forklift fleet maintenance across distribution docks. Automate shift handovers, OSHA inspections, and facility equipment uptime.
+                  {t("hero.description")}
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
@@ -91,7 +93,7 @@ export default function WarehousingLogisticsPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
-                    <span>Book a Logistics Demo</span>
+                    <span>{t("hero.cta.bookDemo")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -99,15 +101,15 @@ export default function WarehousingLogisticsPage() {
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>RF Scanner Shift Check-Out</span>
+                    <span>{t("hero.badges.checkout")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>Forklift OSHA Inspections</span>
+                    <span>{t("hero.badges.osha")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Warehouse className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>Dock & Bay Asset Tracking</span>
+                    <span>{t("hero.badges.tracking")}</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +121,7 @@ export default function WarehousingLogisticsPage() {
                     <div className="flex items-center gap-2">
                       <Warehouse className="h-4 w-4 text-[var(--brand-primary)]" />
                       <span className="text-xs font-bold text-[var(--foreground)]">
-                        Distribution Dock Asset Roster
+                        {t("hero.cockpit.title")}
                       </span>
                     </div>
 
@@ -134,7 +136,7 @@ export default function WarehousingLogisticsPage() {
                             : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
                         )}
                       >
-                        Outbound Hub
+                        {t("hero.cockpit.docks.outbound")}
                       </button>
                       <button
                         type="button"
@@ -146,7 +148,7 @@ export default function WarehousingLogisticsPage() {
                             : "text-[var(--foreground-muted)] hover:text-[var(--foreground)]"
                         )}
                       >
-                        Inbound Dock
+                        {t("hero.cockpit.docks.inbound")}
                       </button>
                     </div>
                   </div>
@@ -162,7 +164,7 @@ export default function WarehousingLogisticsPage() {
                           <div>
                             <div className="font-bold text-[var(--foreground)]">{item.name}</div>
                             <div className="text-[11px] font-mono text-[var(--foreground-subtle)]">
-                              TAG: {item.id} &bull; Operator: <strong className="text-[var(--foreground)]">{item.operator}</strong>
+                              {t("hero.cockpit.tag")} {item.id} &bull; {t("hero.cockpit.operator")} <strong className="text-[var(--foreground)]">{item.operator}</strong>
                             </div>
                           </div>
                           <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] border border-[var(--brand-emerald)]/20 shrink-0">
@@ -170,8 +172,8 @@ export default function WarehousingLogisticsPage() {
                           </span>
                         </div>
                         <div className="flex items-center justify-between text-[11px] text-[var(--foreground-muted)] pt-1 border-t border-[var(--border-subtle)]">
-                          <span>Bay: {item.location}</span>
-                          <span>Battery / Power: <strong>{item.battery}</strong></span>
+                          <span>{t("hero.cockpit.bay")} {item.location}</span>
+                          <span>{t("hero.cockpit.batteryPower")} <strong>{item.battery}</strong></span>
                         </div>
                       </div>
                     ))}
@@ -179,7 +181,7 @@ export default function WarehousingLogisticsPage() {
 
                   <div className="flex items-center justify-between pt-1">
                     <span className="text-xs text-[var(--foreground-muted)]">
-                      Instant barcode scan to issue or return gear
+                      {t("hero.cockpit.instantScan")}
                     </span>
                     <Button
                       variant="primary"
@@ -187,7 +189,7 @@ export default function WarehousingLogisticsPage() {
                       href="/demo"
                       className="text-xs"
                     >
-                      <span>Simulate Shift Checkout</span>
+                      <span>{t("hero.cockpit.simulateCheckout")}</span>
                     </Button>
                   </div>
                 </div>
@@ -201,10 +203,10 @@ export default function WarehousingLogisticsPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Logistics Capabilities
+                {t("capabilities.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Keep warehouse operations <span className="text-[var(--brand-primary)]">moving without interruption.</span>
+                {t("capabilities.title")} <span className="text-[var(--brand-primary)]">{t("capabilities.titleHighlight")}</span>
               </h2>
             </div>
 
@@ -213,9 +215,9 @@ export default function WarehousingLogisticsPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <QrCode className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">RF Scanner Shift Check-Out</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.scannerCheckout.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Fast shift check-in and check-out for Zebra and Honeywell RF guns. Eliminate lost handheld terminals and dead battery bottlenecks.
+                  {t("capabilities.scannerCheckout.description")}
                 </p>
               </div>
 
@@ -223,9 +225,9 @@ export default function WarehousingLogisticsPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Truck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Forklift Fleet Maintenance (CMMS)</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.forkliftMaintenance.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Automate preventative maintenance schedules for electric and LPG forklifts, reach trucks, and order pickers based on operating hours.
+                  {t("capabilities.forkliftMaintenance.description")}
                 </p>
               </div>
 
@@ -233,9 +235,9 @@ export default function WarehousingLogisticsPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">OSHA Pre-Operation Checklists</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.oshaChecklists.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Drivers complete mobile safety walkarounds before operating heavy machinery. Flag hydraulic leaks, horn defects, or tire damage.
+                  {t("capabilities.oshaChecklists.description")}
                 </p>
               </div>
             </div>
@@ -250,29 +252,29 @@ export default function WarehousingLogisticsPage() {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] text-xs font-bold border border-[var(--brand-emerald)]/20">
                     <ShieldCheck className="h-3.5 w-3.5" />
-                    <span>Logistics Case Study &bull; SwiftHub Distribution</span>
+                    <span>{t("caseStudy.badge")}</span>
                   </div>
 
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                    "We eliminated scanner loss across 3 distribution hubs and reduced forklift downtime by 38%."
+                    "{t("caseStudy.quote")}"
                   </h3>
 
                   <p className="text-base text-[var(--foreground-muted)] leading-relaxed">
-                    "With 400+ picking staff across three shifts, barcode scanners and battery cradles used to vanish weekly. Shift check-outs on Asset Master created instant worker accountability and automated forklift runtime service."
+                    "{t("caseStudy.testimonial")}"
                   </p>
 
                   <div className="flex items-center gap-4 pt-2">
                     <div className="relative h-12 w-12 rounded-full overflow-hidden border-2 border-[var(--brand-primary)]">
                       <Image
                         src="/images/avatar-5.jpg"
-                        alt="Jackson Hayes"
+                        alt={t("caseStudy.author")}
                         fill
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-[var(--foreground)]">Jackson Hayes</div>
-                      <div className="text-xs text-[var(--foreground-muted)]">Regional VP of Supply Chain & Fulfillment</div>
+                      <div className="text-sm font-bold text-[var(--foreground)]">{t("caseStudy.author")}</div>
+                      <div className="text-xs text-[var(--foreground-muted)]">{t("caseStudy.role")}</div>
                     </div>
                   </div>
                 </div>
@@ -281,13 +283,13 @@ export default function WarehousingLogisticsPage() {
                   <div className="relative h-72 w-full rounded-xl overflow-hidden border border-[var(--border-custom)] shadow-md group">
                     <Image
                       src="/images/shipment.jpg"
-                      alt="Distribution dock and freight logistics"
+                      alt={t("caseStudy.imageAlt")}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-4">
                       <div className="text-white text-xs font-bold">
-                        Dock asset tracking and multi-facility freight intelligence
+                        {t("caseStudy.imageCaption")}
                       </div>
                     </div>
                   </div>
@@ -302,10 +304,10 @@ export default function WarehousingLogisticsPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Warehousing FAQ
+                {t("faq.badge")}
               </p>
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions for Logistics Directors
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -346,10 +348,10 @@ export default function WarehousingLogisticsPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Ready to take control of your warehouse and dock equipment?
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Schedule a personalized walkthrough of the Asset Master logistics suite.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -358,7 +360,7 @@ export default function WarehousingLogisticsPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-base"
               >
-                <span>Book a Logistics Demo</span>
+                <span>{t("cta.bookDemo")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
