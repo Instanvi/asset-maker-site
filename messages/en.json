@@ -177,10 +177,6 @@
         }
       }
     },
-    "itFacilities": {
-      "title": "IT & Facilities",
-      "description": "Devices and gear assigned to staff, with a record of every handoff."
-    },
     "education": {
       "title": "Education",
       "description": "Devices and shared resources checked out across a campus.",
