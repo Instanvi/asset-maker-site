@@ -9,17 +9,66 @@
     "learnMore": "Learn More",
     "getStarted": "Get Started",
     "contact": "Contact",
+    "contactUs": "Contact Us",
     "readMore": "Read More",
-    "viewAll": "View All"
+    "viewAll": "View All",
+    "login": "Login",
+    "bookDemo": "Book Demo"
   },
   "nav": {
     "home": "Home",
     "products": "Products",
+    "product": "Product",
     "industries": "Industries",
     "pricing": "Pricing",
     "resources": "Resources",
     "demo": "Demo",
-    "contact": "Contact"
+    "contact": "Contact",
+    "howItWorks": "How It Works"
+  },
+  "products": {
+    "assetTracking": {
+      "title": "Asset Tracking & Tags",
+      "description": "QR and barcode tags, scanned from any phone to check assets in or out."
+    },
+    "maintenance": {
+      "title": "Maintenance (CMMS)",
+      "description": "Preventative service schedules and work orders before things break down."
+    },
+    "inspections": {
+      "title": "Inspections & Audit Trail",
+      "description": "Digital checklists and a full history for every asset action."
+    },
+    "itAssetManagement": {
+      "title": "IT Asset Management",
+      "description": "Hardware inventory, software licenses, and device assignments."
+    },
+    "integrations": {
+      "title": "Integrations & API",
+      "description": "Connect with the tools your team already uses."
+    }
+  },
+  "industries": {
+    "construction": {
+      "title": "Construction & Field Crews",
+      "description": "Tools and equipment that move between sites daily."
+    },
+    "itFacilities": {
+      "title": "IT & Facilities",
+      "description": "Devices and gear assigned to staff, with a record of every handoff."
+    },
+    "education": {
+      "title": "Education",
+      "description": "Devices and shared resources checked out across a campus."
+    },
+    "healthcare": {
+      "title": "Healthcare",
+      "description": "Mobile equipment that needs to be findable in seconds."
+    },
+    "warehousing": {
+      "title": "Warehousing & Logistics",
+      "description": "Forklifts, scanners, bin locations, and inventory docks."
+    }
   },
   "hero": {
     "title": "Complete operational accountability in one platform",
@@ -30,14 +79,22 @@
     }
   },
   "footer": {
-    "tagline": "Complete operational accountability in one platform",
-    "products": "Products",
+    "tagline": "Track assets, automate maintenance, and keep a full audit trail - from a phone.",
+    "location": "Douala, Cameroon",
+    "product": "Product",
     "industries": "Industries",
     "company": "Company",
     "resources": "Resources",
     "legal": "Legal",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "copyright": "© 2025 Asset Master. All rights reserved."
+    "copyright": "© {year} AssetMaster. All rights reserved.",
+    "allRightsReserved": "All rights reserved"
+  },
+  "megaMenu": {
+    "categories": "Categories",
+    "requestWalkthrough": "Request a guided walkthrough",
+    "turnActivityIntoIntelligence": "Turn everyday asset activity into audit-ready intelligence.",
+    "learnMore": "Learn more"
   }
 }

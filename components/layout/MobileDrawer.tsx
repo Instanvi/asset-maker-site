@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { X, ChevronDown, QrCode, Wrench, ClipboardCheck, Laptop, Layers, HardHat, Box, GraduationCap, Stethoscope, Warehouse, LogIn } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -13,6 +14,7 @@ export interface MobileDrawerProps {
 }
 
 export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps) {
+  const t = useTranslations();
   const [expandedSection, setExpandedSection] = useState<string | null>("products");
 
   const toggleSection = (id: string) => {
@@ -57,7 +59,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
               onClick={() => toggleSection("products")}
               className="w-full flex items-center justify-between py-2.5 text-sm font-bold text-[var(--foreground)]"
             >
-              <span>Products</span>
+              <span>{t('nav.products')}</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 text-[var(--foreground-subtle)] transition-transform duration-200",
@@ -74,8 +76,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <QrCode className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Asset Tracking & Tags</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">QR & barcode scanning from any phone</div>
+                    <div className="font-bold">{t('products.assetTracking.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('products.assetTracking.description')}</div>
                   </div>
                 </Link>
 
@@ -86,8 +88,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Wrench className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Maintenance (CMMS)</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Preventative schedules & work orders</div>
+                    <div className="font-bold">{t('products.maintenance.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('products.maintenance.description')}</div>
                   </div>
                 </Link>
 
@@ -98,8 +100,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <ClipboardCheck className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Inspections & Audit Trail</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Digital checklists & full history</div>
+                    <div className="font-bold">{t('products.inspections.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('products.inspections.description')}</div>
                   </div>
                 </Link>
 
@@ -110,8 +112,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Laptop className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">IT Asset Management</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Hardware, licenses & MDM sync</div>
+                    <div className="font-bold">{t('products.itAssetManagement.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('products.itAssetManagement.description')}</div>
                   </div>
                 </Link>
 
@@ -122,8 +124,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Layers className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Integrations & API</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Connect ERP, Jamf, Intune & Jira</div>
+                    <div className="font-bold">{t('products.integrations.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('products.integrations.description')}</div>
                   </div>
                 </Link>
               </div>
@@ -137,7 +139,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
               onClick={() => toggleSection("industries")}
               className="w-full flex items-center justify-between py-2.5 text-sm font-bold text-[var(--foreground)]"
             >
-              <span>Industries</span>
+              <span>{t('nav.industries')}</span>
               <ChevronDown
                 className={cn(
                   "h-4 w-4 text-[var(--foreground-subtle)] transition-transform duration-200",
@@ -154,8 +156,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <HardHat className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Construction & Field Crews</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Tools and heavy gear on jobsites</div>
+                    <div className="font-bold">{t('industries.construction.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('industries.construction.description')}</div>
                   </div>
                 </Link>
 
@@ -166,8 +168,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Box className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">IT & Facilities</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Assigned staff devices and gear</div>
+                    <div className="font-bold">{t('industries.itFacilities.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('industries.itFacilities.description')}</div>
                   </div>
                 </Link>
 
@@ -178,8 +180,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <GraduationCap className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Education</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Campus devices & lab equipment</div>
+                    <div className="font-bold">{t('industries.education.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('industries.education.description')}</div>
                   </div>
                 </Link>
 
@@ -190,8 +192,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Stethoscope className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Healthcare</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Findable biomedical equipment</div>
+                    <div className="font-bold">{t('industries.healthcare.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('industries.healthcare.description')}</div>
                   </div>
                 </Link>
 
@@ -202,8 +204,8 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
                 >
                   <Warehouse className="h-4 w-4 text-[var(--brand-primary)] shrink-0" />
                   <div>
-                    <div className="font-bold">Warehousing & Logistics</div>
-                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">Forklifts, bins & dock tools</div>
+                    <div className="font-bold">{t('industries.warehousing.title')}</div>
+                    <div className="text-[11px] text-[var(--foreground-muted)] font-normal">{t('industries.warehousing.description')}</div>
                   </div>
                 </Link>
               </div>
@@ -217,25 +219,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
               onClick={onClose}
               className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
             >
-              How it Works
-            </Link>
-          </div>
-          <div className="border-b border-[var(--border-subtle)] py-1.5">
-            <Link
-              href="/#roi"
-              onClick={onClose}
-              className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
-            >
-              ROI Calculator
-            </Link>
-          </div>
-          <div className="border-b border-[var(--border-subtle)] py-1.5">
-            <Link
-              href="/#proof"
-              onClick={onClose}
-              className="block py-2 text-sm font-bold text-[var(--foreground)] hover:text-[var(--brand-primary)]"
-            >
-              Customer Proof
+              {t('nav.howItWorks')}
             </Link>
           </div>
         </div>
@@ -249,7 +233,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
             onClick={onClose}
           >
             <LogIn className="h-4 w-4" />
-            Login
+            {t('common.login')}
           </Button>
           <Button
             variant="dark"
@@ -258,7 +242,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
             href="/contact"
             onClick={onClose}
           >
-            Contact Us
+            {t('common.contactUs')}
           </Button>
           <Button
             variant="primary"
@@ -267,7 +251,7 @@ export function MobileDrawer({ isOpen, onClose, onBookDemo }: MobileDrawerProps)
             href="/demo"
             onClick={onClose}
           >
-            Book a Demo
+            {t('common.bookDemo')}
           </Button>
         </div>
       </div>

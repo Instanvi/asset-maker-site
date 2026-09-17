@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   Menu,
   ChevronDown,
@@ -35,6 +36,7 @@ interface MenuItem {
 }
 
 export function Header({ onBookDemo }: HeaderProps) {
+  const t = useTranslations();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const closeTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -55,32 +57,32 @@ export function Header({ onBookDemo }: HeaderProps) {
   /* Product - what the platform actually does */
   const productItems: MenuItem[] = [
     {
-      title: "Asset Tracking & Tags",
-      description: "QR and barcode tags, scanned from any phone to check assets in or out.",
+      title: t('products.assetTracking.title'),
+      description: t('products.assetTracking.description'),
       href: "/products/asset-tracking",
       icon: <QrCode className="h-4 w-4" />,
     },
     {
-      title: "Maintenance (CMMS)",
-      description: "Preventative service schedules and work orders before things break down.",
+      title: t('products.maintenance.title'),
+      description: t('products.maintenance.description'),
       href: "/products/maintenance-cmms",
       icon: <Wrench className="h-4 w-4" />,
     },
     {
-      title: "Inspections & Audit Trail",
-      description: "Digital checklists and a full history for every asset action.",
+      title: t('products.inspections.title'),
+      description: t('products.inspections.description'),
       href: "/products/inspections-audit",
       icon: <ClipboardCheck className="h-4 w-4" />,
     },
     {
-      title: "IT Asset Management",
-      description: "Hardware inventory, software licenses, and device assignments.",
+      title: t('products.itAssetManagement.title'),
+      description: t('products.itAssetManagement.description'),
       href: "/products/it-asset-management",
       icon: <Laptop className="h-4 w-4" />,
     },
     {
-      title: "Integrations & API",
-      description: "Connect with the tools your team already uses.",
+      title: t('products.integrations.title'),
+      description: t('products.integrations.description'),
       href: "/products/integrations-api",
       icon: <Layers className="h-4 w-4" />,
     },
@@ -89,32 +91,32 @@ export function Header({ onBookDemo }: HeaderProps) {
   /* Industries - matches the industries you actually built content for */
   const industryItems: MenuItem[] = [
     {
-      title: "Construction & Field Crews",
-      description: "Tools and equipment that move between sites daily.",
+      title: t('industries.construction.title'),
+      description: t('industries.construction.description'),
       href: "/industries/construction",
       icon: <HardHat className="h-4 w-4" />,
     },
     {
-      title: "IT & Facilities",
-      description: "Devices and gear assigned to staff, with a record of every handoff.",
+      title: t('industries.itFacilities.title'),
+      description: t('industries.itFacilities.description'),
       href: "/industries/it-facilities",
       icon: <Box className="h-4 w-4" />,
     },
     {
-      title: "Education",
-      description: "Devices and shared resources checked out across a campus.",
+      title: t('industries.education.title'),
+      description: t('industries.education.description'),
       href: "/industries/education",
       icon: <GraduationCap className="h-4 w-4" />,
     },
     {
-      title: "Healthcare",
-      description: "Mobile equipment that needs to be findable in seconds.",
+      title: t('industries.healthcare.title'),
+      description: t('industries.healthcare.description'),
       href: "/industries/healthcare",
       icon: <Stethoscope className="h-4 w-4" />,
     },
     {
-      title: "Warehousing & Logistics",
-      description: "Forklifts, scanners, bin locations, and inventory docks.",
+      title: t('industries.warehousing.title'),
+      description: t('industries.warehousing.description'),
       href: "/industries/warehousing-logistics",
       icon: <Warehouse className="h-4 w-4" />,
     },
@@ -146,7 +148,7 @@ export function Header({ onBookDemo }: HeaderProps) {
                 activeMenu === "product" && "text-[var(--brand-primary)] font-bold bg-[var(--surface-raised)]"
               )}
             >
-              <span className="text-base">Product</span>
+              <span className="text-base">{t('nav.product')}</span>
               <ChevronDown className={cn("h-5 w-5 text-[var(--foreground-subtle)] transition-transform", activeMenu === "product" && "rotate-180 text-[var(--brand-primary)]")} />
             </button>
 
@@ -159,7 +161,7 @@ export function Header({ onBookDemo }: HeaderProps) {
                 activeMenu === "industries" && "text-[var(--brand-primary)] font-bold bg-[var(--surface-raised)]"
               )}
             >
-              <span className="text-base">Industries</span>
+              <span className="text-base">{t('nav.industries')}</span>
               <ChevronDown className={cn("h-5 w-5 text-[var(--foreground-subtle)] transition-transform", activeMenu === "industries" && "rotate-180 text-[var(--brand-primary)]")} />
             </button>
 
@@ -168,7 +170,7 @@ export function Header({ onBookDemo }: HeaderProps) {
               onClick={() => setActiveMenu(null)}
               className="px-3.5 py-2 text-base font-semibold text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-all rounded-md"
             >
-              How It Works
+              {t('nav.howItWorks')}
             </Link>
           </nav>
 
@@ -179,13 +181,13 @@ export function Header({ onBookDemo }: HeaderProps) {
               aria-label="Login"
             >
               <LogIn className="h-5 w-5" />
-              <span className="hidden xl:inline">Login</span>
+              <span className="hidden xl:inline">{t('common.login')}</span>
             </button>
             <Button variant="dark" size="lg" className="font-bold text-base">
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">{t('common.contactUs')}</Link>
             </Button>
             <Button variant="primary" size="lg" className="font-bold text-base shadow-[var(--shadow-glow)]">
-              <Link href="/demo">Book a Demo</Link>
+              <Link href="/demo">{t('common.bookDemo')}</Link>
             </Button>
           </div>
 
@@ -197,7 +199,7 @@ export function Header({ onBookDemo }: HeaderProps) {
               <LogIn className="h-5 w-5" />
             </button>
             <Button variant="primary" size="sm" className="text-base px-3">
-              <Link href="/demo">Book Demo</Link>
+              <Link href="/demo">{t('common.bookDemo')}</Link>
             </Button>
             <button
               type="button"
