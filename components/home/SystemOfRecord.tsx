@@ -33,6 +33,7 @@ import {
   Globe,
   Bell,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -41,6 +42,7 @@ interface SystemOfRecordProps {
 }
 
 export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
+  const t = useTranslations();
   const [activeStep, setActiveStep] = useState(0);
 
   // ─── STEP 01 STATE ───
@@ -200,51 +202,51 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
   const steps = [
     {
       number: "01",
-      title: "Asset Tracking",
-      tagline: "Master Asset Registry",
-      shortDesc: "Complete searchable identity, depreciation & warranty record.",
+      title: t('home.system.steps.assetTracking.title'),
+      tagline: t('home.system.steps.assetTracking.tagline'),
+      shortDesc: t('home.system.steps.assetTracking.description'),
       icon: <Box className="h-4 w-4" />,
     },
     {
       number: "02",
-      title: "IT Asset Tracking",
-      tagline: "Fleet & MDM Custody",
-      shortDesc: "Real-time user checkout, Jamf/Intune sync & license tracking.",
+      title: t('home.system.steps.itTracking.title'),
+      tagline: t('home.system.steps.itTracking.tagline'),
+      shortDesc: t('home.system.steps.itTracking.description'),
       icon: <Laptop className="h-4 w-4" />,
     },
     {
       number: "03",
-      title: "Mobile Asset Tracking",
-      tagline: "High-Speed Scanner HUD",
-      shortDesc: "Offline-first 2D barcode, QR and UHF RFID scanning.",
+      title: t('home.system.steps.mobileTracking.title'),
+      tagline: t('home.system.steps.mobileTracking.tagline'),
+      shortDesc: t('home.system.steps.mobileTracking.description'),
       icon: <QrCode className="h-4 w-4" />,
     },
     {
       number: "04",
-      title: "Inspection Management",
-      tagline: "Digital Field Protocols",
-      shortDesc: "Structured checklists, photo proofs & instant e-signatures.",
+      title: t('home.system.steps.inspection.title'),
+      tagline: t('home.system.steps.inspection.tagline'),
+      shortDesc: t('home.system.steps.inspection.description'),
       icon: <ClipboardCheck className="h-4 w-4" />,
     },
     {
       number: "05",
-      title: "Lifecycle Management",
-      tagline: "Depreciation & Service",
-      shortDesc: "From procurement to straight-line & MACRS retirement.",
+      title: t('home.system.steps.lifecycle.title'),
+      tagline: t('home.system.steps.lifecycle.tagline'),
+      shortDesc: t('home.system.steps.lifecycle.description'),
       icon: <ShieldAlert className="h-4 w-4" />,
     },
     {
       number: "06",
-      title: "Asset Reporting",
-      tagline: "Audit-Ready Reconciliations",
-      shortDesc: "One-click 100% reconciled reports for internal & external audits.",
+      title: t('home.system.steps.reporting.title'),
+      tagline: t('home.system.steps.reporting.tagline'),
+      shortDesc: t('home.system.steps.reporting.description'),
       icon: <FileBarChart className="h-4 w-4" />,
     },
     {
       number: "07",
-      title: "Workflow & API Automation",
-      tagline: "Automated Rules & Webhooks",
-      shortDesc: "Trigger automatic alerts, ERP sync, and webhook integrations.",
+      title: t('home.system.steps.automation.title'),
+      tagline: t('home.system.steps.automation.tagline'),
+      shortDesc: t('home.system.steps.automation.description'),
       icon: <SlidersHorizontal className="h-4 w-4" />,
     },
   ];
@@ -255,13 +257,13 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-16">
           <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
-            One Unified Architecture
+            {t('home.system.badge')}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
-            The Single System of Record <span className="text-[var(--brand-primary)]">from First Tag to Final Audit.</span>
+            {t('home.system.title')} <span className="text-[var(--brand-primary)]">{t('home.system.titleHighlight')}</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-            Eliminate disconnected spreadsheets and siloed software. Asset Master connects physical identity, custody, lifecycle health, and regulatory compliance into one operational spine.
+            {t('home.system.description')}
           </p>
         </div>
 
@@ -270,8 +272,8 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
           {/* Left Column: Interactive Vertical Step Pipeline (01 to 07) */}
           <div className="lg:col-span-4 space-y-2">
             <div className="flex items-center justify-between px-2 pb-2 text-[10px] sm:text-xs font-bold text-[var(--foreground-muted)] uppercase tracking-wider border-b border-[var(--border-custom)]">
-              <span>Operational Pipeline</span>
-              <span>7 Modules</span>
+              <span>{t('home.system.operationalPipeline')}</span>
+              <span>7 {t('home.system.modules')}</span>
             </div>
 
             <div className="space-y-1.5 pt-1">
@@ -373,8 +375,8 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                 <div className="flex items-center gap-2">
                   <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold text-[var(--brand-emerald)] bg-[var(--brand-emerald-light)] px-2 sm:px-2.5 py-1 rounded-md border border-[var(--brand-emerald)]/20">
                     <ShieldCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                    <span className="hidden xs:inline">Live System Active</span>
-                    <span className="xs:hidden">Active</span>
+                    <span className="hidden xs:inline">{t('home.system.liveSystemActive')}</span>
+                    <span className="xs:hidden">{t('home.system.active')}</span>
                   </span>
                 </div>
               </div>
@@ -412,7 +414,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                     </div>
 
                     <div className="text-xs font-mono text-[var(--foreground-subtle)] shrink-0">
-                      Showing {filteredRegistry.length} live records
+                      {t('home.industries.showing')} {filteredRegistry.length} {t('home.industries.liveStat')}
                     </div>
                   </div>
 
@@ -987,7 +989,7 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
               <div className="mt-4 sm:mt-5 pt-3 sm:pt-4 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-3">
                 <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs text-[var(--foreground-muted)] text-center sm:text-left">
                   <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0" />
-                  <span>SOC 2 Type II certified &bull; Real-time cryptographic ledger</span>
+                  <span>{t('home.system.soc2Certified')}</span>
                 </div>
 
                 <div className="flex items-center gap-2 w-full sm:w-auto">
@@ -997,8 +999,8 @@ export function SystemOfRecord({ onBookDemo }: SystemOfRecordProps) {
                     onClick={onBookDemo}
                     className="w-full sm:w-auto text-[11px] sm:text-xs"
                   >
-                    <span className="hidden xs:inline">Schedule Custom Walkthrough</span>
-                    <span className="xs:hidden">Schedule Demo</span>
+                    <span className="hidden xs:inline">{t('home.system.scheduleWalkthrough')}</span>
+                    <span className="xs:hidden">{t('home.system.scheduleWalkthroughShort')}</span>
                     <ArrowRight className="h-3.5 w-3.5" />
                   </Button>
                 </div>

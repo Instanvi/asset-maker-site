@@ -22,6 +22,7 @@ import {
   AlertCircle,
   FileCheck,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -47,6 +48,7 @@ interface DemoAsset {
 }
 
 export function HeroSection({ onBookDemo }: HeroSectionProps) {
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState<"dashboard" | "scanner" | "inspection">("dashboard");
   const [selectedAssetIndex, setSelectedAssetIndex] = useState(0);
   const [isCheckedOut, setIsCheckedOut] = useState(false);
@@ -146,18 +148,18 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
           {/* Left Column: Clear, Punchy Copy & CTAs */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-6 text-center lg:text-left">
             <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-              Total Operational Accountability
+              {t('home.hero.badge')}
             </p>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.1] sm:leading-[1.08]">
-              Go Beyond Tracking.{" "}
+              {t('home.hero.title')}{" "}
               <span className="text-[var(--brand-primary)]">
-                Complete Asset Intelligence.
+                {t('home.hero.titleHighlight')}
               </span>
             </h1>
 
             <p className="text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Track physical assets, automate digital field inspections, and prove compliance in seconds. Asset Master centralizes your lifecycle records, warranties, and tamper-proof custody without spreadsheets.
+              {t('home.hero.description')}
             </p>
 
             {/* CTAs */}
@@ -168,7 +170,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                 href="/demo"
                 className="w-full sm:w-auto text-sm sm:text-base shadow-[var(--shadow-glow)]"
               >
-                <span>Book a Live Demo</span>
+                <span>{t('home.hero.cta.bookDemo')}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
               <Button
@@ -177,7 +179,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                 href="/contact"
                 className="w-full sm:w-auto text-sm sm:text-base"
               >
-                <span>Contact Sales</span>
+                <span>{t('home.hero.cta.contactSales')}</span>
               </Button>
             </div>
 
@@ -185,15 +187,15 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
             <div className="pt-3 sm:pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 text-[11px] sm:text-xs text-[var(--foreground-muted)] font-medium">
               <div className="flex items-center gap-1.5">
                 <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)]" />
-                <span>SOC 2 Type II Certified</span>
+                <span>{t('home.hero.trustBadges.soc2')}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-primary)]" />
-                <span>ISO 27001 Compliant</span>
+                <span>{t('home.hero.trustBadges.iso27001')}</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-primary)]" />
-                <span>Deploy in &lt; 15 Mins</span>
+                <span>{t('home.hero.trustBadges.deployTime')}</span>
               </div>
             </div>
           </div>
@@ -214,8 +216,8 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                   )}
                 >
                   <Eye className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                  <span className="hidden xs:inline">Asset Hub</span>
-                  <span className="xs:hidden">Hub</span>
+                  <span className="hidden xs:inline">{t('home.hero.tabs.assetHub')}</span>
+                  <span className="xs:hidden">{t('home.hero.tabs.assetHubShort')}</span>
                 </button>
 
                 <button
@@ -229,8 +231,8 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                   )}
                 >
                   <QrCode className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                  <span className="hidden xs:inline">Mobile Scanner</span>
-                  <span className="xs:hidden">Scan</span>
+                  <span className="hidden xs:inline">{t('home.hero.tabs.mobileScanner')}</span>
+                  <span className="xs:hidden">{t('home.hero.tabs.mobileScannerShort')}</span>
                 </button>
 
                 <button
@@ -244,8 +246,8 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                   )}
                 >
                   <ClipboardCheck className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
-                  <span className="hidden xs:inline">Field Audit</span>
-                  <span className="xs:hidden">Audit</span>
+                  <span className="hidden xs:inline">{t('home.hero.tabs.fieldAudit')}</span>
+                  <span className="xs:hidden">{t('home.hero.tabs.fieldAuditShort')}</span>
                 </button>
               </div>
 
@@ -284,7 +286,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         </h3>
                       </div>
                       <span className="text-xs font-bold px-2 py-1 rounded-md bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] shrink-0 border border-[var(--brand-emerald)]/20">
-                        {isCheckedOut ? "Checked Out" : "Active & Verified"}
+                        {isCheckedOut ? t('home.hero.demo.checkedOut') : t('home.hero.demo.activeVerified')}
                       </span>
                     </div>
 
@@ -292,7 +294,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                     <div className="grid grid-cols-2 gap-2">
                       <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                         <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
-                          Book Value
+                          {t('home.hero.demo.bookValue')}
                         </div>
                         <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5">
                           {currentAsset.bookValue}
@@ -301,7 +303,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
 
                       <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                         <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
-                          Health Score
+                          {t('home.hero.demo.healthScore')}
                         </div>
                         <div className="text-[11px] sm:text-xs font-bold text-[var(--brand-emerald)] mt-0.5">
                           {currentAsset.conditionScore}% (A+)
@@ -310,7 +312,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
 
                       <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                         <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
-                          Warranty
+                          {t('home.hero.demo.warranty')}
                         </div>
                         <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5">
                           {currentAsset.warrantyUntil}
@@ -319,10 +321,10 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
 
                       <div className="p-2 sm:p-2.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                         <div className="text-[9px] sm:text-[10px] font-bold text-[var(--foreground-subtle)] uppercase tracking-wider">
-                          Custody
+                          {t('home.hero.demo.custody')}
                         </div>
                         <div className="text-[11px] sm:text-xs font-bold text-[var(--foreground)] mt-0.5 truncate">
-                          {isCheckedOut ? "In Field" : currentAsset.custodian.split(" ")[0]}
+                          {isCheckedOut ? t('home.hero.demo.inField') : currentAsset.custodian.split(" ")[0]}
                         </div>
                       </div>
                     </div>
@@ -332,7 +334,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                       <div className="flex items-center gap-2">
                         <MapPin className="h-4 w-4 text-[var(--brand-primary)]" />
                         <span className="text-[var(--foreground-muted)]">
-                          Assigned: <strong className="text-[var(--foreground)]">{currentAsset.location.replace("&bull;", "•")}</strong>
+                          {t('home.hero.demo.assigned')}: <strong className="text-[var(--foreground)]">{currentAsset.location.replace("&bull;", "•")}</strong>
                         </span>
                       </div>
                       <span className="text-[11px] font-mono text-[var(--foreground-subtle)]">
@@ -349,7 +351,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         onClick={() => setIsCheckedOut(!isCheckedOut)}
                       >
                         <UserCheck className="h-3.5 w-3.5" />
-                        <span>{isCheckedOut ? "Return to Inventory" : "Quick Check-Out"}</span>
+                        <span>{isCheckedOut ? t('home.hero.demo.returnToInventory') : t('home.hero.demo.quickCheckout')}</span>
                       </Button>
                       <Button
                         variant="primary"
@@ -358,7 +360,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         href="/demo"
                       >
                         <FileCheck className="h-3.5 w-3.5" />
-                        <span>Generate Audit Record</span>
+                        <span>{t('home.hero.demo.generateAudit')}</span>
                       </Button>
                     </div>
                   </div>
@@ -377,20 +379,20 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                       <div className="relative z-10 my-2 mx-auto w-40 h-28 border-2 border-dashed border-cyan-400/80 rounded-lg flex flex-col items-center justify-center p-2 bg-slate-900/50">
                         <QrCode className="h-10 w-10 text-cyan-400 mb-1" />
                         <span className="text-[10px] font-mono text-cyan-300">
-                          {isScanning ? "READING TAG..." : currentAsset.tag}
+                          {isScanning ? t('home.hero.demo.readingTag') : currentAsset.tag}
                         </span>
                       </div>
 
                       <div className="flex items-center justify-between text-[11px] text-slate-400 px-2 pt-2 border-t border-slate-800">
-                        <span>Latency: &lt; 85ms</span>
-                        <span>Camera: 4K 2D Matrix</span>
-                        <span className="text-emerald-400 font-bold">GPS Tagged</span>
+                        <span>{t('home.hero.demo.latency')}</span>
+                        <span>{t('home.hero.demo.camera')}</span>
+                        <span className="text-emerald-400 font-bold">{t('home.hero.demo.gpsTagged')}</span>
                       </div>
                     </div>
 
                     <div className="flex items-center justify-between pt-1">
                       <div className="text-xs text-[var(--foreground-muted)]">
-                        Current Scan: <strong className="text-[var(--foreground)]">{currentAsset.name}</strong>
+                        {t('home.hero.demo.currentScan')}: <strong className="text-[var(--foreground)]">{currentAsset.name}</strong>
                       </div>
                       <Button
                         variant="primary"
@@ -399,7 +401,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         className="text-xs"
                       >
                         <RefreshCw className={cn("h-3.5 w-3.5", isScanning && "animate-spin")} />
-                        <span>Simulate Scan Next</span>
+                        <span>{t('home.hero.demo.simulateScan')}</span>
                       </Button>
                     </div>
                   </div>
@@ -411,14 +413,14 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                     <div className="flex items-center justify-between pb-2 border-b border-[var(--border-subtle)]">
                       <div>
                         <span className="text-xs font-bold text-[var(--foreground)]">
-                          Digital Inspection Protocol #8491
+                          {t('home.hero.demo.inspectionProtocol')}
                         </span>
                         <p className="text-[11px] text-[var(--foreground-muted)]">
-                          Inspector: Dave Martinez &bull; {currentAsset.name}
+                          {t('home.hero.demo.inspector')}: Dave Martinez &bull; {currentAsset.name}
                         </p>
                       </div>
                       <span className="text-xs font-bold text-[var(--brand-emerald)]">
-                        {checklist.filter((c) => c.passed).length}/{checklist.length} Passed
+                        {checklist.filter((c) => c.passed).length}/{checklist.length} {t('home.hero.demo.passed')}
                       </span>
                     </div>
 
@@ -443,7 +445,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                             <span className="font-semibold">{item.text}</span>
                           </div>
                           <span className="text-[10px] font-bold uppercase tracking-wider font-mono">
-                            {item.passed ? "Pass" : "Flag"}
+                            {item.passed ? t('home.hero.demo.pass') : t('home.hero.demo.flag')}
                           </span>
                         </div>
                       ))}
@@ -452,7 +454,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                     <div className="pt-2 flex items-center justify-between text-xs text-[var(--foreground-muted)]">
                       <span className="flex items-center gap-1 text-[var(--brand-emerald)] font-bold">
                         <ShieldCheck className="h-3.5 w-3.5" />
-                        Automated Digital Scoring Active
+                        {t('home.hero.demo.automatedScoring')}
                       </span>
                       <Button
                         variant="primary"
@@ -460,7 +462,7 @@ export function HeroSection({ onBookDemo }: HeroSectionProps) {
                         href="/demo"
                         className="text-xs"
                       >
-                        Submit Inspection
+                        {t('home.hero.demo.submitInspection')}
                       </Button>
                     </div>
                   </div>

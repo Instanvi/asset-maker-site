@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const logos = [
   { src: "/images/Amazon_logo.svg.webp", alt: "Amazon", h: "30px" },
@@ -15,11 +16,13 @@ const logos = [
 ];
 
 export function LogoMarquee() {
+  const t = useTranslations();
+
   return (
     <div className="py-6 sm:py-8 bg-white border-y border-[var(--border-subtle)] overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-4 sm:mb-5 text-center">
         <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--foreground-muted)]">
-          Trusted by operations & fleet teams
+          {t('home.logoMarquee.trustedBy')}
         </p>
       </div>
 

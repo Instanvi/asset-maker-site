@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 
 interface WhyTeamsChooseProps {
@@ -9,26 +10,24 @@ interface WhyTeamsChooseProps {
 }
 
 export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
+  const t = useTranslations();
+
   const pillars = [
     {
-      title: "Flexible by design",
-      description:
-        "Configure fields, workflows, and reports to match how your operation runs. No rigid templates. Asset Master adapts to you.",
+      title: t('home.whyTeams.pillars.flexible.title'),
+      description: t('home.whyTeams.pillars.flexible.description'),
     },
     {
-      title: "Easy enough for everyone",
-      description:
-        "Field teams, IT, finance, and operations can all use it without training. If you can use a smartphone, you’re ready.",
+      title: t('home.whyTeams.pillars.easy.title'),
+      description: t('home.whyTeams.pillars.easy.description'),
     },
     {
-      title: "Visibility that’s actually useful",
-      description:
-        "Every asset’s location, assignment, condition, and history. Across every team and location, in real time.",
+      title: t('home.whyTeams.pillars.visibility.title'),
+      description: t('home.whyTeams.pillars.visibility.description'),
     },
     {
-      title: "Finally done with spreadsheets",
-      description:
-        "Replace manual tracking and version confusion with one system that scales as your organization grows.",
+      title: t('home.whyTeams.pillars.noSpreadsheets.title'),
+      description: t('home.whyTeams.pillars.noSpreadsheets.description'),
     },
   ];
 
@@ -39,15 +38,15 @@ export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
           {/* Left Column */}
           <div className="lg:col-span-5 space-y-4 sm:space-y-5 text-center lg:text-left">
             <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-              Why Teams Choose Asset Master
+              {t('home.whyTeams.badge')}
             </p>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
-              Built for the field. <span className="text-[var(--brand-primary)]">Ready for anything.</span>
+              {t('home.whyTeams.title')} <span className="text-[var(--brand-primary)]">{t('home.whyTeams.titleHighlight')}</span>
             </h2>
 
             <p className="text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-              Replace the spreadsheets and manual processes your team has outgrown. Configure Asset Master your way and prove operational accountability whenever it counts.
+              {t('home.whyTeams.description')}
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
@@ -57,7 +56,7 @@ export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
                 href="/demo"
                 className="w-full sm:w-auto text-xs shadow-[var(--shadow-glow)]"
               >
-                <span>Book a Demo</span>
+                <span>{t('common.bookDemo')}</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Button>
               <Button
@@ -66,12 +65,12 @@ export function WhyTeamsChoose({ onBookDemo }: WhyTeamsChooseProps) {
                 href="#demo"
                 className="w-full sm:w-auto text-xs"
               >
-                Talk to Sales
+                {t('home.whyTeams.talkToSales')}
               </Button>
             </div>
 
             <div className="pt-2 text-[10px] sm:text-xs font-bold text-[var(--brand-emerald)]">
-              Asset management becomes proactive - not reactive.
+              {t('home.whyTeams.proactiveNotReactive')}
             </div>
           </div>
 

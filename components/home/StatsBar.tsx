@@ -1,15 +1,18 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 
 export function StatsBar() {
+  const t = useTranslations();
+
   const stats = [
-    { value: "50M+", label: "Assets Tracked Worldwide" },
-    { value: "10,000+", label: "Organizations Served Since 2012" },
-    { value: "90,000+", label: "Users Managing Assets Daily" },
-    { value: "4,000", label: "Hours Saved Annually" },
-    { value: "800%", label: "Time Savings ROI" },
-    { value: "67+", label: "Countries Using Asset Master" },
+    { value: "50M+", label: t('home.stats.assetsTracked') },
+    { value: "10,000+", label: t('home.stats.organizationsServed') },
+    { value: "90,000+", label: t('home.stats.usersDaily') },
+    { value: "4,000", label: t('home.stats.hoursSaved') },
+    { value: "800%", label: t('home.stats.timeSavingsRoi') },
+    { value: "67+", label: t('home.stats.countries') },
   ];
 
   return (
@@ -17,10 +20,10 @@ export function StatsBar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
           <h2 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[var(--brand-primary)] mb-2">
-            Global Compliance & Scale
+            {t('home.stats.badge')}
           </h2>
           <p className="text-lg sm:text-xl lg:text-2xl font-bold text-[var(--foreground)] tracking-tight leading-snug">
-            Trusted by thousands of organizations managing millions of assets worldwide.
+            {t('home.stats.title')}
           </p>
         </div>
 

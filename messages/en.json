@@ -96,5 +96,389 @@
     "requestWalkthrough": "Request a guided walkthrough",
     "turnActivityIntoIntelligence": "Turn everyday asset activity into audit-ready intelligence.",
     "learnMore": "Learn more"
+  },
+  "home": {
+    "hero": {
+      "badge": "Total Operational Accountability",
+      "title": "Go Beyond Tracking.",
+      "titleHighlight": "Complete Asset Intelligence.",
+      "description": "Track physical assets, automate digital field inspections, and prove compliance in seconds. Asset Master centralizes your lifecycle records, warranties, and tamper-proof custody without spreadsheets.",
+      "cta": {
+        "bookDemo": "Book a Live Demo",
+        "contactSales": "Contact Sales"
+      },
+      "trustBadges": {
+        "soc2": "SOC 2 Type II Certified",
+        "iso27001": "ISO 27001 Compliant",
+        "deployTime": "Deploy in < 15 Mins"
+      },
+      "tabs": {
+        "assetHub": "Asset Hub",
+        "assetHubShort": "Hub",
+        "mobileScanner": "Mobile Scanner",
+        "mobileScannerShort": "Scan",
+        "fieldAudit": "Field Audit",
+        "fieldAuditShort": "Audit"
+      },
+      "demo": {
+        "checkedOut": "Checked Out",
+        "activeVerified": "Active & Verified",
+        "bookValue": "Book Value",
+        "healthScore": "Health Score",
+        "warranty": "Warranty",
+        "custody": "Custody",
+        "inField": "In Field",
+        "assigned": "Assigned",
+        "quickCheckout": "Quick Check-Out",
+        "returnToInventory": "Return to Inventory",
+        "generateAudit": "Generate Audit Record",
+        "readingTag": "READING TAG...",
+        "latency": "Latency: < 85ms",
+        "camera": "Camera: 4K 2D Matrix",
+        "gpsTagged": "GPS Tagged",
+        "currentScan": "Current Scan",
+        "simulateScan": "Simulate Scan Next",
+        "inspectionProtocol": "Digital Inspection Protocol #8491",
+        "inspector": "Inspector",
+        "passed": "Passed",
+        "pass": "Pass",
+        "flag": "Flag",
+        "automatedScoring": "Automated Digital Scoring Active",
+        "submitInspection": "Submit Inspection"
+      }
+    },
+    "stats": {
+      "badge": "Global Compliance & Scale",
+      "title": "Trusted by thousands of organizations managing millions of assets worldwide.",
+      "assetsTracked": "Assets Tracked Worldwide",
+      "organizationsServed": "Organizations Served Since 2012",
+      "usersDaily": "Users Managing Assets Daily",
+      "hoursSaved": "Hours Saved Annually",
+      "timeSavingsRoi": "Time Savings ROI",
+      "countries": "Countries Using Asset Master"
+    },
+    "logoMarquee": {
+      "trustedBy": "Trusted by operations & fleet teams"
+    },
+    "whyIntelligence": {
+      "badge": "Why Asset Intelligence",
+      "title": "Four verbs. One platform.",
+      "titleHighlight": "Total accountability.",
+      "description": "Tracking tells you where things are. Asset Master tells you everything else: who had it, what happened to it, and whether you can prove it.",
+      "pillars": {
+        "tracking": {
+          "verb": "Tracking",
+          "tagline": "Total Real-Time Visibility",
+          "assetMaster": "Asset Master automatically captures every scan, transfer, and checkout, keeping the master record synchronized in real time. You always know current location and active custody.",
+          "spreadsheet": "A spreadsheet row that goes stale the moment someone forgets to update it."
+        },
+        "inspection": {
+          "verb": "Inspection",
+          "tagline": "Instant Field Condition Grading",
+          "assetMaster": "Execute digital checklists on mobile, attach geotagged photo proof, and automatically log pass/fail defect status directly from the field.",
+          "spreadsheet": "Paper forms, emailed photos, and inspection logs living in someone's inbox."
+        },
+        "audit": {
+          "verb": "Audit",
+          "tagline": "Instant Chain of Custody",
+          "assetMaster": "Instantly compile complete lifecycle history, custody handover signatures, and tamper-proof compliance logs for internal and external auditors.",
+          "spreadsheet": "Weeks of manual reconciliation across files, folders, and departments."
+        },
+        "compliance": {
+          "verb": "Compliance",
+          "tagline": "Proactive Risk Prevention",
+          "assetMaster": "Continuously monitor warranty expirations and inspection schedules, automatically flagging overdue items and generating audit-ready reports.",
+          "spreadsheet": "Reactive scrambling when regulators, insurers, or executives ask for proof."
+        }
+      },
+      "assetMasterTitle": "Asset Master",
+      "assetMasterSubtitle": "Continuous Operational Intelligence",
+      "spreadsheetsTitle": "Spreadsheets & Siloed Tools",
+      "spreadsheetsSubtitle": "Manual Status Quo",
+      "capability": "Capability",
+      "traditionalPitfall": "Traditional Pitfall",
+      "zeroManualUpkeep": "Zero manual spreadsheet upkeep required",
+      "proneToError": "Prone to human error, blind spots, and data drift",
+      "readyToReplace": "Ready to replace fragile spreadsheets with complete asset intelligence?",
+      "exploreIntelligence": "Explore Asset Intelligence",
+      "seeComparison": "See Comparison"
+    },
+    "whyTeams": {
+      "badge": "Why Teams Choose Asset Master",
+      "title": "Built for the field.",
+      "titleHighlight": "Ready for anything.",
+      "description": "Replace the spreadsheets and manual processes your team has outgrown. Configure Asset Master your way and prove operational accountability whenever it counts.",
+      "pillars": {
+        "flexible": {
+          "title": "Flexible by design",
+          "description": "Configure fields, workflows, and reports to match how your operation runs. No rigid templates. Asset Master adapts to you."
+        },
+        "easy": {
+          "title": "Easy enough for everyone",
+          "description": "Field teams, IT, finance, and operations can all use it without training. If you can use a smartphone, you're ready."
+        },
+        "visibility": {
+          "title": "Visibility that's actually useful",
+          "description": "Every asset's location, assignment, condition, and history. Across every team and location, in real time."
+        },
+        "noSpreadsheets": {
+          "title": "Finally done with spreadsheets",
+          "description": "Replace manual tracking and version confusion with one system that scales as your organization grows."
+        }
+      },
+      "talkToSales": "Talk to Sales",
+      "proactiveNotReactive": "Asset management becomes proactive - not reactive."
+    },
+    "industries": {
+      "badge": "Built for Your Industry",
+      "title": "Tailored for your sector.",
+      "titleHighlight": "Zero compromise.",
+      "description": "Every sector manages physical equipment with distinct regulatory and operational rules. Discover our specialized industry workflows.",
+      "verifiedImpact": "Verified Impact",
+      "readFullStory": "Read Full Success Story",
+      "bookLiveWalkthrough": "Book Live Walkthrough",
+      "viewAllIndustries": "View All Industry Solutions & Compliance Frameworks",
+      "liveStat": "live records",
+      "showing": "Showing"
+    },
+    "customerStory": {
+      "badge": "Customer Story",
+      "title": "Real results from teams that",
+      "titleHighlight": "couldn't afford guesswork.",
+      "description": "See how organizations moved from scattered records and reactive audits to complete asset intelligence.",
+      "of": "of",
+      "verifiedImpact": "Verified Impact",
+      "readFullStory": "Read Full Success Story",
+      "stories": [
+        {
+          "institution": "Saint Francis University",
+          "headline": "St. Francis got a much-needed update to their financial reports",
+          "quote": "With the implementation and the customizable fields, we were able to basically match things into Asset Master out of our current data we were used to managing.",
+          "author": "Tom Kendziora",
+          "role": "Assistant Controller",
+          "metrics": [
+            { "label": "Audit Prep Time", "value": "-85%" },
+            { "label": "Campus Assets Tracked", "value": "14,500+" },
+            { "label": "Financial Reporting", "value": "100% Real-Time" }
+          ]
+        },
+        {
+          "institution": "Apex Infrastructure Group",
+          "headline": "Apex eliminated lost jobsite equipment across 42 active project sites",
+          "quote": "Field workers scan tools directly with their phones before leaving the site. We recovered over $340,000 in heavy tools in our first six months alone.",
+          "author": "Derrick Hayes",
+          "role": "Director of Field Operations",
+          "metrics": [
+            { "label": "Equipment Loss Rate", "value": "0.2%" },
+            { "label": "Tool Checkout Speed", "value": "< 5 secs" },
+            { "label": "Annual Capital Saved", "value": "$340,000+" }
+          ]
+        },
+        {
+          "institution": "Merit Health Systems",
+          "headline": "Merit passed state biomedical audits with zero non-compliance citations",
+          "quote": "When state inspectors arrive, we hand them full calibration histories and inspection logs in two clicks. There is no scrambling or searching files.",
+          "author": "Elena Rostova",
+          "role": "VP of Clinical Engineering",
+          "metrics": [
+            { "label": "Regulatory Citations", "value": "0" },
+            { "label": "Biomed Devices Managed", "value": "8,200+" },
+            { "label": "Inspection Accuracy", "value": "99.9%" }
+          ]
+        }
+      ]
+    },
+    "intelligence": {
+      "badge": "Intelligence in Action",
+      "title": "Every team. Every workflow.",
+      "titleHighlight": "One source of truth.",
+      "description": "Unify IT, operations, maintenance, and compliance into a single centralized system built for speed and audit readiness.",
+      "workflows": {
+        "itTracking": {
+          "title": "IT Asset Tracking",
+          "description": "Every device tracked, assigned, and audited. No chasing emails. No digging through files.",
+          "link": "Explore IT tracking"
+        },
+        "equipmentTracking": {
+          "title": "Equipment Tracking",
+          "description": "Location, condition, ownership, and maintenance history. All tied to each asset, in real time.",
+          "link": "Explore equipment tracking"
+        },
+        "maintenance": {
+          "title": "Maintenance & Inspections",
+          "description": "Every repair, inspection, calibration, and warranty lives with the asset. Not in a spreadsheet.",
+          "link": "See inspection workflows"
+        },
+        "fieldOps": {
+          "title": "Field Operations",
+          "description": "Scan barcodes, update records, and complete inspections from your mobile device. No desk required.",
+          "link": "Explore mobile tracking"
+        },
+        "auditReadiness": {
+          "title": "Audit Readiness",
+          "description": "When auditors ask, you answer in minutes. Full histories, documentation, and reports. Ready to go.",
+          "link": "Learn about audit readiness"
+        },
+        "facilities": {
+          "title": "Facilities Management",
+          "description": "Every tool, fixture, vehicle, and shared asset across every location. Compliance status included.",
+          "link": "Explore facilities management"
+        }
+      }
+    },
+    "roi": {
+      "badge": "Interactive ROI Calculator",
+      "title": "See your projected",
+      "titleHighlight": "time & capital savings.",
+      "description": "Calculate how much your organization saves by replacing manual spreadsheets and reactive audits with automated asset intelligence.",
+      "totalAssets": "Total Assets Tracked",
+      "units": "units",
+      "weeklyHours": "Weekly Hours Spent Auditing & Searching",
+      "weeklyHoursShort": "Weekly Audit Hours",
+      "hrsWeek": "hrs/week",
+      "hrs": "hrs",
+      "assumptions": "Benchmark Calculation Assumptions",
+      "assumptionsText": "Based on verified customer data: 75% reduction in reconciliation hours, 4% average loss prevention rate, and standard $48/hr operational burdened labor.",
+      "projectedValue": "Projected Annual Value",
+      "perYear": "/ year",
+      "estRoi": "Est. ROI",
+      "laborHours": "Labor Hours Saved",
+      "saved": "saved",
+      "lostAssetPrevention": "Lost Asset Prevention",
+      "lostAssetPreventionShort": "Asset Prevention",
+      "avoidedReplacements": "Avoided replacements",
+      "avoided": "Avoided",
+      "getReport": "Get Full Customized ROI Report",
+      "getReportShort": "Get Full ROI Report"
+    },
+    "system": {
+      "badge": "One Unified Architecture",
+      "title": "The Single System of Record",
+      "titleHighlight": "from First Tag to Final Audit.",
+      "description": "Eliminate disconnected spreadsheets and siloed software. Asset Master connects physical identity, custody, lifecycle health, and regulatory compliance into one operational spine.",
+      "operationalPipeline": "Operational Pipeline",
+      "modules": "Modules",
+      "liveSystemActive": "Live System Active",
+      "active": "Active",
+      "steps": {
+        "assetTracking": {
+          "title": "Asset Tracking",
+          "tagline": "Master Asset Registry",
+          "description": "Complete searchable identity, depreciation & warranty record."
+        },
+        "itTracking": {
+          "title": "IT Asset Tracking",
+          "tagline": "Fleet & MDM Custody",
+          "description": "Real-time user checkout, Jamf/Intune sync & license tracking."
+        },
+        "mobileTracking": {
+          "title": "Mobile Asset Tracking",
+          "tagline": "High-Speed Scanner HUD",
+          "description": "Offline-first 2D barcode, QR and UHF RFID scanning."
+        },
+        "inspection": {
+          "title": "Inspection Management",
+          "tagline": "Digital Field Protocols",
+          "description": "Structured checklists, photo proofs & instant e-signatures."
+        },
+        "lifecycle": {
+          "title": "Lifecycle Management",
+          "tagline": "Depreciation & Service",
+          "description": "From procurement to straight-line & MACRS retirement."
+        },
+        "reporting": {
+          "title": "Asset Reporting",
+          "tagline": "Audit-Ready Reconciliations",
+          "description": "One-click 100% reconciled reports for internal & external audits."
+        },
+        "automation": {
+          "title": "Workflow & API Automation",
+          "tagline": "Automated Rules & Webhooks",
+          "description": "Trigger automatic alerts, ERP sync, and webhook integrations."
+        }
+      },
+      "scheduleWalkthrough": "Schedule Custom Walkthrough",
+      "scheduleWalkthroughShort": "Schedule Demo",
+      "soc2Certified": "SOC 2 Type II certified • Real-time cryptographic ledger"
+    },
+    "cta": {
+      "badge": "Ready to See it in Action?",
+      "title": "See everything. Know everything.",
+      "titleHighlight": "Prove everything.",
+      "description": "No guesswork. No spreadsheets. No scrambling when audits happen. Configure Asset Master in minutes and scale across all locations.",
+      "talkToSales": "Talk to Sales"
+    },
+    "bookDemo": {
+      "badge": "Book a Personalized Demo",
+      "title": "See how Asset Master",
+      "titleHighlight": "transforms your operations.",
+      "description": "Get a 1-on-1 walkthrough customized to your industry workflows, asset volume, and compliance standards.",
+      "benefits": {
+        "tailored": "Live demo tailored to your specific asset types and jobsite needs",
+        "import": "Learn how to import existing spreadsheets in under 15 minutes",
+        "explore": "Explore mobile scanning and automated digital inspections in real time"
+      },
+      "form": {
+        "title": "Request a Live Walkthrough",
+        "noCard": "No credit card required. Free 14-day full access included.",
+        "fullName": "Full Name",
+        "workEmail": "Work Email",
+        "company": "Company / Organization Name",
+        "industry": "Primary Industry",
+        "assetsCount": "Estimated Assets Count",
+        "industries": {
+          "it": "IT & Technology",
+          "construction": "Construction & Field Ops",
+          "healthcare": "Healthcare & Biomedical",
+          "education": "Education (K-12 & Higher Ed)",
+          "manufacturing": "Manufacturing & Logistics",
+          "government": "Government & Public Sector",
+          "nonprofit": "Nonprofit & Other"
+        },
+        "assetsCounts": {
+          "small": "50 - 500 assets",
+          "medium": "500 - 2,500 assets",
+          "large": "2,500 - 10,000 assets",
+          "enterprise": "10,000+ enterprise assets"
+        },
+        "submit": "Schedule My Demo",
+        "success": {
+          "title": "Demo Request Received!",
+          "message": "An Asset Master product specialist will reach out to {email} within 2 hours to confirm your session.",
+          "another": "Submit Another Request"
+        }
+      }
+    },
+    "bookDemoModal": {
+      "title": "Book an Asset Master Demo",
+      "description": "See how complete asset tracking and digital compliance workflows transform your team's operational efficiency.",
+      "form": {
+        "fullName": "Full Name",
+        "workEmail": "Work Email",
+        "company": "Company Name",
+        "industry": "Industry",
+        "assetsVolume": "Assets Volume",
+        "industries": {
+          "it": "IT Hardware",
+          "construction": "Construction",
+          "healthcare": "Healthcare",
+          "education": "Education",
+          "manufacturing": "Manufacturing",
+          "government": "Government"
+        },
+        "volumes": {
+          "small": "50 - 500",
+          "medium": "500 - 2.5k",
+          "large": "2.5k - 10k",
+          "enterprise": "10k+ units"
+        },
+        "submit": "Confirm Demo Booking",
+        "success": {
+          "title": "Demo Request Confirmed!",
+          "message": "We will contact {email} with meeting details shortly.",
+          "done": "Done"
+        }
+      }
+    }
   }
 }

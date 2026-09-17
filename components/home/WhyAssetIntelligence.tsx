@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   ArrowRight,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -19,44 +20,37 @@ interface WhyAssetIntelligenceProps {
 }
 
 export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) {
+  const t = useTranslations();
   const [activePillarIndex, setActivePillarIndex] = useState(0);
 
   const pillars = [
     {
-      verb: "Tracking",
-      tagline: "Total Real-Time Visibility",
+      verb: t('home.whyIntelligence.pillars.tracking.verb'),
+      tagline: t('home.whyIntelligence.pillars.tracking.tagline'),
       icon: <Eye className="h-5 w-5" />,
-      assetMasterText:
-        "Asset Master automatically captures every scan, transfer, and checkout, keeping the master record synchronized in real time. You always know current location and active custody.",
-      spreadsheetText:
-        "A spreadsheet row that goes stale the moment someone forgets to update it.",
+      assetMasterText: t('home.whyIntelligence.pillars.tracking.assetMaster'),
+      spreadsheetText: t('home.whyIntelligence.pillars.tracking.spreadsheet'),
     },
     {
-      verb: "Inspection",
-      tagline: "Instant Field Condition Grading",
+      verb: t('home.whyIntelligence.pillars.inspection.verb'),
+      tagline: t('home.whyIntelligence.pillars.inspection.tagline'),
       icon: <Camera className="h-5 w-5" />,
-      assetMasterText:
-        "Execute digital checklists on mobile, attach geotagged photo proof, and automatically log pass/fail defect status directly from the field.",
-      spreadsheetText:
-        "Paper forms, emailed photos, and inspection logs living in someone’s inbox.",
+      assetMasterText: t('home.whyIntelligence.pillars.inspection.assetMaster'),
+      spreadsheetText: t('home.whyIntelligence.pillars.inspection.spreadsheet'),
     },
     {
-      verb: "Audit",
-      tagline: "Instant Chain of Custody",
+      verb: t('home.whyIntelligence.pillars.audit.verb'),
+      tagline: t('home.whyIntelligence.pillars.audit.tagline'),
       icon: <FileCheck className="h-5 w-5" />,
-      assetMasterText:
-        "Instantly compile complete lifecycle history, custody handover signatures, and tamper-proof compliance logs for internal and external auditors.",
-      spreadsheetText:
-        "Weeks of manual reconciliation across files, folders, and departments.",
+      assetMasterText: t('home.whyIntelligence.pillars.audit.assetMaster'),
+      spreadsheetText: t('home.whyIntelligence.pillars.audit.spreadsheet'),
     },
     {
-      verb: "Compliance",
-      tagline: "Proactive Risk Prevention",
+      verb: t('home.whyIntelligence.pillars.compliance.verb'),
+      tagline: t('home.whyIntelligence.pillars.compliance.tagline'),
       icon: <ShieldAlert className="h-5 w-5" />,
-      assetMasterText:
-        "Continuously monitor warranty expirations and inspection schedules, automatically flagging overdue items and generating audit-ready reports.",
-      spreadsheetText:
-        "Reactive scrambling when regulators, insurers, or executives ask for proof.",
+      assetMasterText: t('home.whyIntelligence.pillars.compliance.assetMaster'),
+      spreadsheetText: t('home.whyIntelligence.pillars.compliance.spreadsheet'),
     },
   ];
 
@@ -66,13 +60,13 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 lg:mb-14">
           <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
-            Why Asset Intelligence
+            {t('home.whyIntelligence.badge')}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
-            Four verbs. One platform. <span className="text-[var(--brand-primary)]">Total accountability.</span>
+            {t('home.whyIntelligence.title')} <span className="text-[var(--brand-primary)]">{t('home.whyIntelligence.titleHighlight')}</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-            Tracking tells you where things are. Asset Master tells you everything else: who had it, what happened to it, and whether you can prove it.
+            {t('home.whyIntelligence.description')}
           </p>
         </div>
 
@@ -110,10 +104,10 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
                     </div>
                     <div>
                       <h4 className="text-sm sm:text-base font-extrabold text-[var(--foreground)]">
-                        Asset Master
+                        {t('home.whyIntelligence.assetMasterTitle')}
                       </h4>
                       <span className="text-[10px] sm:text-xs text-[var(--brand-primary)] font-semibold">
-                        Continuous Operational Intelligence
+                        {t('home.whyIntelligence.assetMasterSubtitle')}
                       </span>
                     </div>
                   </div>
@@ -121,7 +115,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
 
                 <div className="space-y-1.5 mt-2">
                   <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[var(--foreground-subtle)]">
-                    {pillars[activePillarIndex].verb} Capability
+                    {pillars[activePillarIndex].verb} {t('home.whyIntelligence.capability')}
                   </div>
                   <p className="text-sm sm:text-base font-semibold text-[var(--foreground)] leading-relaxed">
                     {pillars[activePillarIndex].assetMasterText}
@@ -131,7 +125,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
 
               <div className="mt-4 sm:mt-5 pt-3 sm:pt-3.5 border-t border-[var(--border-subtle)] flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-bold text-[var(--brand-emerald)]">
                 <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
-                <span>Zero manual spreadsheet upkeep required</span>
+                <span>{t('home.whyIntelligence.zeroManualUpkeep')}</span>
               </div>
             </div>
 
@@ -145,10 +139,10 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
                     </div>
                     <div>
                       <h4 className="text-sm sm:text-base font-extrabold text-[var(--foreground)]">
-                        Spreadsheets & Siloed Tools
+                        {t('home.whyIntelligence.spreadsheetsTitle')}
                       </h4>
                       <span className="text-[10px] sm:text-xs text-[var(--foreground-subtle)] font-medium">
-                        Manual Status Quo
+                        {t('home.whyIntelligence.spreadsheetsSubtitle')}
                       </span>
                     </div>
                   </div>
@@ -156,7 +150,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
 
                 <div className="space-y-1.5 mt-2">
                   <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[var(--foreground-subtle)]">
-                    Traditional Pitfall
+                    {t('home.whyIntelligence.traditionalPitfall')}
                   </div>
                   <p className="text-sm sm:text-base text-[var(--foreground-muted)] leading-relaxed">
                     {pillars[activePillarIndex].spreadsheetText}
@@ -166,7 +160,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
 
               <div className="mt-4 sm:mt-5 pt-3 sm:pt-3.5 border-t border-[var(--border-custom)] flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold text-rose-600">
                 <XCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 shrink-0" />
-                <span>Prone to human error, blind spots, and data drift</span>
+                <span>{t('home.whyIntelligence.proneToError')}</span>
               </div>
             </div>
           </div>
@@ -174,7 +168,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
           {/* Bottom Actions */}
           <div className="mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-[var(--border-custom)] flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             <span className="text-xs sm:text-sm font-medium text-[var(--foreground-muted)] text-center sm:text-left">
-              Ready to replace fragile spreadsheets with complete asset intelligence?
+              {t('home.whyIntelligence.readyToReplace')}
             </span>
             <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2 sm:gap-2.5 w-full sm:w-auto">
               <Button
@@ -182,7 +176,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
                 href="/demo"
                 className="w-full xs:w-auto text-xs"
               >
-                <span>Explore Asset Intelligence</span>
+                <span>{t('home.whyIntelligence.exploreIntelligence')}</span>
                 <ArrowRight className="h-3.5 w-3.5" />
               </Button>
               <Button
@@ -190,7 +184,7 @@ export function WhyAssetIntelligence({ onBookDemo }: WhyAssetIntelligenceProps) 
                 href="#case-studies"
                 className="w-full xs:w-auto text-xs"
               >
-                See Comparison
+                {t('home.whyIntelligence.seeComparison')}
               </Button>
             </div>
           </div>

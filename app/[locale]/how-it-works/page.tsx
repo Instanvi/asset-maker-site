@@ -318,14 +318,6 @@ export default function HowItWorksPage() {
                   <span>Book a Demo</span>
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button
-                  variant="dark"
-                  size="xl"
-                  href="/demo"
-                  className="w-full sm:w-auto text-base"
-                >
-                  <span>Try It Free - No Credit Card</span>
-                </Button>
               </div>
             </div>
           </div>
@@ -727,14 +719,6 @@ export default function HowItWorksPage() {
               >
                 <span>Book a Live Walkthrough</span>
                 <ArrowRight className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="dark"
-                size="xl"
-                href="/demo"
-                className="w-full sm:w-auto text-lg"
-              >
-                <span>Start Free Trial - No Credit Card</span>
               </Button>
             </div>
 

@@ -32,12 +32,9 @@ export function generateStaticParams() {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
-  // Validate the locale — 404 if unsupported
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
-  // Enable static rendering
   setRequestLocale(locale);
 
   return (

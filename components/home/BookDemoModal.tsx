@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Mail, User, Building, CheckCircle, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Modal from "@/components/ui/Modal";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
@@ -13,6 +14,7 @@ interface BookDemoModalProps {
 }
 
 export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
+  const t = useTranslations();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -36,11 +38,11 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
     <Modal
       isOpen={isOpen}
       onClose={handleModalClose}
-      title={submitted ? "" : "Book an Asset Master Demo"}
+      title={submitted ? "" : t('home.bookDemoModal.title')}
       description={
         submitted
           ? ""
-          : "See how complete asset tracking and digital compliance workflows transform your team's operational efficiency."
+          : t('home.bookDemoModal.description')
       }
     >
       {submitted ? (
@@ -49,20 +51,20 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
             <CheckCircle className="h-6 w-6" />
           </div>
           <h3 className="text-xl font-bold text-[var(--foreground)]">
-            Demo Request Confirmed!
+            {t('home.bookDemoModal.form.success.title')}
           </h3>
           <p className="text-sm text-[var(--foreground-muted)]">
-            We will contact <span className="font-bold text-[var(--foreground)]">{formData.email}</span> with meeting details shortly.
+            {t('home.bookDemoModal.form.success.message', { email: formData.email })}
           </p>
           <Button variant="primary" size="sm" onClick={handleModalClose} className="mt-2">
-            Done
+            {t('home.bookDemoModal.form.success.done')}
           </Button>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4 pt-2">
           <div>
             <label className="block text-xs font-bold text-[var(--foreground)] mb-1">
-              Full Name
+              {t('home.bookDemoModal.form.fullName')}
             </label>
             <Input
               required
@@ -75,7 +77,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
           <div>
             <label className="block text-xs font-bold text-[var(--foreground)] mb-1">
-              Work Email
+              {t('home.bookDemoModal.form.workEmail')}
             </label>
             <Input
               required
@@ -89,7 +91,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
           <div>
             <label className="block text-xs font-bold text-[var(--foreground)] mb-1">
-              Company Name
+              {t('home.bookDemoModal.form.company')}
             </label>
             <Input
               required
@@ -103,33 +105,33 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-xs font-bold text-[var(--foreground)] mb-1">
-                Industry
+                {t('home.bookDemoModal.form.industry')}
               </label>
               <Select
                 value={formData.industry}
                 onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
               >
-                <option value="it">IT Hardware</option>
-                <option value="construction">Construction</option>
-                <option value="healthcare">Healthcare</option>
-                <option value="education">Education</option>
-                <option value="manufacturing">Manufacturing</option>
-                <option value="government">Government</option>
+                <option value="it">{t('home.bookDemoModal.form.industries.it')}</option>
+                <option value="construction">{t('home.bookDemoModal.form.industries.construction')}</option>
+                <option value="healthcare">{t('home.bookDemoModal.form.industries.healthcare')}</option>
+                <option value="education">{t('home.bookDemoModal.form.industries.education')}</option>
+                <option value="manufacturing">{t('home.bookDemoModal.form.industries.manufacturing')}</option>
+                <option value="government">{t('home.bookDemoModal.form.industries.government')}</option>
               </Select>
             </div>
 
             <div>
               <label className="block text-xs font-bold text-[var(--foreground)] mb-1">
-                Assets Volume
+                {t('home.bookDemoModal.form.assetsVolume')}
               </label>
               <Select
                 value={formData.assetsCount}
                 onChange={(e) => setFormData({ ...formData, assetsCount: e.target.value })}
               >
-                <option value="50-500">50 - 500</option>
-                <option value="500-2500">500 - 2.5k</option>
-                <option value="2500-10000">2.5k - 10k</option>
-                <option value="10000+">10k+ units</option>
+                <option value="50-500">{t('home.bookDemoModal.form.volumes.small')}</option>
+                <option value="500-2500">{t('home.bookDemoModal.form.volumes.medium')}</option>
+                <option value="2500-10000">{t('home.bookDemoModal.form.volumes.large')}</option>
+                <option value="10000+">{t('home.bookDemoModal.form.volumes.enterprise')}</option>
               </Select>
             </div>
           </div>
@@ -140,7 +142,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
             size="lg"
             className="w-full justify-center text-sm font-bold shadow-[var(--shadow-glow)] mt-4"
           >
-            <span>Confirm Demo Booking</span>
+            <span>{t('home.bookDemoModal.form.submit')}</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
         </form>

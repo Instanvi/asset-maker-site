@@ -21,6 +21,7 @@ import {
   Activity,
   UserCheck,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 
@@ -29,6 +30,7 @@ interface IndustrySolutionsProps {
 }
 
 export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
+  const t = useTranslations();
   const [activeTab, setActiveTab] = useState<string>("construction");
 
   const industriesData = {
@@ -172,13 +174,13 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
-            Built for Your Industry
+            {t('home.industries.badge')}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
-            Tailored for your sector. <span className="text-[var(--brand-primary)]">Zero compromise.</span>
+            {t('home.industries.title')} <span className="text-[var(--brand-primary)]">{t('home.industries.titleHighlight')}</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-            Every sector manages physical equipment with distinct regulatory and operational rules. Discover our specialized industry workflows.
+            {t('home.industries.description')}
           </p>
         </div>
 
@@ -247,8 +249,8 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
                   href={currentInd.href}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-md bg-[var(--brand-primary)] text-white text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] hover:opacity-95 transition-opacity"
                 >
-                  <span className="hidden xs:inline">Explore {currentInd.title}</span>
-                  <span className="xs:hidden">Explore Industry</span>
+                  <span className="hidden xs:inline">{t('home.industries.showing')} {currentInd.title}</span>
+                  <span className="xs:hidden">{t('home.industries.showing')}</span>
                   <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 </Link>
                 <Button
@@ -257,7 +259,7 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
                   href="/demo"
                   className="w-full sm:w-auto text-xs sm:text-sm"
                 >
-                  <span>Book Live Walkthrough</span>
+                  <span>{t('home.industries.bookLiveWalkthrough')}</span>
                 </Button>
               </div>
             </div>
@@ -275,7 +277,7 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
                         {currentInd.mockupData.title}
                       </div>
                       <div className="text-[9px] sm:text-[11px] text-[var(--foreground-muted)] hidden sm:block">
-                        Real-time live synchronization
+                        {t('home.industries.liveStat')}
                       </div>
                     </div>
                   </div>
@@ -324,7 +326,7 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
                     <div className="text-white text-[10px] sm:text-xs font-bold flex items-center justify-between w-full gap-2">
                       <span className="line-clamp-1"><span className="hidden sm:inline">Field-proven across 12,000+ organizations</span><span className="sm:hidden">12,000+ organizations</span></span>
                       <Link href={currentInd.href} className="inline-flex items-center gap-1 text-[var(--brand-primary-light)] hover:underline shrink-0">
-                        <span className="hidden sm:inline">Deep Dive</span>
+                        <span className="hidden sm:inline">{t('home.industries.readFullStory')}</span>
                         <ArrowRight className="h-3 w-3" />
                       </Link>
                     </div>
@@ -341,8 +343,8 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
             href="/industries"
             className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold text-[var(--brand-primary)] hover:underline"
           >
-            <span className="hidden sm:inline">View All Industry Solutions & Compliance Frameworks</span>
-            <span className="sm:hidden">View All Industries</span>
+            <span className="hidden sm:inline">{t('home.industries.viewAllIndustries')}</span>
+            <span className="sm:hidden">View All</span>
             <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </Link>
         </div>
@@ -352,4 +354,3 @@ export function IndustrySolutions({ onBookDemo }: IndustrySolutionsProps) {
 }
 
 export default IndustrySolutions;
-

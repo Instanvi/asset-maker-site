@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Calculator, Sparkles, TrendingUp, Clock, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Slider from "@/components/ui/Slider";
 import Button from "@/components/ui/Button";
 
@@ -10,6 +11,7 @@ interface RoiCalculatorProps {
 }
 
 export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
+  const t = useTranslations();
   const [assetCount, setAssetCount] = useState(2500);
   const [auditHoursPerWeek, setAuditHoursPerWeek] = useState(14);
   const hourlyRate = 48; // Standard operational/IT burdened rate
@@ -27,13 +29,13 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 lg:mb-14">
           <p className="text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2 sm:mb-2.5">
-            Interactive ROI Calculator
+            {t('home.roi.badge')}
           </p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight">
-            See your projected <span className="text-[var(--brand-primary)]">time & capital savings.</span>
+            {t('home.roi.title')} <span className="text-[var(--brand-primary)]">{t('home.roi.titleHighlight')}</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-            Calculate how much your organization saves by replacing manual spreadsheets and reactive audits with automated asset intelligence.
+            {t('home.roi.description')}
           </p>
         </div>
 
@@ -45,10 +47,10 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
             <div className="space-y-2 sm:space-y-2.5">
               <div className="flex items-center justify-between gap-2">
                 <label className="text-xs sm:text-sm font-bold text-[var(--foreground)]">
-                  Total Assets Tracked
+                  {t('home.roi.totalAssets')}
                 </label>
                 <span className="text-base sm:text-lg font-extrabold text-[var(--brand-primary)] font-mono">
-                  {assetCount.toLocaleString()}<span className="hidden xs:inline"> units</span>
+                  {assetCount.toLocaleString()}<span className="hidden xs:inline"> {t('home.roi.units')}</span>
                 </span>
               </div>
               <Slider
@@ -69,11 +71,11 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
             <div className="space-y-2 sm:space-y-2.5">
               <div className="flex items-center justify-between gap-2">
                 <label className="text-xs sm:text-sm font-bold text-[var(--foreground)]">
-                  <span className="hidden sm:inline">Weekly Hours Spent Auditing & Searching</span>
-                  <span className="sm:hidden">Weekly Audit Hours</span>
+                  <span className="hidden sm:inline">{t('home.roi.weeklyHours')}</span>
+                  <span className="sm:hidden">{t('home.roi.weeklyHoursShort')}</span>
                 </label>
                 <span className="text-base sm:text-lg font-extrabold text-[var(--brand-primary)] font-mono whitespace-nowrap">
-                  {auditHoursPerWeek} <span className="hidden xs:inline">hrs/week</span><span className="xs:hidden">hrs</span>
+                  {auditHoursPerWeek} <span className="hidden xs:inline">{t('home.roi.hrsWeek')}</span><span className="xs:hidden">{t('home.roi.hrs')}</span>
                 </span>
               </div>
               <Slider
@@ -93,10 +95,10 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
             <div className="p-2.5 sm:p-3.5 rounded-lg bg-white border border-[var(--border-custom)] text-[10px] sm:text-xs text-[var(--foreground-muted)] space-y-1">
               <div className="font-bold text-[var(--foreground)] flex items-center gap-1.5">
                 <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[var(--brand-emerald)] shrink-0" />
-                <span>Benchmark Calculation Assumptions</span>
+                <span>{t('home.roi.assumptions')}</span>
               </div>
               <p>
-                Based on verified customer data: 75% reduction in reconciliation hours, 4% average loss prevention rate, and standard $48/hr operational burdened labor.
+                {t('home.roi.assumptionsText')}
               </p>
             </div>
           </div>
@@ -106,16 +108,16 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
             <div className="flex items-center justify-between pb-3 sm:pb-3.5 border-b border-[var(--border-subtle)] gap-2">
               <div>
                 <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[var(--foreground-subtle)]">
-                  Projected Annual Value
+                  {t('home.roi.projectedValue')}
                 </div>
                 <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[var(--brand-primary)] tracking-tight">
                   ${totalAnnualSavings.toLocaleString()}
-                  <span className="text-[10px] sm:text-xs font-normal text-[var(--foreground-muted)] ml-1">/ year</span>
+                  <span className="text-[10px] sm:text-xs font-normal text-[var(--foreground-muted)] ml-1">{t('home.roi.perYear')}</span>
                 </div>
               </div>
               <div className="text-right">
                 <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[var(--brand-emerald)]">
-                  Est. ROI
+                  {t('home.roi.estRoi')}
                 </span>
                 <div className="text-xl sm:text-2xl font-extrabold text-[var(--brand-emerald)]">
                   {projectedRoi}%
@@ -128,27 +130,27 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
               <div className="p-2.5 sm:p-3.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                 <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-[var(--foreground-muted)] mb-1">
                   <Clock className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[var(--brand-primary)] shrink-0" />
-                  <span className="line-clamp-1">Labor Hours Saved</span>
+                  <span className="line-clamp-1">{t('home.roi.laborHours')}</span>
                 </div>
                 <div className="text-base sm:text-lg font-bold text-[var(--foreground)]">
-                  {hoursSavedPerYear.toLocaleString()} <span className="text-xs sm:text-sm">hrs</span>
+                  {hoursSavedPerYear.toLocaleString()} <span className="text-xs sm:text-sm">{t('home.roi.hrs')}</span>
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-[var(--brand-emerald)] font-semibold mt-0.5">
-                  ${laborSavings.toLocaleString()} saved
+                  ${laborSavings.toLocaleString()} {t('home.roi.saved')}
                 </div>
               </div>
 
               <div className="p-2.5 sm:p-3.5 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)]">
                 <div className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-[var(--foreground-muted)] mb-1">
                   <TrendingUp className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-[var(--brand-emerald)] shrink-0" />
-                  <span className="line-clamp-1"><span className="hidden sm:inline">Lost Asset Prevention</span><span className="sm:hidden">Asset Prevention</span></span>
+                  <span className="line-clamp-1"><span className="hidden sm:inline">{t('home.roi.lostAssetPrevention')}</span><span className="sm:hidden">{t('home.roi.lostAssetPreventionShort')}</span></span>
                 </div>
                 <div className="text-base sm:text-lg font-bold text-[var(--foreground)]">
                   ${lostAssetPrevention.toLocaleString()}
                 </div>
                 <div className="text-[10px] sm:text-[11px] text-[var(--foreground-muted)] font-semibold mt-0.5">
-                  <span className="hidden sm:inline">Avoided replacements</span>
-                  <span className="sm:hidden">Avoided</span>
+                  <span className="hidden sm:inline">{t('home.roi.avoidedReplacements')}</span>
+                  <span className="sm:hidden">{t('home.roi.avoided')}</span>
                 </div>
               </div>
             </div>
@@ -159,8 +161,8 @@ export function RoiCalculator({ onBookDemo }: RoiCalculatorProps) {
               href="/demo"
               className="w-full justify-center text-xs sm:text-sm shadow-[var(--shadow-glow)]"
             >
-              <span className="hidden sm:inline">Get Full Customized ROI Report</span>
-              <span className="sm:hidden">Get Full ROI Report</span>
+              <span className="hidden sm:inline">{t('home.roi.getReport')}</span>
+              <span className="sm:hidden">{t('home.roi.getReportShort')}</span>
               <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </Button>
           </div>

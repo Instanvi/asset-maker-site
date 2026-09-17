@@ -2,11 +2,13 @@
 
 import React, { useState } from "react";
 import { Mail, User, Building, Phone, Calendar, CheckCircle, ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Input from "@/components/ui/Input";
 import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 
 export function BookDemoSection() {
+  const t = useTranslations();
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -28,29 +30,29 @@ export function BookDemoSection() {
           {/* Left Intro Text */}
           <div className="lg:col-span-6 space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-[var(--brand-primary-light)] text-[var(--brand-primary)] text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-2">
-              <span>Book a Personalized Demo</span>
+              <span>{t('home.bookDemo.badge')}</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--foreground)] tracking-tight leading-tight">
-              See how Asset Master <span className="text-[var(--brand-primary)]">transforms your operations.</span>
+              {t('home.bookDemo.title')} <span className="text-[var(--brand-primary)]">{t('home.bookDemo.titleHighlight')}</span>
             </h2>
 
             <p className="text-sm sm:text-base lg:text-lg text-[var(--foreground-muted)] leading-relaxed">
-              Get a 1-on-1 walkthrough customized to your industry workflows, asset volume, and compliance standards.
+              {t('home.bookDemo.description')}
             </p>
 
             <ul className="space-y-2.5 sm:space-y-3 pt-2 text-xs sm:text-sm text-[var(--foreground)] font-medium">
               <li className="flex items-start gap-2 sm:gap-2.5">
                 <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
-                <span>Live demo tailored to your specific asset types and jobsite needs</span>
+                <span>{t('home.bookDemo.benefits.tailored')}</span>
               </li>
               <li className="flex items-start gap-2 sm:gap-2.5">
                 <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
-                <span>Learn how to import existing spreadsheets in under 15 minutes</span>
+                <span>{t('home.bookDemo.benefits.import')}</span>
               </li>
               <li className="flex items-start gap-2 sm:gap-2.5">
                 <CheckCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[var(--brand-emerald)] shrink-0 mt-0.5" />
-                <span>Explore mobile scanning and automated digital inspections in real time</span>
+                <span>{t('home.bookDemo.benefits.explore')}</span>
               </li>
             </ul>
           </div>
@@ -64,11 +66,10 @@ export function BookDemoSection() {
                     <CheckCircle className="h-7 w-7 sm:h-8 sm:w-8" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[var(--foreground)]">
-                    Demo Request Received!
+                    {t('home.bookDemo.form.success.title')}
                   </h3>
                   <p className="text-xs sm:text-sm text-[var(--foreground-muted)] max-w-sm mx-auto">
-                    An Asset Master product specialist will reach out to{" "}
-                    <span className="font-bold text-[var(--foreground)]">{formData.email}</span> within 2 hours to confirm your session.
+                    {t('home.bookDemo.form.success.message', { email: formData.email })}
                   </p>
                   <Button
                     variant="outline"
@@ -76,22 +77,22 @@ export function BookDemoSection() {
                     onClick={() => setSubmitted(false)}
                     className="mt-4"
                   >
-                    Submit Another Request
+                    {t('home.bookDemo.form.success.another')}
                   </Button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
                   <h3 className="text-lg sm:text-xl font-bold text-[var(--foreground)] mb-1">
-                    Request a Live Walkthrough
+                    {t('home.bookDemo.form.title')}
                   </h3>
                   <p className="text-[10px] sm:text-xs text-[var(--foreground-muted)] mb-4">
-                    No credit card required. Free 14-day full access included.
+                    {t('home.bookDemo.form.noCard')}
                   </p>
 
                   <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
                       <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
-                        Full Name
+                        {t('home.bookDemo.form.fullName')}
                       </label>
                       <Input
                         required
@@ -104,7 +105,7 @@ export function BookDemoSection() {
 
                     <div>
                       <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
-                        Work Email
+                        {t('home.bookDemo.form.workEmail')}
                       </label>
                       <Input
                         required
@@ -119,7 +120,7 @@ export function BookDemoSection() {
 
                   <div>
                     <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
-                      Company / Organization Name
+                      {t('home.bookDemo.form.company')}
                     </label>
                     <Input
                       required
@@ -133,34 +134,34 @@ export function BookDemoSection() {
                   <div className="grid sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div>
                       <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
-                        Primary Industry
+                        {t('home.bookDemo.form.industry')}
                       </label>
                       <Select
                         value={formData.industry}
                         onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
                       >
-                        <option value="it">IT & Technology</option>
-                        <option value="construction">Construction & Field Ops</option>
-                        <option value="healthcare">Healthcare & Biomedical</option>
-                        <option value="education">Education (K-12 & Higher Ed)</option>
-                        <option value="manufacturing">Manufacturing & Logistics</option>
-                        <option value="government">Government & Public Sector</option>
-                        <option value="nonprofit">Nonprofit & Other</option>
+                        <option value="it">{t('home.bookDemo.form.industries.it')}</option>
+                        <option value="construction">{t('home.bookDemo.form.industries.construction')}</option>
+                        <option value="healthcare">{t('home.bookDemo.form.industries.healthcare')}</option>
+                        <option value="education">{t('home.bookDemo.form.industries.education')}</option>
+                        <option value="manufacturing">{t('home.bookDemo.form.industries.manufacturing')}</option>
+                        <option value="government">{t('home.bookDemo.form.industries.government')}</option>
+                        <option value="nonprofit">{t('home.bookDemo.form.industries.nonprofit')}</option>
                       </Select>
                     </div>
 
                     <div>
                       <label className="block text-[10px] sm:text-xs font-bold text-[var(--foreground)] mb-1.5">
-                        Estimated Assets Count
+                        {t('home.bookDemo.form.assetsCount')}
                       </label>
                       <Select
                         value={formData.assetsCount}
                         onChange={(e) => setFormData({ ...formData, assetsCount: e.target.value })}
                       >
-                        <option value="50-500">50 - 500 assets</option>
-                        <option value="500-2500">500 - 2,500 assets</option>
-                        <option value="2500-10000">2,500 - 10,000 assets</option>
-                        <option value="10000+">10,000+ enterprise assets</option>
+                        <option value="50-500">{t('home.bookDemo.form.assetsCounts.small')}</option>
+                        <option value="500-2500">{t('home.bookDemo.form.assetsCounts.medium')}</option>
+                        <option value="2500-10000">{t('home.bookDemo.form.assetsCounts.large')}</option>
+                        <option value="10000+">{t('home.bookDemo.form.assetsCounts.enterprise')}</option>
                       </Select>
                     </div>
                   </div>
@@ -171,7 +172,7 @@ export function BookDemoSection() {
                     size="lg"
                     className="w-full justify-center text-xs sm:text-sm font-bold shadow-[var(--shadow-glow)] mt-2"
                   >
-                    <span>Schedule My Demo</span>
+                    <span>{t('home.bookDemo.form.submit')}</span>
                     <ArrowRight className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                   </Button>
                 </form>
