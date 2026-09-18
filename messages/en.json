@@ -28,19 +28,553 @@
   "products": {
     "assetTracking": {
       "title": "Asset Tracking & Tags",
-      "description": "QR and barcode tags, scanned from any phone to check assets in or out."
+      "description": "QR and barcode tags, scanned from any phone to check assets in or out.",
+      "page": {
+        "meta": {
+          "title": "Asset Tracking & Tags | Complete QR & Barcode Asset Management",
+          "description": "Turn any smartphone into an enterprise scanner. Track physical equipment, tools, IT hardware, and fleet gear with tamper-proof chain of custody, GPS timestamps, and zero spreadsheets."
+        },
+        "hero": {
+          "badge": "Enterprise Physical & Digital Tracking",
+          "title": "Total Asset Visibility.",
+          "titleHighlight": "Scanned in Seconds.",
+          "description": "Turn any smartphone into an enterprise scanner. Track physical equipment, tools, IT hardware, and fleet gear with tamper-proof chain of custody, GPS timestamps, and zero spreadsheets.",
+          "cta": {
+            "bookDemo": "Book a Live Demo"
+          },
+          "trustBadges": {
+            "instantScan": "Instant Smartphone Camera Scan",
+            "offlineSync": "Full Offline Sync",
+            "latency": "< 85ms Tag Read Latency"
+          },
+          "cockpit": {
+            "tabs": {
+              "registry": "Live Asset Registry",
+              "registryShort": "Hub",
+              "scanner": "Mobile Scanner Viewfinder",
+              "scannerShort": "Scan"
+            },
+            "searchPlaceholder": "Search by tag, name, user...",
+            "categories": {
+              "all": "All",
+              "it": "IT",
+              "fleet": "Fleet",
+              "tools": "Tools"
+            },
+            "demoAssets": {
+              "macbook": {
+                "name": "Apple MacBook Pro 16\" M3 Max",
+                "category": "it",
+                "custodian": "Sarah Jenkins (Lead Dev)",
+                "location": "San Francisco HQ • Floor 4",
+                "status": "In Use",
+                "bookValue": "$3,850.00",
+                "warranty": "Dec 2027"
+              },
+              "excavator": {
+                "name": "CAT 320 Hydraulic Excavator",
+                "category": "fleet",
+                "custodian": "Marcus Vance (Jobsite #4)",
+                "location": "Austin Site B • Sector 2",
+                "status": "Operational",
+                "bookValue": "$185,000.00",
+                "warranty": "Aug 2029"
+              },
+              "hammer": {
+                "name": "Hilti TE 60-ATC Rotary Hammer",
+                "category": "tools",
+                "custodian": "Dave Martinez (Crew 3)",
+                "location": "Tool Crib #1 • Bay 4",
+                "status": "Checked Out",
+                "bookValue": "$1,420.00",
+                "warranty": "Mar 2026"
+              }
+            },
+            "scanner": {
+              "readingTag": "READING TAG...",
+              "latency": "Latency: < 75ms",
+              "buffer": "Buffer: {count} Scanned",
+              "gpsTagged": "GPS Geotagged",
+              "engineDescription": "Continuous 1D/2D Barcode & QR recognition engine",
+              "simulateScan": "Simulate Mobile Scan"
+            },
+            "custodianLabel": "Custodian:",
+            "locationLabel": "Location:"
+          }
+        },
+        "capabilities": {
+          "badge": "Core Capabilities",
+          "title": "Everything you need to eliminate",
+          "titleHighlight": "ghost assets and loss.",
+          "items": {
+            "mobileScanning": {
+              "title": "Mobile Barcode & QR Scanning",
+              "description": "Turn iOS and Android devices into high-speed scanners. Support for continuous batch scanning, Code 128, DataMatrix, and durable metal tags."
+            },
+            "custody": {
+              "title": "Check-In & Check-Out Custody",
+              "description": "Know exactly who has every tool, vehicle, and laptop. Capture e-signatures and timestamps for full chain-of-custody accountability."
+            },
+            "gpsTracking": {
+              "title": "GPS & Geofenced Locations",
+              "description": "Every scan automatically logs precise GPS coordinates. Set geofenced alert perimeters around job sites, warehouses, and campuses."
+            },
+            "tagGenerator": {
+              "title": "Custom Asset Tag Generator",
+              "description": "Generate and print custom branded barcode and QR labels on standard Zebra, Avery, or Dymo label stock in seconds."
+            },
+            "auditHistory": {
+              "title": "Audit-Ready History Log",
+              "description": "Every change, transfer, repair, and inspection creates an immutable audit record. Complete proof ready for finance and regulators."
+            },
+            "customFields": {
+              "title": "Unlimited Custom Fields",
+              "description": "Structure your registry around your specific business. Add custom dropdowns, serial numbers, warranty dates, and photo attachments."
+            }
+          }
+        },
+        "workflow": {
+          "badge": "Implementation Workflow",
+          "title": "From unboxing to full operational deployment in",
+          "titleHighlight": "three steps.",
+          "steps": {
+            "step1": {
+              "number": "01",
+              "title": "Tag & Register",
+              "description": "Affix durable QR or barcode tags to your assets and import your existing spreadsheets or scan to create records in under 30 seconds."
+            },
+            "step2": {
+              "number": "02",
+              "title": "Scan & Assign in Field",
+              "description": "Equip crews with the mobile app. Check items out to workers, transfer gear between job sites, and log condition updates on the go."
+            },
+            "step3": {
+              "number": "03",
+              "title": "Reconcile & Audit",
+              "description": "Run physical inventory audits in minutes. Generate 100% reconciled reports for executive leadership and external compliance auditors."
+            }
+          }
+        },
+        "faq": {
+          "badge": "Got Questions?",
+          "title": "Frequently Asked Questions about Asset Tracking",
+          "questions": {
+            "q1": {
+              "question": "Can we scan assets using our existing employee smartphones?",
+              "answer": "Yes. Asset Master transforms any standard iOS or Android smartphone into an enterprise-grade barcode and QR scanner using the device camera. No proprietary or expensive handheld hardware is required."
+            },
+            "q2": {
+              "question": "What types of asset tags does Asset Master support?",
+              "answer": "Asset Master natively supports 1D barcodes (Code 128, UPC, Code 39), 2D QR codes, DataMatrix, and UHF RFID tags. You can print tags using your existing office printers or order durable anodized aluminum tags directly through our platform."
+            },
+            "q3": {
+              "question": "Does asset tracking work when workers are offline in remote areas?",
+              "answer": "Yes. Our mobile application includes full offline functionality. Field crews can scan tags, run audits, and update custody without internet access. All records automatically sync to the cloud the moment connectivity is restored."
+            },
+            "q4": {
+              "question": "How does check-in and check-out tracking work?",
+              "answer": "Workers scan the asset's QR code or barcode tag, select the recipient or jobsite, and capture an optional electronic signature. Chain-of-custody timestamps and GPS coordinates are logged instantaneously."
+            },
+            "q5": {
+              "question": "Can we import our existing asset spreadsheets?",
+              "answer": "Yes. Our bulk CSV and Excel importer allows you to migrate thousands of assets, custom fields, historical values, and department mappings in under 15 minutes."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to take total control of your physical assets?",
+          "description": "Join thousands of organizations worldwide that eliminate spreadsheets and streamline audits with Asset Master.",
+          "bookDemo": "Schedule a 1-on-1 Demo"
+        }
+      }
     },
     "maintenance": {
       "title": "Maintenance (CMMS)",
-      "description": "Preventative service schedules and work orders before things break down."
+      "description": "Preventative service schedules and work orders before things break down.",
+      "page": {
+        "meta": {
+          "title": "Maintenance & CMMS Platform | Automated Preventative Service Management",
+          "description": "Schedule preventative service, dispatch mobile work orders, track spare parts, and capture full repair histories. Cut equipment downtime by up to 38% with automated maintenance workflows."
+        },
+        "hero": {
+          "badge": "Preventative Maintenance & CMMS Platform",
+          "title": "Stop Breakdowns Before They Happen.",
+          "titleHighlight": "Automate CMMS.",
+          "description": "Schedule preventative service, dispatch mobile work orders, track spare parts, and capture full repair histories. Cut equipment downtime by up to 38% with automated maintenance workflows.",
+          "cta": {
+            "bookDemo": "Book a CMMS Demo",
+            "explorePlatform": "Explore Platform"
+          },
+          "trustBadges": {
+            "autoTrigger": "Auto-Triggered Work Orders",
+            "partsSync": "Spare Parts Inventory Sync",
+            "downtime": "-38% Equipment Downtime"
+          },
+          "cockpit": {
+            "tabs": {
+              "workorders": "Live Work Orders",
+              "preventative": "Preventative Schedules"
+            },
+            "workOrders": {
+              "title": "Active Work Order Queue",
+              "clickStatus": "Click status to cycle",
+              "items": {
+                "item1": {
+                  "id": "WO-2026-904",
+                  "title": "500-Hour Hydraulic Oil & Filter Replacement",
+                  "asset": "CAT 320 Hydraulic Excavator",
+                  "assetTag": "AM-EQ-90142",
+                  "priority": "High",
+                  "status": "In Progress",
+                  "assignedTo": "Dave Martinez (Chief Mechanic)",
+                  "dueDate": "Tomorrow, 5:00 PM",
+                  "estimatedCost": "$420.00"
+                },
+                "item2": {
+                  "id": "WO-2026-881",
+                  "title": "Quarterly Biomedical Transducer Recalibration",
+                  "asset": "Siemens Acuson Ultrasound Scanner",
+                  "assetTag": "AM-MED-4091",
+                  "priority": "Medium",
+                  "status": "Open",
+                  "assignedTo": "BioMed Field Engineering",
+                  "dueDate": "In 4 Days",
+                  "estimatedCost": "$850.00"
+                },
+                "item3": {
+                  "id": "WO-2026-792",
+                  "title": "Emergency Belt Replacement & Motor Inspection",
+                  "asset": "Warehouse Conveyor Line #2",
+                  "assetTag": "AM-FAC-1102",
+                  "priority": "High",
+                  "status": "Completed",
+                  "assignedTo": "Marcus Vance",
+                  "dueDate": "Yesterday",
+                  "estimatedCost": "$1,250.00"
+                }
+              },
+              "labels": {
+                "tech": "Tech:",
+                "due": "Due:",
+                "statusOpen": "Open",
+                "statusInProgress": "In Progress",
+                "statusCompleted": "Completed"
+              }
+            },
+            "preventative": {
+              "schedule1": {
+                "title": "Heavy Fleet 90-Day Inspection",
+                "status": "Active Rule",
+                "description": "Trigger every 90 calendar days or 500 runtime hours. Auto-generates work order for certified mechanic.",
+                "nextDispatch": "Next Dispatch: Nov 15, 2026",
+                "scope": "Scope: 14 Excavators & Cranes"
+              },
+              "schedule2": {
+                "title": "Biomedical Calibration Routine",
+                "status": "Active Rule",
+                "description": "Annual hospital calibration check compliant with Joint Commission standards.",
+                "nextDispatch": "Next Dispatch: Dec 01, 2026",
+                "scope": "Scope: 82 Diagnostic Devices"
+              }
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "CMMS Capabilities",
+          "title": "Built to keep critical machinery",
+          "titleHighlight": "running at peak efficiency.",
+          "items": {
+            "schedules": {
+              "title": "Automated Service Schedules",
+              "description": "Set recurring calendar or usage-based maintenance triggers. Prevent missed oil changes, calibration dates, and safety checks."
+            },
+            "dispatch": {
+              "title": "Mobile Work Order Dispatch",
+              "description": "Dispatch tickets directly to technicians' mobile apps. Technicians log hours, attach photos of repairs, and close tickets on site."
+            },
+            "inventory": {
+              "title": "Spare Parts Inventory",
+              "description": "Track spare parts used per repair. Set low-stock alerts and maintain automatic replenishment reorder points."
+            },
+            "analytics": {
+              "title": "Downtime & MTTR Analytics",
+              "description": "Measure Mean Time to Repair (MTTR) and Mean Time Between Failures (MTBF). Identify problematic equipment before major failures occur."
+            },
+            "tco": {
+              "title": "Total Cost of Ownership (TCO)",
+              "description": "Calculate cumulative repair costs vs. replacement value. Make informed data-backed decisions on when to repair or retire assets."
+            },
+            "vendor": {
+              "title": "Vendor & Warranty Management",
+              "description": "Track third-party service provider contracts, SLAs, and warranty terms. Avoid paying out-of-pocket for warranty-covered repairs."
+            }
+          }
+        },
+        "faq": {
+          "badge": "Maintenance FAQ",
+          "title": "Frequently Asked Questions about CMMS",
+          "questions": {
+            "q1": {
+              "question": "What is CMMS and why do asset-heavy teams need it?",
+              "answer": "A Computerized Maintenance Management System (CMMS) centralizes maintenance schedules, work orders, service histories, and technician assignments. It helps organizations prevent costly unplanned downtime, extend equipment lifespan, and prove safety compliance."
+            },
+            "q2": {
+              "question": "Can preventative maintenance schedules trigger automatically?",
+              "answer": "Yes. Asset Master supports both calendar-based triggers (e.g. every 90 days) and meter/usage-based triggers (e.g. every 500 operating hours or 10,000 miles). Work orders are automatically created and dispatched to technicians."
+            },
+            "q3": {
+              "question": "Can field technicians update work orders from their mobile phones?",
+              "answer": "Yes. Technicians can scan the asset's QR code on-site, view service manuals, log parts used, attach photos of completed repairs, capture supervisor signatures, and close tickets directly on mobile."
+            },
+            "q4": {
+              "question": "How does Asset Master track spare parts and replacement inventory?",
+              "answer": "Every work order allows technicians to deduct spare parts from inventory. Minimum threshold alerts automatically notify purchasing when critical replacement items run low."
+            },
+            "q5": {
+              "question": "Can we track total cost of ownership (TCO) and maintenance ROI?",
+              "answer": "Yes. Asset Master logs all labor hours, parts costs, and vendor invoices against the master asset record, giving you an exact real-time TCO and residual book value."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to automate your maintenance and eliminate downtime?",
+          "description": "Schedule a personalized walkthrough of the Asset Master CMMS platform today.",
+          "bookDemo": "Schedule a 1-on-1 Demo"
+        }
+      }
     },
     "inspections": {
       "title": "Inspections & Audit Trail",
-      "description": "Digital checklists and a full history for every asset action."
+      "description": "Digital checklists and a full history for every asset action.",
+      "page": {
+        "meta": {
+          "title": "Inspections & Audit Trail | Digital Field Checklists & Compliance",
+          "description": "Replace paper clipboards with digital inspection protocols. Capture geotagged photos, collect verified e-signatures, and generate audit-ready compliance certificates in seconds."
+        },
+        "hero": {
+          "badge": "Digital Field Checklists & Audit Compliance",
+          "title": "Paperless Field Audits.",
+          "titleHighlight": "Guaranteed Proof.",
+          "description": "Replace paper clipboards with digital inspection protocols. Capture geotagged photos, collect verified e-signatures, and generate audit-ready compliance certificates in seconds.",
+          "cta": {
+            "bookDemo": "Book an Inspection Demo"
+          },
+          "trustBadges": {
+            "compliance": "OSHA & ISO 55001 Compliant",
+            "photos": "Geotagged Photo Proof",
+            "tamperProof": "Tamper-Proof Audit Hash"
+          },
+          "cockpit": {
+            "protocol": "OSHA Field Protocol #8491",
+            "asset": "Asset: CAT 320 Hydraulic Excavator (AM-EQ-90142)",
+            "passed": "{count}/{total} Passed",
+            "checklist": {
+              "item1": "Emergency Stop & Interlock Safety Test",
+              "item2": "Hydraulic Line Pressure & O-Ring Seal Check",
+              "item3": "Latest Calibration Sensor Verification",
+              "item4": "Physical Chassis Damage & Geofence Beacon"
+            },
+            "statusPass": "Pass",
+            "statusFlag": "Flag Defect",
+            "inspector": "Inspector:",
+            "inspectorName": "Dave Martinez",
+            "gps": "GPS: 32.7767° N, 96.7970° W",
+            "signature": "SIGNATURE: Verified (E-Sign Token)",
+            "hash": "HASH: 0x9B21...7FA4",
+            "clickToggle": "Click items above to toggle Pass / Flag",
+            "submitAudit": "Submit Audit Record"
+          }
+        },
+        "capabilities": {
+          "badge": "Inspection & Audit Capabilities",
+          "title": "Designed for field simplicity.",
+          "titleHighlight": "Built for rigorous audits.",
+          "items": {
+            "protocolBuilder": {
+              "title": "Custom Protocol Builder",
+              "description": "Design dynamic inspection protocols tailored to your industry. Add conditional logic, required photos, and numeric sensor limits."
+            },
+            "photoProof": {
+              "title": "Mandatory Photo Proof",
+              "description": "Require inspectors to snap high-resolution photos of critical wear areas, fluid levels, and serial plates with tamper-proof geotags."
+            },
+            "autoWorkOrders": {
+              "title": "Auto-Triggered Corrective Work Orders",
+              "description": "When an inspection check fails, Asset Master automatically generates a corrective maintenance ticket and locks the equipment."
+            },
+            "signatures": {
+              "title": "Electronic Signatures",
+              "description": "Capture legally binding digital signatures on mobile screens from inspectors, site supervisors, and equipment operators."
+            },
+            "cryptoLedger": {
+              "title": "Cryptographic Ledger",
+              "description": "All audit logs are stored with cryptographic hashes. No records can be secretly modified or deleted after inspection completion."
+            },
+            "pdfExport": {
+              "title": "1-Click PDF Audit Packs",
+              "description": "Export branded, professional audit compliance packets complete with checklist results, photos, timestamps, and certificates."
+            }
+          }
+        },
+        "faq": {
+          "badge": "Inspections FAQ",
+          "title": "Frequently Asked Questions about Digital Inspections",
+          "questions": {
+            "q1": {
+              "question": "Can we build our own custom inspection checklist templates?",
+              "answer": "Yes. Our drag-and-drop form builder lets you configure custom inspection protocols with pass/fail toggles, multiple-choice dropdowns, numeric sensor readings, mandatory photos, and required electronic signatures."
+            },
+            "q2": {
+              "question": "What happens when an inspector flags a failed safety item?",
+              "answer": "When a defect is flagged, Asset Master can automatically lock the asset's check-out permission, dispatch an emergency maintenance work order, and send an instant push notification to the safety supervisor."
+            },
+            "q3": {
+              "question": "Are the inspection logs and signatures audit-proof?",
+              "answer": "Yes. Every submitted inspection generates a tamper-evident record with an immutable timestamp, inspector ID, GPS geotag, and SHA-256 cryptographic verification hash compliant with ISO 27001 and SOC 2 Type II."
+            },
+            "q4": {
+              "question": "Can field crews perform inspections without cellular signal?",
+              "answer": "Yes. The mobile app stores checklist protocols locally. Inspectors can complete surveys, take photos, and sign off offline. Data syncs automatically once a network connection is detected."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to eliminate paper clipboards and pass audits without stress?",
+          "description": "Schedule a live inspection demonstration customized to your safety standards.",
+          "bookDemo": "Book an Inspection Demo"
+        }
+      }
     },
     "itAssetManagement": {
       "title": "IT Asset Management",
-      "description": "Hardware inventory, software licenses, and device assignments."
+      "description": "Hardware inventory, software licenses, and device assignments.",
+      "page": {
+        "meta": {
+          "title": "IT Asset Management (ITAM) | Hardware, MDM & Licenses Unified",
+          "description": "Connect Jamf, Intune, and your employee directory into one central ITAM cockpit. Manage hardware checkouts, software licenses, remote worker returns, and SOC 2 security compliance."
+        },
+        "hero": {
+          "badge": "Enterprise IT Asset Management (ITAM)",
+          "title": "Hardware, MDM & Licenses.",
+          "titleHighlight": "Unified ITAM.",
+          "description": "Connect Jamf, Intune, and your employee directory into one central ITAM cockpit. Manage hardware checkouts, software licenses, remote worker returns, and SOC 2 security compliance.",
+          "cta": {
+            "bookDemo": "Book an ITAM Demo"
+          },
+          "trustBadges": {
+            "mdmSync": "Jamf & Intune Auto-Sync",
+            "offboarding": "Automated Offboarding Checklists",
+            "soc2": "SOC 2 Type II Certified"
+          },
+          "cockpit": {
+            "employees": {
+              "sarah": {
+                "id": "EMP-1049",
+                "name": "Sarah Jenkins",
+                "role": "Lead Platform Engineer",
+                "dept": "Engineering",
+                "device": "MacBook Pro 16\" (M3 Max)",
+                "serial": "C02GF798MD6T",
+                "mdmStatus": "Jamf Pro Synced",
+                "encryption": "FileVault 2 Active",
+                "osPatch": "macOS 15.3 (Compliant)",
+                "licenses": {
+                  "figma": "Figma Enterprise",
+                  "github": "GitHub Copilot",
+                  "slack": "Slack Business+",
+                  "jetbrains": "JetBrains All Products"
+                }
+              },
+              "marcus": {
+                "id": "EMP-2081",
+                "name": "Marcus Vance",
+                "role": "Field Operations Director",
+                "dept": "Operations",
+                "device": "Lenovo ThinkPad X1 Carbon Gen 12",
+                "serial": "PF-388102A-LEN",
+                "mdmStatus": "Microsoft Intune Enrolled",
+                "encryption": "BitLocker AES-256 Active",
+                "osPatch": "Windows 11 Enterprise (Compliant)",
+                "licenses": {
+                  "microsoft365": "Microsoft 365 E5",
+                  "procore": "Procore Field",
+                  "autodesk": "Autodesk Build",
+                  "zoom": "Zoom Pro"
+                }
+              }
+            },
+            "labels": {
+              "serial": "SERIAL:",
+              "assignedTo": "Assigned to",
+              "diskEncryption": "Disk Encryption",
+              "osPatchPosture": "OS Patch Posture",
+              "handoverSignature": "Handover Signature",
+              "verifiedOnFile": "Verified on File",
+              "activeSoftwareLicenses": "Active Software License Entitlements",
+              "instantCheckIn": "Instant remote check-in and auto-provisioning",
+              "simulateOffboarding": "Simulate IT Offboarding"
+            }
+          }
+        },
+        "capabilities": {
+          "badge": "ITAM Capabilities",
+          "title": "Complete hardware & software lifecycle",
+          "titleHighlight": "in one system.",
+          "items": {
+            "mdmSync": {
+              "title": "MDM Auto-Sync",
+              "description": "Direct two-way synchronization with Microsoft Intune, Jamf Pro, and Kandji. Hardware specs, serial numbers, and OS versions update automatically."
+            },
+            "licenses": {
+              "title": "Software License Management",
+              "description": "Track SaaS licenses, seats, renewal deadlines, and license keys. Reclaim unused seats during offboarding to cut wasteful software spend."
+            },
+            "offboarding": {
+              "title": "Automated Offboarding & Returns",
+              "description": "Prevent lost laptops during employee departures. Generate return shipping labels and track recovery across distributed and remote teams."
+            },
+            "security": {
+              "title": "Security & Encryption Verification",
+              "description": "Verify FileVault and BitLocker encryption status on all assigned machines. Prove compliance effortlessly for SOC 2, HIPAA, and ISO 27001."
+            },
+            "depreciation": {
+              "title": "Depreciation & Asset Retirement",
+              "description": "Automate straight-line and MACRS depreciation for IT hardware. Track end-of-life replacement schedules and certified e-waste disposal."
+            },
+            "serviceDesk": {
+              "title": "IT Service Desk Integration",
+              "description": "Connect with Jira Service Management, Zendesk, and ServiceNow. Technicians can view asset custody directly inside support tickets."
+            }
+          }
+        },
+        "faq": {
+          "badge": "ITAM FAQ",
+          "title": "Frequently Asked Questions about IT Asset Management",
+          "questions": {
+            "q1": {
+              "question": "How does Asset Master integrate with Mobile Device Management (MDM) tools?",
+              "answer": "Asset Master natively connects with Microsoft Intune, Jamf Pro, Google Workspace MDM, and Kandji via automated APIs. Hardware specs, OS versions, disk encryption status, and serial numbers synchronize automatically without manual data entry."
+            },
+            "q2": {
+              "question": "How does Asset Master streamline employee onboarding and offboarding?",
+              "answer": "When a new hire starts, IT assigns device bundles with a single scan and collects digital handover signatures. During offboarding, Asset Master auto-generates return packing labels and provides a complete checklist of all assigned laptops, monitors, keys, and software licenses."
+            },
+            "q3": {
+              "question": "Can we track software licenses and SaaS seat usage alongside hardware?",
+              "answer": "Yes. You can manage software licenses (Figma, GitHub, Adobe, Microsoft 365) and tie them directly to individual users and devices, eliminating expensive ghost license subscriptions."
+            },
+            "q4": {
+              "question": "Does Asset Master support SOC 2 and ISO 27001 IT compliance audits?",
+              "answer": "Yes. Asset Master provides continuous audit readiness by logging 100% of device handoffs, MDM encryption compliance, remote wipe readiness, and certified disposal certificates."
+            }
+          }
+        },
+        "cta": {
+          "title": "Ready to unify your IT hardware and software management?",
+          "description": "Schedule a personalized demo of the Asset Master ITAM suite.",
+          "bookDemo": "Book an ITAM Demo"
+        }
+      }
     },
     "integrations": {
       "title": "Integrations & API",
