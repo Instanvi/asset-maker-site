@@ -185,9 +185,10 @@ export function Header({ onBookDemo }: HeaderProps) {
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <LanguageSwitcher />
             <button
-              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors rounded-lg"
+              className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors rounded-lg "
               aria-label="Login"
             >
+              <Link href="https://asset-manager-frontend-pz4ljx-48b97f-94-72-97-117.sslip.io/login"></Link>
               <LogIn className="h-5 w-5" />
               <span className="hidden xl:inline">{t('common.login')}</span>
             </button>
@@ -204,6 +205,7 @@ export function Header({ onBookDemo }: HeaderProps) {
               className="p-2 rounded-lg text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors"
               aria-label="Login"
             >
+              <Link href="https://asset-manager-frontend-pz4ljx-48b97f-94-72-97-117.sslip.io/login"></Link>
               <LogIn className="h-5 w-5" />
             </button>
             <Button variant="primary" size="sm" className="text-base px-3">

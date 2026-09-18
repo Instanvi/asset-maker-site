@@ -19,6 +19,7 @@ import {
   MapPin,
   Clock,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -26,14 +27,15 @@ import BookDemoModal from "@/components/home/BookDemoModal";
 import { cn } from "@/lib/utils";
 
 export default function InspectionsAuditPage() {
+  const t = useTranslations("products.inspections.page");
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const [checklistItems, setChecklistItems] = useState([
-    { id: 1, title: "Emergency Stop & Interlock Safety Test", passed: true },
-    { id: 2, title: "Hydraulic Line Pressure & O-Ring Seal Check", passed: true },
-    { id: 3, title: "Latest Calibration Sensor Verification", passed: true },
-    { id: 4, title: "Physical Chassis Damage & Geofence Beacon", passed: false },
+    { id: 1, title: t("hero.cockpit.checklist.item1"), passed: true },
+    { id: 2, title: t("hero.cockpit.checklist.item2"), passed: true },
+    { id: 3, title: t("hero.cockpit.checklist.item3"), passed: true },
+    { id: 4, title: t("hero.cockpit.checklist.item4"), passed: false },
   ]);
 
   const toggleItem = (id: number) => {
@@ -46,20 +48,20 @@ export default function InspectionsAuditPage() {
 
   const faqs = [
     {
-      q: "Can we build our own custom inspection checklist templates?",
-      a: "Yes. Our drag-and-drop form builder lets you configure custom inspection protocols with pass/fail toggles, multiple-choice dropdowns, numeric sensor readings, mandatory photos, and required electronic signatures.",
+      q: t("faq.questions.q1.question"),
+      a: t("faq.questions.q1.answer"),
     },
     {
-      q: "What happens when an inspector flags a failed safety item?",
-      a: "When a defect is flagged, Asset Master can automatically lock the asset's check-out permission, dispatch an emergency maintenance work order, and send an instant push notification to the safety supervisor.",
+      q: t("faq.questions.q2.question"),
+      a: t("faq.questions.q2.answer"),
     },
     {
-      q: "Are the inspection logs and signatures audit-proof?",
-      a: "Yes. Every submitted inspection generates a tamper-evident record with an immutable timestamp, inspector ID, GPS geotag, and SHA-256 cryptographic verification hash compliant with ISO 27001 and SOC 2 Type II.",
+      q: t("faq.questions.q3.question"),
+      a: t("faq.questions.q3.answer"),
     },
     {
-      q: "Can field crews perform inspections without cellular signal?",
-      a: "Yes. The mobile app stores checklist protocols locally. Inspectors can complete surveys, take photos, and sign off offline. Data syncs automatically once a network connection is detected.",
+      q: t("faq.questions.q4.question"),
+      a: t("faq.questions.q4.answer"),
     },
   ];
 
@@ -78,15 +80,15 @@ export default function InspectionsAuditPage() {
               {/* Left Column Copy */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                  Digital Field Checklists & Audit Compliance
+                  {t("hero.badge")}
                 </p>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  Paperless Field Audits. <span className="text-[var(--brand-primary)]">Guaranteed Proof.</span>
+                  {t("hero.title")} <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                  Replace paper clipboards with digital inspection protocols. Capture geotagged photos, collect verified e-signatures, and generate audit-ready compliance certificates in seconds.
+                  {t("hero.description")}
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
@@ -96,7 +98,7 @@ export default function InspectionsAuditPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
-                    <span>Book an Inspection Demo</span>
+                    <span>{t("hero.cta.bookDemo")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -104,15 +106,15 @@ export default function InspectionsAuditPage() {
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>OSHA & ISO 55001 Compliant</span>
+                    <span>{t("hero.trustBadges.compliance")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>Geotagged Photo Proof</span>
+                    <span>{t("hero.trustBadges.photos")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Lock className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>Tamper-Proof Audit Hash</span>
+                    <span>{t("hero.trustBadges.tamperProof")}</span>
                   </div>
                 </div>
               </div>
@@ -123,14 +125,14 @@ export default function InspectionsAuditPage() {
                   <div className="flex items-center justify-between pb-3 border-b border-[var(--border-subtle)]">
                     <div>
                       <div className="text-xs font-bold text-[var(--foreground)]">
-                        OSHA Field Protocol #8491
+                        {t("hero.cockpit.protocol")}
                       </div>
                       <div className="text-[11px] text-[var(--foreground-muted)] font-mono">
-                        Asset: CAT 320 Hydraulic Excavator (AM-EQ-90142)
+                        {t("hero.cockpit.asset")}
                       </div>
                     </div>
                     <span className="text-xs font-bold text-[var(--brand-emerald)]">
-                      {passedCount}/{checklistItems.length} Passed
+                      {t("hero.cockpit.passed", { count: passedCount, total: checklistItems.length })}
                     </span>
                   </div>
 
@@ -156,7 +158,7 @@ export default function InspectionsAuditPage() {
                           <span className="font-semibold">{item.title}</span>
                         </div>
                         <span className="text-[10px] font-bold uppercase tracking-wider font-mono">
-                          {item.passed ? "Pass" : "Flag Defect"}
+                          {item.passed ? t("hero.cockpit.statusPass") : t("hero.cockpit.statusFlag")}
                         </span>
                       </div>
                     ))}
@@ -165,18 +167,18 @@ export default function InspectionsAuditPage() {
                   {/* Telemetry & E-Signature Strip */}
                   <div className="p-3 rounded-lg bg-[var(--surface)] border border-[var(--border-subtle)] space-y-2 text-xs">
                     <div className="flex items-center justify-between text-[11px] text-[var(--foreground-muted)]">
-                      <span>Inspector: <strong>Dave Martinez</strong></span>
-                      <span>GPS: 32.7767° N, 96.7970° W</span>
+                      <span>{t("hero.cockpit.inspector")} <strong>{t("hero.cockpit.inspectorName")}</strong></span>
+                      <span>{t("hero.cockpit.gps")}</span>
                     </div>
                     <div className="flex items-center justify-between pt-1 border-t border-[var(--border-subtle)] text-[11px] text-[var(--foreground-subtle)] font-mono">
-                      <span>SIGNATURE: Verified (E-Sign Token)</span>
-                      <span>HASH: 0x9B21...7FA4</span>
+                      <span>{t("hero.cockpit.signature")}</span>
+                      <span>{t("hero.cockpit.hash")}</span>
                     </div>
                   </div>
 
                   <div className="pt-1 flex items-center justify-between">
                     <span className="text-xs text-[var(--foreground-muted)]">
-                      Click items above to toggle Pass / Flag
+                      {t("hero.cockpit.clickToggle")}
                     </span>
                     <Button
                       variant="primary"
@@ -184,7 +186,7 @@ export default function InspectionsAuditPage() {
                       href="/demo"
                       className="text-xs"
                     >
-                      <span>Submit Audit Record</span>
+                      <span>{t("hero.cockpit.submitAudit")}</span>
                     </Button>
                   </div>
                 </div>
@@ -198,10 +200,10 @@ export default function InspectionsAuditPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Inspection & Audit Capabilities
+                {t("capabilities.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Designed for field simplicity. <span className="text-[var(--brand-primary)]">Built for rigorous audits.</span>
+                {t("capabilities.title")} <span className="text-[var(--brand-primary)]">{t("capabilities.titleHighlight")}</span>
               </h2>
             </div>
 
@@ -210,9 +212,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <ClipboardCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Custom Protocol Builder</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.protocolBuilder.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Design dynamic inspection protocols tailored to your industry. Add conditional logic, required photos, and numeric sensor limits.
+                  {t("capabilities.items.protocolBuilder.description")}
                 </p>
               </div>
 
@@ -220,9 +222,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Camera className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Mandatory Photo Proof</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.photoProof.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Require inspectors to snap high-resolution photos of critical wear areas, fluid levels, and serial plates with tamper-proof geotags.
+                  {t("capabilities.items.photoProof.description")}
                 </p>
               </div>
 
@@ -230,9 +232,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <AlertCircle className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Auto-Triggered Corrective Work Orders</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.autoWorkOrders.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  When an inspection check fails, Asset Master automatically generates a corrective maintenance ticket and locks the equipment.
+                  {t("capabilities.items.autoWorkOrders.description")}
                 </p>
               </div>
 
@@ -240,9 +242,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <UserCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Electronic Signatures</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.signatures.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Capture legally binding digital signatures on mobile screens from inspectors, site supervisors, and equipment operators.
+                  {t("capabilities.items.signatures.description")}
                 </p>
               </div>
 
@@ -250,9 +252,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Lock className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Cryptographic Ledger</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.cryptoLedger.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  All audit logs are stored with cryptographic hashes. No records can be secretly modified or deleted after inspection completion.
+                  {t("capabilities.items.cryptoLedger.description")}
                 </p>
               </div>
 
@@ -260,9 +262,9 @@ export default function InspectionsAuditPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <FileCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">1-Click PDF Audit Packs</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.pdfExport.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Export branded, professional audit compliance packets complete with checklist results, photos, timestamps, and certificates.
+                  {t("capabilities.items.pdfExport.description")}
                 </p>
               </div>
             </div>
@@ -274,10 +276,10 @@ export default function InspectionsAuditPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Inspections FAQ
+                {t("faq.badge")}
               </p>
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions about Digital Inspections
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -318,10 +320,10 @@ export default function InspectionsAuditPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Ready to eliminate paper clipboards and pass audits without stress?
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Schedule a live inspection demonstration customized to your safety standards.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -330,7 +332,7 @@ export default function InspectionsAuditPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-base"
               >
-                <span>Book an Inspection Demo</span>
+                <span>{t("cta.bookDemo")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>

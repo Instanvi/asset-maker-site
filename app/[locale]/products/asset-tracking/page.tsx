@@ -24,6 +24,7 @@ import {
   ChevronDown,
   Building,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -31,6 +32,7 @@ import BookDemoModal from "@/components/home/BookDemoModal";
 import { cn } from "@/lib/utils";
 
 export default function AssetTrackingPage() {
+  const t = useTranslations("products.assetTracking.page");
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<"registry" | "scanner">("registry");
   const [searchTerm, setSearchTerm] = useState("");
@@ -43,33 +45,33 @@ export default function AssetTrackingPage() {
   const demoAssets = [
     {
       id: "AM-IT-88421",
-      name: "Apple MacBook Pro 16\" M3 Max",
+      name: t("hero.cockpit.demoAssets.macbook.name"),
       category: "it",
-      custodian: "Sarah Jenkins (Lead Dev)",
-      location: "San Francisco HQ • Floor 4",
-      status: "In Use",
-      bookValue: "$3,850.00",
-      warranty: "Dec 2027",
+      custodian: t("hero.cockpit.demoAssets.macbook.custodian"),
+      location: t("hero.cockpit.demoAssets.macbook.location"),
+      status: t("hero.cockpit.demoAssets.macbook.status"),
+      bookValue: t("hero.cockpit.demoAssets.macbook.bookValue"),
+      warranty: t("hero.cockpit.demoAssets.macbook.warranty"),
     },
     {
       id: "AM-EQ-90142",
-      name: "CAT 320 Hydraulic Excavator",
+      name: t("hero.cockpit.demoAssets.excavator.name"),
       category: "fleet",
-      custodian: "Marcus Vance (Jobsite #4)",
-      location: "Austin Site B • Sector 2",
-      status: "Operational",
-      bookValue: "$185,000.00",
-      warranty: "Aug 2029",
+      custodian: t("hero.cockpit.demoAssets.excavator.custodian"),
+      location: t("hero.cockpit.demoAssets.excavator.location"),
+      status: t("hero.cockpit.demoAssets.excavator.status"),
+      bookValue: t("hero.cockpit.demoAssets.excavator.bookValue"),
+      warranty: t("hero.cockpit.demoAssets.excavator.warranty"),
     },
     {
       id: "AM-TL-30419",
-      name: "Hilti TE 60-ATC Rotary Hammer",
+      name: t("hero.cockpit.demoAssets.hammer.name"),
       category: "tools",
-      custodian: "Dave Martinez (Crew 3)",
-      location: "Tool Crib #1 • Bay 4",
-      status: "Checked Out",
-      bookValue: "$1,420.00",
-      warranty: "Mar 2026",
+      custodian: t("hero.cockpit.demoAssets.hammer.custodian"),
+      location: t("hero.cockpit.demoAssets.hammer.location"),
+      status: t("hero.cockpit.demoAssets.hammer.status"),
+      bookValue: t("hero.cockpit.demoAssets.hammer.bookValue"),
+      warranty: t("hero.cockpit.demoAssets.hammer.warranty"),
     },
   ];
 
@@ -94,24 +96,24 @@ export default function AssetTrackingPage() {
 
   const faqs = [
     {
-      q: "Can we scan assets using our existing employee smartphones?",
-      a: "Yes. Asset Master transforms any standard iOS or Android smartphone into an enterprise-grade barcode and QR scanner using the device camera. No proprietary or expensive handheld hardware is required.",
+      q: t("faq.questions.q1.question"),
+      a: t("faq.questions.q1.answer"),
     },
     {
-      q: "What types of asset tags does Asset Master support?",
-      a: "Asset Master natively supports 1D barcodes (Code 128, UPC, Code 39), 2D QR codes, DataMatrix, and UHF RFID tags. You can print tags using your existing office printers or order durable anodized aluminum tags directly through our platform.",
+      q: t("faq.questions.q2.question"),
+      a: t("faq.questions.q2.answer"),
     },
     {
-      q: "Does asset tracking work when workers are offline in remote areas?",
-      a: "Yes. Our mobile application includes full offline functionality. Field crews can scan tags, run audits, and update custody without internet access. All records automatically sync to the cloud the moment connectivity is restored.",
+      q: t("faq.questions.q3.question"),
+      a: t("faq.questions.q3.answer"),
     },
     {
-      q: "How does check-in and check-out tracking work?",
-      a: "Workers scan the asset's QR code or barcode tag, select the recipient or jobsite, and capture an optional electronic signature. Chain-of-custody timestamps and GPS coordinates are logged instantaneously.",
+      q: t("faq.questions.q4.question"),
+      a: t("faq.questions.q4.answer"),
     },
     {
-      q: "Can we import our existing asset spreadsheets?",
-      a: "Yes. Our bulk CSV and Excel importer allows you to migrate thousands of assets, custom fields, historical values, and department mappings in under 15 minutes.",
+      q: t("faq.questions.q5.question"),
+      a: t("faq.questions.q5.answer"),
     },
   ];
 
@@ -130,15 +132,15 @@ export default function AssetTrackingPage() {
               {/* Left Column Copy */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                  Enterprise Physical & Digital Tracking
+                  {t("hero.badge")}
                 </p>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  Total Asset Visibility. <span className="text-[var(--brand-primary)]">Scanned in Seconds.</span>
+                  {t("hero.title")} <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                  Turn any smartphone into an enterprise scanner. Track physical equipment, tools, IT hardware, and fleet gear with tamper-proof chain of custody, GPS timestamps, and zero spreadsheets.
+                  {t("hero.description")}
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
@@ -148,7 +150,7 @@ export default function AssetTrackingPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
-                    <span>Book a Live Demo</span>
+                    <span>{t("hero.cta.bookDemo")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
@@ -156,15 +158,15 @@ export default function AssetTrackingPage() {
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>Instant Smartphone Camera Scan</span>
+                    <span>{t("hero.trustBadges.instantScan")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>Full Offline Sync</span>
+                    <span>{t("hero.trustBadges.offlineSync")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Clock className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>&lt; 85ms Tag Read Latency</span>
+                    <span>{t("hero.trustBadges.latency")}</span>
                   </div>
                 </div>
               </div>
@@ -185,7 +187,7 @@ export default function AssetTrackingPage() {
                       )}
                     >
                       <Box className="h-3.5 w-3.5" />
-                      <span>Live Asset Registry</span>
+                      <span>{t("hero.cockpit.tabs.registry")}</span>
                     </button>
 
                     <button
@@ -199,7 +201,7 @@ export default function AssetTrackingPage() {
                       )}
                     >
                       <QrCode className="h-3.5 w-3.5" />
-                      <span>Mobile Scanner Viewfinder</span>
+                      <span>{t("hero.cockpit.tabs.scanner")}</span>
                     </button>
                   </div>
 
@@ -211,7 +213,7 @@ export default function AssetTrackingPage() {
                           <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-[var(--foreground-subtle)]" />
                           <input
                             type="text"
-                            placeholder="Search by tag, name, user..."
+                            placeholder={t("hero.cockpit.searchPlaceholder")}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full pl-8 pr-3 py-1.5 text-xs rounded-md border border-[var(--border-custom)] bg-[var(--surface)] focus:outline-none focus:border-[var(--brand-primary)]"
@@ -221,10 +223,10 @@ export default function AssetTrackingPage() {
                         <div className="flex items-center gap-1 w-full sm:w-auto overflow-x-auto pb-1 sm:pb-0">
                           {(
                             [
-                              { id: "all", label: "All" },
-                              { id: "it", label: "IT" },
-                              { id: "fleet", label: "Fleet" },
-                              { id: "tools", label: "Tools" },
+                              { id: "all", label: t("hero.cockpit.categories.all") },
+                              { id: "it", label: t("hero.cockpit.categories.it") },
+                              { id: "fleet", label: t("hero.cockpit.categories.fleet") },
+                              { id: "tools", label: t("hero.cockpit.categories.tools") },
                             ] as const
                           ).map((cat) => (
                             <button
@@ -260,7 +262,7 @@ export default function AssetTrackingPage() {
                               </span>
                             </div>
                             <div className="mt-2 flex items-center justify-between text-[11px] text-[var(--foreground-muted)] pt-2 border-t border-[var(--border-subtle)]">
-                              <span>Location: {asset.location}</span>
+                              <span>{t("hero.cockpit.locationLabel")} {asset.location}</span>
                               <span className="font-bold text-[var(--foreground)]">{asset.bookValue}</span>
                             </div>
                           </div>
@@ -280,20 +282,20 @@ export default function AssetTrackingPage() {
                         <div className="relative z-10 my-2 mx-auto w-44 h-28 border-2 border-dashed border-cyan-400/80 rounded-lg flex flex-col items-center justify-center p-2 bg-slate-900/50">
                           <QrCode className="h-10 w-10 text-cyan-400 mb-1" />
                           <span className="text-[11px] font-mono text-cyan-300">
-                            {isScanning ? "READING TAG..." : scannedAssetTag}
+                            {isScanning ? t("hero.cockpit.scanner.readingTag") : scannedAssetTag}
                           </span>
                         </div>
 
                         <div className="flex items-center justify-between text-[11px] text-slate-400 px-2 pt-2 border-t border-slate-800">
-                          <span>Latency: &lt; 75ms</span>
-                          <span>Buffer: {scanCount} Scanned</span>
-                          <span className="text-emerald-400 font-bold">GPS Geotagged</span>
+                          <span>{t("hero.cockpit.scanner.latency")}</span>
+                          <span>{t("hero.cockpit.scanner.buffer", { count: scanCount })}</span>
+                          <span className="text-emerald-400 font-bold">{t("hero.cockpit.scanner.gpsTagged")}</span>
                         </div>
                       </div>
 
                       <div className="flex items-center justify-between pt-1">
                         <span className="text-xs text-[var(--foreground-muted)]">
-                          Continuous 1D/2D Barcode & QR recognition engine
+                          {t("hero.cockpit.scanner.engineDescription")}
                         </span>
                         <Button
                           variant="primary"
@@ -302,7 +304,7 @@ export default function AssetTrackingPage() {
                           className="text-xs"
                         >
                           <RefreshCw className={cn("h-3.5 w-3.5", isScanning && "animate-spin")} />
-                          <span>Simulate Mobile Scan</span>
+                          <span>{t("hero.cockpit.scanner.simulateScan")}</span>
                         </Button>
                       </div>
                     </div>
@@ -318,10 +320,10 @@ export default function AssetTrackingPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Core Capabilities
+                {t("capabilities.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Everything you need to eliminate <span className="text-[var(--brand-primary)]">ghost assets and loss.</span>
+                {t("capabilities.title")} <span className="text-[var(--brand-primary)]">{t("capabilities.titleHighlight")}</span>
               </h2>
             </div>
 
@@ -330,9 +332,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Smartphone className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Mobile Barcode & QR Scanning</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.mobileScanning.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Turn iOS and Android devices into high-speed scanners. Support for continuous batch scanning, Code 128, DataMatrix, and durable metal tags.
+                  {t("capabilities.items.mobileScanning.description")}
                 </p>
               </div>
 
@@ -340,9 +342,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <UserCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Check-In & Check-Out Custody</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.custody.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Know exactly who has every tool, vehicle, and laptop. Capture e-signatures and timestamps for full chain-of-custody accountability.
+                  {t("capabilities.items.custody.description")}
                 </p>
               </div>
 
@@ -350,9 +352,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <MapPin className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">GPS & Geofenced Locations</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.gpsTracking.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Every scan automatically logs precise GPS coordinates. Set geofenced alert perimeters around job sites, warehouses, and campuses.
+                  {t("capabilities.items.gpsTracking.description")}
                 </p>
               </div>
 
@@ -360,9 +362,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Tag className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Custom Asset Tag Generator</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.tagGenerator.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Generate and print custom branded barcode and QR labels on standard Zebra, Avery, or Dymo label stock in seconds.
+                  {t("capabilities.items.tagGenerator.description")}
                 </p>
               </div>
 
@@ -370,9 +372,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <ShieldCheck className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Audit-Ready History Log</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.auditHistory.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Every change, transfer, repair, and inspection creates an immutable audit record. Complete proof ready for finance and regulators.
+                  {t("capabilities.items.auditHistory.description")}
                 </p>
               </div>
 
@@ -380,9 +382,9 @@ export default function AssetTrackingPage() {
                 <div className="p-2.5 rounded-lg bg-[var(--brand-primary-light)] text-[var(--brand-primary)] w-fit">
                   <Layers className="h-5 w-5" />
                 </div>
-                <h3 className="text-lg font-bold text-[var(--foreground)]">Unlimited Custom Fields</h3>
+                <h3 className="text-lg font-bold text-[var(--foreground)]">{t("capabilities.items.customFields.title")}</h3>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Structure your registry around your specific business. Add custom dropdowns, serial numbers, warranty dates, and photo attachments.
+                  {t("capabilities.items.customFields.description")}
                 </p>
               </div>
             </div>
@@ -394,35 +396,35 @@ export default function AssetTrackingPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Implementation Workflow
+                {t("workflow.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                From unboxing to full operational deployment in <span className="text-[var(--brand-primary)]">three steps.</span>
+                {t("workflow.title")} <span className="text-[var(--brand-primary)]">{t("workflow.titleHighlight")}</span>
               </h2>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-6 rounded-xl bg-white border border-[var(--border-custom)] space-y-3">
-                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">01</span>
-                <h4 className="text-lg font-bold text-[var(--foreground)]">Tag & Register</h4>
+                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">{t("workflow.steps.step1.number")}</span>
+                <h4 className="text-lg font-bold text-[var(--foreground)]">{t("workflow.steps.step1.title")}</h4>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Affix durable QR or barcode tags to your assets and import your existing spreadsheets or scan to create records in under 30 seconds.
+                  {t("workflow.steps.step1.description")}
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white border border-[var(--border-custom)] space-y-3">
-                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">02</span>
-                <h4 className="text-lg font-bold text-[var(--foreground)]">Scan & Assign in Field</h4>
+                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">{t("workflow.steps.step2.number")}</span>
+                <h4 className="text-lg font-bold text-[var(--foreground)]">{t("workflow.steps.step2.title")}</h4>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Equip crews with the mobile app. Check items out to workers, transfer gear between job sites, and log condition updates on the go.
+                  {t("workflow.steps.step2.description")}
                 </p>
               </div>
 
               <div className="p-6 rounded-xl bg-white border border-[var(--border-custom)] space-y-3">
-                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">03</span>
-                <h4 className="text-lg font-bold text-[var(--foreground)]">Reconcile & Audit</h4>
+                <span className="text-3xl font-extrabold text-[var(--brand-primary)]">{t("workflow.steps.step3.number")}</span>
+                <h4 className="text-lg font-bold text-[var(--foreground)]">{t("workflow.steps.step3.title")}</h4>
                 <p className="text-sm text-[var(--foreground-muted)] leading-relaxed">
-                  Run physical inventory audits in minutes. Generate 100% reconciled reports for executive leadership and external compliance auditors.
+                  {t("workflow.steps.step3.description")}
                 </p>
               </div>
             </div>
@@ -434,10 +436,10 @@ export default function AssetTrackingPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Got Questions?
+                {t("faq.badge")}
               </p>
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions about Asset Tracking
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -478,10 +480,10 @@ export default function AssetTrackingPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Ready to take total control of your physical assets?
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Join thousands of organizations worldwide that eliminate spreadsheets and streamline audits with Asset Master.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -490,7 +492,7 @@ export default function AssetTrackingPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-base"
               >
-                <span>Schedule a 1-on-1 Demo</span>
+                <span>{t("cta.bookDemo")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
