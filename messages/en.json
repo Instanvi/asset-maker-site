@@ -445,6 +445,123 @@
         }
       }
     },
+    "integrationsApi": {
+      "title": "Integrations & API",
+      "description": "Connect Asset Master into your ERP, MDM, IT helpdesk, and SSO identity providers.",
+      "page": {
+        "meta": {
+          "title": "Integrations & API | Connect Asset Master to Your Entire Tech Stack",
+          "description": "Connect Asset Master seamlessly into your ERP, MDM, IT helpdesk, and SSO identity providers. Automate data sync with real-time webhooks and a developer-friendly REST API."
+        },
+        "hero": {
+          "badge": "Enterprise Ecosystem & Developer API",
+          "title": "Connected Operations.",
+          "titleHighlight": "Open REST API.",
+          "description": "Connect Asset Master seamlessly into your ERP, MDM, IT helpdesk, and SSO identity providers. Automate data sync with real-time webhooks and a developer-friendly REST API.",
+          "cta": {
+            "primary": "Explore Integrations",
+            "secondary": "View API Documentation"
+          },
+          "trustBadges": {
+            "webhooks": "Real-Time HTTPS Webhooks",
+            "saml": "SAML 2.0 & SCIM Provisioning",
+            "openapi": "OpenAPI / Swagger Specs"
+          },
+          "apiStudio": {
+            "title": "REST API & Webhook Dispatcher",
+            "status": "200 OK • Latency: 42ms",
+            "comment": "// POST /api/v1/webhooks/asset.transfer",
+            "fields": {
+              "event": "asset.custody_transferred",
+              "assetTag": "AM-EQ-90142",
+              "previousCustodian": "Marcus Vance",
+              "newCustodian": "Dave Martinez",
+              "gpsCoordinates": "32.7767° N, 96.7970° W",
+              "verifiedHash": "0x8F92...B31A"
+            },
+            "successMessage": "Webhook event dispatched successfully to 5 subscribed endpoints!",
+            "deliveryNote": "Instant delivery to Zapier, Jira, SAP & Slack",
+            "testButton": "Test Webhook Dispatch"
+          }
+        },
+        "integrationDirectory": {
+          "badge": "Ecosystem Directory",
+          "title": "Pre-built connectors for your",
+          "titleHighlight": "entire tech stack.",
+          "categories": {
+            "all": "All Integrations",
+            "mdm": "MDM & Endpoint",
+            "erp": "ERP & Finance",
+            "itsm": "IT Helpdesk & ITSM",
+            "sso": "Identity & SSO"
+          },
+          "items": {
+            "intune": {
+              "name": "Microsoft Intune",
+              "description": "Auto-sync hardware specs, BitLocker encryption posture, and OS patches.",
+              "syncFrequency": "Real-Time Webhook"
+            },
+            "jamf": {
+              "name": "Jamf Pro",
+              "description": "Two-way macOS and iOS fleet inventory sync with FileVault status.",
+              "syncFrequency": "Real-Time Webhook"
+            },
+            "sap": {
+              "name": "SAP S/4HANA",
+              "description": "Post depreciation ledger entries and capital asset reconciliations.",
+              "syncFrequency": "Daily Batch Sync"
+            },
+            "jira": {
+              "name": "Jira Service Management",
+              "description": "View asset custody and service history directly inside IT helpdesk tickets.",
+              "syncFrequency": "Instant API Link"
+            },
+            "okta": {
+              "name": "Okta SSO & SCIM",
+              "description": "Automate employee user provisioning and role-based access controls.",
+              "syncFrequency": "SCIM Push"
+            },
+            "servicenow": {
+              "name": "ServiceNow ITSM",
+              "description": "Sync CMDB asset records and automate incident management workflows.",
+              "syncFrequency": "REST API Connector"
+            }
+          },
+          "status": {
+            "connected": "Connected",
+            "available": "Available"
+          },
+          "syncModeLabel": "Sync Mode:"
+        },
+        "faq": {
+          "badge": "API & Integrations FAQ",
+          "title": "Frequently Asked Questions",
+          "items": [
+            {
+              "q": "Does Asset Master provide a documented public REST API?",
+              "a": "Yes. Asset Master offers a fully documented REST API with granular API key scopes, rate limiting protection, and OpenAPI / Swagger specifications. You can create, read, update, and delete assets, work orders, inspections, and users programmatically."
+            },
+            {
+              "q": "What webhooks are available?",
+              "a": "Asset Master supports real-time HTTPS webhooks for key system events including: Asset Created, Custody Transferred, Inspection Defect Flagged, Warranty Expiring, and Work Order Completed."
+            },
+            {
+              "q": "Can we connect our internal ERP systems like NetSuite or SAP?",
+              "a": "Yes. We offer pre-built connectors and custom webhook integration templates for major ERP platforms to synchronize fixed asset depreciation, purchase values, and general ledger journal entries."
+            },
+            {
+              "q": "Is Single Sign-On (SSO) supported?",
+              "a": "Yes. We support SAML 2.0, OpenID Connect (OIDC), and SCIM automated user provisioning with Okta, Microsoft Entra ID (Azure AD), Google Workspace, and OneLogin."
+            }
+          ]
+        },
+        "cta": {
+          "title": "Ready to connect Asset Master with your existing software stack?",
+          "description": "Our solutions engineering team will help you configure custom webhooks, ERP connectors, and SSO.",
+          "button": "Book an Architecture Walkthrough"
+        }
+      }
+    },
     "itAssetManagement": {
       "title": "IT Asset Management",
       "description": "Hardware inventory, software licenses, and device assignments.",

@@ -19,6 +19,7 @@ import {
   Key,
   Check,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Button from "@/components/ui/Button";
@@ -35,6 +36,7 @@ interface IntegrationItem {
 }
 
 export default function IntegrationsApiPage() {
+  const t = useTranslations("products.integrationsApi.page");
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [selectedCategory, setSelectedCategory] = useState<"all" | "erp" | "mdm" | "itsm" | "sso">("all");
@@ -44,51 +46,51 @@ export default function IntegrationsApiPage() {
   const integrations: IntegrationItem[] = [
     {
       id: "intune",
-      name: "Microsoft Intune",
+      name: t("integrationDirectory.items.intune.name"),
       category: "mdm",
-      description: "Auto-sync hardware specs, BitLocker encryption posture, and OS patches.",
+      description: t("integrationDirectory.items.intune.description"),
       status: "Connected",
-      syncFrequency: "Real-Time Webhook",
+      syncFrequency: t("integrationDirectory.items.intune.syncFrequency"),
     },
     {
       id: "jamf",
-      name: "Jamf Pro",
+      name: t("integrationDirectory.items.jamf.name"),
       category: "mdm",
-      description: "Two-way macOS and iOS fleet inventory sync with FileVault status.",
+      description: t("integrationDirectory.items.jamf.description"),
       status: "Connected",
-      syncFrequency: "Real-Time Webhook",
+      syncFrequency: t("integrationDirectory.items.jamf.syncFrequency"),
     },
     {
       id: "sap",
-      name: "SAP S/4HANA",
+      name: t("integrationDirectory.items.sap.name"),
       category: "erp",
-      description: "Post depreciation ledger entries and capital asset reconciliations.",
+      description: t("integrationDirectory.items.sap.description"),
       status: "Connected",
-      syncFrequency: "Daily Batch Sync",
+      syncFrequency: t("integrationDirectory.items.sap.syncFrequency"),
     },
     {
       id: "jira",
-      name: "Jira Service Management",
+      name: t("integrationDirectory.items.jira.name"),
       category: "itsm",
-      description: "View asset custody and service history directly inside IT helpdesk tickets.",
+      description: t("integrationDirectory.items.jira.description"),
       status: "Connected",
-      syncFrequency: "Instant API Link",
+      syncFrequency: t("integrationDirectory.items.jira.syncFrequency"),
     },
     {
       id: "okta",
-      name: "Okta SSO & SCIM",
+      name: t("integrationDirectory.items.okta.name"),
       category: "sso",
-      description: "Automate employee user provisioning and role-based access controls.",
+      description: t("integrationDirectory.items.okta.description"),
       status: "Connected",
-      syncFrequency: "SCIM Push",
+      syncFrequency: t("integrationDirectory.items.okta.syncFrequency"),
     },
     {
       id: "servicenow",
-      name: "ServiceNow ITSM",
+      name: t("integrationDirectory.items.servicenow.name"),
       category: "itsm",
-      description: "Sync CMDB asset records and automate incident management workflows.",
+      description: t("integrationDirectory.items.servicenow.description"),
       status: "Available",
-      syncFrequency: "REST API Connector",
+      syncFrequency: t("integrationDirectory.items.servicenow.syncFrequency"),
     },
   ];
 
@@ -109,20 +111,20 @@ export default function IntegrationsApiPage() {
 
   const faqs = [
     {
-      q: "Does Asset Master provide a documented public REST API?",
-      a: "Yes. Asset Master offers a fully documented REST API with granular API key scopes, rate limiting protection, and OpenAPI / Swagger specifications. You can create, read, update, and delete assets, work orders, inspections, and users programmatically.",
+      q: t("faq.items.0.q"),
+      a: t("faq.items.0.a"),
     },
     {
-      q: "What webhooks are available?",
-      a: "Asset Master supports real-time HTTPS webhooks for key system events including: Asset Created, Custody Transferred, Inspection Defect Flagged, Warranty Expiring, and Work Order Completed.",
+      q: t("faq.items.1.q"),
+      a: t("faq.items.1.a"),
     },
     {
-      q: "Can we connect our internal ERP systems like NetSuite or SAP?",
-      a: "Yes. We offer pre-built connectors and custom webhook integration templates for major ERP platforms to synchronize fixed asset depreciation, purchase values, and general ledger journal entries.",
+      q: t("faq.items.2.q"),
+      a: t("faq.items.2.a"),
     },
     {
-      q: "Is Single Sign-On (SSO) supported?",
-      a: "Yes. We support SAML 2.0, OpenID Connect (OIDC), and SCIM automated user provisioning with Okta, Microsoft Entra ID (Azure AD), Google Workspace, and OneLogin.",
+      q: t("faq.items.3.q"),
+      a: t("faq.items.3.a"),
     },
   ];
 
@@ -141,15 +143,15 @@ export default function IntegrationsApiPage() {
               {/* Left Column Copy */}
               <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
                 <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-[var(--brand-primary)]">
-                  Enterprise Ecosystem & Developer API
+                  {t("hero.badge")}
                 </p>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] leading-[1.08]">
-                  Connected Operations. <span className="text-[var(--brand-primary)]">Open REST API.</span>
+                  {t("hero.title")} <span className="text-[var(--brand-primary)]">{t("hero.titleHighlight")}</span>
                 </h1>
 
                 <p className="text-base sm:text-lg text-[var(--foreground-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                  Connect Asset Master seamlessly into your ERP, MDM, IT helpdesk, and SSO identity providers. Automate data sync with real-time webhooks and a developer-friendly REST API.
+                  {t("hero.description")}
                 </p>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5">
@@ -159,7 +161,7 @@ export default function IntegrationsApiPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base shadow-[var(--shadow-glow)]"
                   >
-                    <span>Explore Integrations</span>
+                    <span>{t("hero.cta.primary")}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                   <Button
@@ -168,22 +170,22 @@ export default function IntegrationsApiPage() {
                     href="/demo"
                     className="w-full sm:w-auto text-base"
                   >
-                    <span>View API Documentation</span>
+                    <span>{t("hero.cta.secondary")}</span>
                   </Button>
                 </div>
 
                 <div className="pt-4 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-[var(--foreground-muted)] font-medium">
                   <div className="flex items-center gap-1.5">
                     <ShieldCheck className="h-4 w-4 text-[var(--brand-emerald)]" />
-                    <span>Real-Time HTTPS Webhooks</span>
+                    <span>{t("hero.trustBadges.webhooks")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>SAML 2.0 & SCIM Provisioning</span>
+                    <span>{t("hero.trustBadges.saml")}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <Code className="h-4 w-4 text-[var(--brand-primary)]" />
-                    <span>OpenAPI / Swagger Specs</span>
+                    <span>{t("hero.trustBadges.openapi")}</span>
                   </div>
                 </div>
               </div>
@@ -195,36 +197,36 @@ export default function IntegrationsApiPage() {
                     <div className="flex items-center gap-2">
                       <Code className="h-4 w-4 text-[var(--brand-primary)]" />
                       <span className="text-xs font-bold text-[var(--foreground)]">
-                        REST API & Webhook Dispatcher
+                        {t("hero.apiStudio.title")}
                       </span>
                     </div>
                     <span className="text-xs font-mono text-[var(--brand-emerald)] font-bold">
-                      200 OK • Latency: 42ms
+                      {t("hero.apiStudio.status")}
                     </span>
                   </div>
 
                   {/* Simulated JSON Payload */}
                   <div className="p-3.5 rounded-lg bg-slate-950 text-slate-200 font-mono text-xs space-y-1 overflow-x-auto border border-slate-800">
-                    <div className="text-slate-500">// POST /api/v1/webhooks/asset.transfer</div>
+                    <div className="text-slate-500">{t("hero.apiStudio.comment")}</div>
                     <div className="text-cyan-400">&#123;</div>
-                    <div className="pl-4 text-emerald-400">"event": <span className="text-amber-300">"asset.custody_transferred"</span>,</div>
-                    <div className="pl-4 text-emerald-400">"asset_tag": <span className="text-amber-300">"AM-EQ-90142"</span>,</div>
-                    <div className="pl-4 text-emerald-400">"previous_custodian": <span className="text-amber-300">"Marcus Vance"</span>,</div>
-                    <div className="pl-4 text-emerald-400">"new_custodian": <span className="text-amber-300">"Dave Martinez"</span>,</div>
-                    <div className="pl-4 text-emerald-400">"gps_coordinates": <span className="text-amber-300">"32.7767° N, 96.7970° W"</span>,</div>
-                    <div className="pl-4 text-emerald-400">"verified_hash": <span className="text-amber-300">"0x8F92...B31A"</span></div>
+                    <div className="pl-4 text-emerald-400">"event": <span className="text-amber-300">"{t("hero.apiStudio.fields.event")}"</span>,</div>
+                    <div className="pl-4 text-emerald-400">"asset_tag": <span className="text-amber-300">"{t("hero.apiStudio.fields.assetTag")}"</span>,</div>
+                    <div className="pl-4 text-emerald-400">"previous_custodian": <span className="text-amber-300">"{t("hero.apiStudio.fields.previousCustodian")}"</span>,</div>
+                    <div className="pl-4 text-emerald-400">"new_custodian": <span className="text-amber-300">"{t("hero.apiStudio.fields.newCustodian")}"</span>,</div>
+                    <div className="pl-4 text-emerald-400">"gps_coordinates": <span className="text-amber-300">"{t("hero.apiStudio.fields.gpsCoordinates")}"</span>,</div>
+                    <div className="pl-4 text-emerald-400">"verified_hash": <span className="text-amber-300">"{t("hero.apiStudio.fields.verifiedHash")}"</span></div>
                     <div className="text-cyan-400">&#125;</div>
                   </div>
 
                   {webhookSent && (
                     <div className="p-2.5 rounded-md bg-[var(--brand-emerald-light)] border border-[var(--brand-emerald)]/30 text-xs font-bold text-[var(--brand-emerald)] text-center animate-in fade-in-0 duration-150">
-                      Webhook event dispatched successfully to 5 subscribed endpoints!
+                      {t("hero.apiStudio.successMessage")}
                     </div>
                   )}
 
                   <div className="flex items-center justify-between pt-1">
                     <span className="text-xs text-[var(--foreground-muted)]">
-                      Instant delivery to Zapier, Jira, SAP & Slack
+                      {t("hero.apiStudio.deliveryNote")}
                     </span>
                     <Button
                       variant="primary"
@@ -233,7 +235,7 @@ export default function IntegrationsApiPage() {
                       className="text-xs"
                     >
                       <RefreshCw className={cn("h-3.5 w-3.5", isTestingWebhook && "animate-spin")} />
-                      <span>Test Webhook Dispatch</span>
+                      <span>{t("hero.apiStudio.testButton")}</span>
                     </Button>
                   </div>
                 </div>
@@ -247,10 +249,10 @@ export default function IntegrationsApiPage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-10">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                Ecosystem Directory
+                {t("integrationDirectory.badge")}
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Pre-built connectors for your <span className="text-[var(--brand-primary)]">entire tech stack.</span>
+                {t("integrationDirectory.title")} <span className="text-[var(--brand-primary)]">{t("integrationDirectory.titleHighlight")}</span>
               </h2>
             </div>
 
@@ -258,11 +260,11 @@ export default function IntegrationsApiPage() {
             <div className="flex items-center justify-center gap-2 mb-10 overflow-x-auto pb-2">
               {(
                 [
-                  { id: "all", label: "All Integrations" },
-                  { id: "mdm", label: "MDM & Endpoint" },
-                  { id: "erp", label: "ERP & Finance" },
-                  { id: "itsm", label: "IT Helpdesk & ITSM" },
-                  { id: "sso", label: "Identity & SSO" },
+                  { id: "all", label: t("integrationDirectory.categories.all") },
+                  { id: "mdm", label: t("integrationDirectory.categories.mdm") },
+                  { id: "erp", label: t("integrationDirectory.categories.erp") },
+                  { id: "itsm", label: t("integrationDirectory.categories.itsm") },
+                  { id: "sso", label: t("integrationDirectory.categories.sso") },
                 ] as const
               ).map((cat) => (
                 <button
@@ -292,7 +294,7 @@ export default function IntegrationsApiPage() {
                       <Layers className="h-5 w-5" />
                     </div>
                     <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[var(--brand-emerald-light)] text-[var(--brand-emerald)] border border-[var(--brand-emerald)]/20">
-                      {item.status}
+                      {item.status === "Connected" ? t("integrationDirectory.status.connected") : t("integrationDirectory.status.available")}
                     </span>
                   </div>
 
@@ -302,7 +304,7 @@ export default function IntegrationsApiPage() {
                   </p>
 
                   <div className="pt-2 border-t border-[var(--border-subtle)] text-[11px] text-[var(--foreground-subtle)] font-mono">
-                    Sync Mode: {item.syncFrequency}
+                    {t("integrationDirectory.syncModeLabel")} {item.syncFrequency}
                   </div>
                 </div>
               ))}
@@ -315,10 +317,10 @@ export default function IntegrationsApiPage() {
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-xs font-extrabold uppercase tracking-wider text-[var(--brand-primary)] mb-2.5">
-                API & Integrations FAQ
+                {t("faq.badge")}
               </p>
               <h2 className="text-3xl font-extrabold text-[var(--foreground)] tracking-tight">
-                Frequently Asked Questions
+                {t("faq.title")}
               </h2>
             </div>
 
@@ -359,10 +361,10 @@ export default function IntegrationsApiPage() {
         <section className="py-16 bg-[var(--surface-dark)] text-white">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight">
-              Ready to connect Asset Master with your existing software stack?
+              {t("cta.title")}
             </h2>
             <p className="text-base text-slate-300 max-w-2xl mx-auto">
-              Our solutions engineering team will help you configure custom webhooks, ERP connectors, and SSO.
+              {t("cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
               <Button
@@ -371,7 +373,7 @@ export default function IntegrationsApiPage() {
                 href="/demo"
                 className="w-full sm:w-auto text-base"
               >
-                <span>Book an Architecture Walkthrough</span>
+                <span>{t("cta.button")}</span>
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </div>
