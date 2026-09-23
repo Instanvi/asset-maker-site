@@ -129,19 +129,19 @@ export function Header({ onBookDemo }: HeaderProps) {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[var(--border-custom)] h-[var(--header-height,72px)] flex items-center transition-all"
+        className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-[var(--border-custom)] h-[60px] sm:h-[68px] md:h-[var(--header-height,72px)] flex items-center transition-all"
         onMouseLeave={handleMouseLeave}
       >
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2.5 group shrink-0" onClick={() => setActiveMenu(null)}>
+        <div className="mx-auto w-full max-w-7xl px-3 sm:px-4 lg:px-6 xl:px-8 flex items-center justify-between gap-2 sm:gap-4">
+          <Link href="/" className="flex items-center gap-2 sm:gap-2.5 group shrink-0 min-w-0" onClick={() => setActiveMenu(null)}>
             <Image 
               src="/assetMaster.svg" 
               alt="AssetMaster Logo" 
               width={32} 
               height={32}
-              className="shrink-0"
+              className="shrink-0 w-7 h-7 sm:w-8 sm:h-8"
             />
-            <span className="font-extrabold text-[var(--foreground)] text-2xl tracking-tight">
+            <span className="font-extrabold text-[var(--foreground)] text-lg sm:text-xl md:text-2xl tracking-tight whitespace-nowrap">
               Asset<span className="text-[var(--brand-primary)]">Master</span>
             </span>
           </Link>
@@ -200,24 +200,24 @@ export function Header({ onBookDemo }: HeaderProps) {
             </Button>
           </div>
 
-          <div className="flex items-center gap-2 xl:hidden">
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
             <Link
               href="https://asset-manager-frontend-pz4ljx-48b97f-94-72-97-117.sslip.io/login"
-              className="p-2 rounded-lg text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors cursor-pointer"
+              className="p-1.5 sm:p-2 rounded-lg text-[var(--foreground-muted)] hover:text-[var(--brand-primary)] hover:bg-[var(--surface-raised)] transition-colors cursor-pointer"
               aria-label="Login"
             >
-              <LogIn className="h-5 w-5" />
+              <LogIn className="h-4 w-4 sm:h-5 sm:w-5" />
             </Link>
-            <Button variant="primary" size="sm" className="text-base px-3">
+            <Button variant="primary" size="sm" className="text-xs sm:text-sm px-2 sm:px-3 py-1.5 sm:py-2 whitespace-nowrap min-w-[70px] sm:min-w-[80px]">
               <Link href="/demo">{t('common.bookDemo')}</Link>
             </Button>
             <button
               type="button"
               onClick={() => setIsMobileOpen(true)}
-              className="p-2 rounded-lg text-[var(--foreground)] hover:bg-[var(--surface-raised)] border border-[var(--border-custom)] cursor-pointer"
+              className="p-1.5 sm:p-2 rounded-lg text-[var(--foreground)] hover:bg-[var(--surface-raised)] border border-[var(--border-custom)] cursor-pointer shrink-0"
               aria-label="Open mobile menu"
             >
-              <Menu className="h-5 w-5" />
+              <Menu className="h-4 w-4 sm:h-5 sm:w-5" />
             </button>
           </div>
         </div>

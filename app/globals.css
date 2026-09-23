@@ -18,6 +18,8 @@
 
 :root {
   --header-height: 72px;
+  --header-height-mobile: 60px;
+  --header-height-tablet: 68px;
 
   --background: #ffffff;
   --surface: #f8fafc;
